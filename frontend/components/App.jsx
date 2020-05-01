@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import GreetingContainer from './greeting/greeting_container';
 import {
     Route,
     Redirect,
@@ -11,19 +12,22 @@ import {
 
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
-
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
         <header>
-            <h1>Mew Mew Trest</h1>
-           
+            <Link to="/" className="header-link">
+                <h1>Welcome to MewMewTrest</h1>
+            </Link>
+            <GreetingContainer />
         </header>
-
-        <Route path="/login" component={LoginFormContainer} />
-        <Route path="/signup" component={SignupFormContainer} />
+        <Switch>
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        </Switch>
     </div>
 );
+
 
 export default App;

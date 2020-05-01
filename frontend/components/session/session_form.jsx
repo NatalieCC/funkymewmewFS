@@ -5,9 +5,12 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            email: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClearErrors = this.handleClearErrors.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     update(field) {
@@ -22,6 +25,14 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
+    handleClearErrors(e) {
+        e.preventDefault();
+        this.props.clearSessionErrors();
+    }
+    componentDidMount() {
+        this.props.clearSessionErrors();
+    }
+
     renderErrors() {
         return (
             <ul>
@@ -34,26 +45,43 @@ class SessionForm extends React.Component {
         );
     }
 
+    demoLogin(e) {
+        e.preventDefault();
+        this.setState({
+            username: "poppy",
+            email: "poppy@aa.com",
+            password: "123321"
+        },()=>this.props.processForm(this.state))  
+    }
+
     render() {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to MewTrest!
+                    Your Inspirations!
           <br />
           Please {this.props.formType} or {this.props.navLink}
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
                         <label>Username:
-              <input type="text"
+                                <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="login-input"
                             />
                         </label>
                         <br />
+                        <label>Email:
+                                <input type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                                className="login-input"
+                            />
+                        </label>
+                        <br />
                         <label>Password:
-              <input type="password"
+                                <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
@@ -61,6 +89,9 @@ class SessionForm extends React.Component {
                         </label>
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
+                        <button className="demo-btn" onClick={this.demoLogin}>
+                            Demo Login
+                        </button>
                     </div>
                 </form>
             </div>
