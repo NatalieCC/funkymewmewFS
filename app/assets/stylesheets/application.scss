@@ -33,9 +33,6 @@ html, body {
     height: 100%;
 }
 
-
-
-
  html {
    background-color: rgb(248, 213, 243);
    text-size-adjust: none;
@@ -63,15 +60,6 @@ a:focus, a:hover {
   color: red;
 }
 
-
-/* button, input, select, textarea {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",メイリオ,Meiryo,"ＭＳ Ｐゴシック",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 100%;
-  vertical-align: middle;
-  margin: 1000px;
-} */
-
-
 div {
   display: block;
 }
@@ -89,7 +77,6 @@ section,
 ul {
   display: block;
 }
-
 
 button,
 input,
@@ -109,17 +96,6 @@ input::-moz-focus-inner {
   padding: 10px;
   border: 0;
 }
-button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
-  cursor: pointer;
-  -webkit-appearance: button;
-}
-input[type='search'] {
-  box-sizing: content-box;
-  -webkit-appearance: textfield;
-}
 
 textarea {
   overflow: auto;
@@ -136,10 +112,21 @@ figure {
   margin: 0;
 }
 
-.app {
-  margin-top: -1px;
-  min-width: 320px;
-  padding-top: 1px;
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 

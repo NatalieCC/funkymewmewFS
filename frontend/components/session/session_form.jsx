@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -51,7 +52,10 @@ class SessionForm extends React.Component {
             username: "poppy",
             email: "poppy@aa.com",
             password: "123321"
-        },()=>this.props.processForm(this.state))  
+        },()=>{
+            this.props.processForm(this.state) 
+            .then(this.props.closeModal)
+        })
     }
 
     render() {
@@ -60,7 +64,8 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     Your Inspirations!
           <br />
-          Please {this.props.formType} or {this.props.navLink}
+          Please {this.props.formType} or {this.props.otherForm}
+         <div onClick={this.props.closeModal} className="close-x"></div>
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
