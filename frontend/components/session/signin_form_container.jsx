@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import { login, clearSessionErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'login',
+        formType: 'Log In',
         //navLink: <Link to="/signup">Let's sign up!</Link>,
     };
 };
@@ -29,4 +30,4 @@ const mapDispatchToProps = dispatch => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionForm));

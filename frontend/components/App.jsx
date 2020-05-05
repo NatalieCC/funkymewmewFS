@@ -1,6 +1,5 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import GreetingContainer from './greeting/greeting_container';
 import {
     Route,
     Redirect,
@@ -8,25 +7,25 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
-import SignupFormContainer from './session/signup_form_container';
-import LoginFormContainer from './session/login_form_container';
+import RegisterFormContainer from './session/register_form_container';
+import SigninFormContainer from './session/signin_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Modal from './modal/modal';
+//import Modal from './modal/modal';
+import SigninContainer from './greeting/signin_container';
+import RegisterContainer from './greeting/register_container';
+import PinFeedContainer from './pins/pin_feed_container';
 
 const App = () => (
     <div>
-        <Modal />
-        <header>
-            <Link to="/" className="header-link">
-                <h1>Welcome to MewMewTrest</h1>
-            </Link>
-            <GreetingContainer />
-        </header>
         <Switch>
-            {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+            <Route exact path="/" component={RegisterContainer} />
+            <Route exact path="/signin" component={SigninContainer} />
+        </Switch>
+        <Switch>
+            <Route path="/feed" component={PinFeedContainer} />
         </Switch>
     </div>
+
 );
 
 

@@ -4,7 +4,8 @@ import { openModal } from '../../actions/modal_actions';
 import Greeting from './greeting';
 
 const mapStateToProps = ({ entities,session }) => ({
-    currentUser: entities.users[session.id]
+    currentUser: entities.users[session.id],
+    cornerButtonText: 'register'
 });
 
 const mapDispatchToProps = dispatch => ({

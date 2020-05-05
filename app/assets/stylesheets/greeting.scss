@@ -1,0 +1,72 @@
+
+%flex-row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button-text {
+  @extend %flex-row;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  height: 40px;
+  line-height: 36px;
+  margin-top: 48px;
+  margin-left: 24px;
+  padding: 10px, 14px;
+  position: absolute;
+  vertical-align: middle;
+  width: 130px;
+
+  &:hover {
+    background-color: pink;
+  }
+}
+
+input::placeholder {
+  color: darkgrey;
+  font-family: Apple Chancery;
+  font-size: large;
+}
+
+button{
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+    margin-top: 10px;
+    width: 100%;
+    font-family: inherit;
+    border-radius: 30px;
+    border: inherit;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+button:focus{
+    outline: none;
+}
+
+.modal-transparency {
+ 
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  .modal-child {
+    width: 430px;
+    height: 430px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: white;
+  }
+}
