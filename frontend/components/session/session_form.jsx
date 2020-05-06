@@ -64,6 +64,7 @@ class SessionForm extends React.Component {
             <div className="login-form-container">
                 <div className="form-box">
                     <div className="logo-box">
+                        <i id="logo" className="fas fa-cat-space"></i>
                         <img src={window.logo} className="small-logo" />
                     </div>     
                     <h1>Welcome to MewMew Trest</h1>

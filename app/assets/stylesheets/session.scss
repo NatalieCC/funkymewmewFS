@@ -11,8 +11,10 @@
     text-align: center;
     align-items: center;
     justify-content: center;   //not present
-    width: 430px;
-    height: 430px;
+    // width: 430px;
+    // height: 430px;
+    min-width: 420px;
+    min-height: 420px;
     border-radius: 10px;
     position: absolute;
     background-color: white; 
@@ -74,5 +76,7 @@
   width: 42.44px;
 }
 
-
+#logo {
+  font-size: 24px;
+}
 
