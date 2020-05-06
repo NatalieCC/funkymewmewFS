@@ -1,8 +1,6 @@
-import { RECEIVE_PINS, RECEIVE_PIN, REMOVE_PIN, CLEAR_PIN_INDEX } from "../actions/pin_actions";
+import { RECEIVE_PINS } from "../actions/pin_actions";
 import { merge } from 'lodash';
-import { RECEIVE_BOARD, RECEIVE_BOARDS } from "../actions/board_actions";
-import { RECEIVE_USER, RECEIVE_USERS } from "../actions/user_actions";
-import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
+
 
 const pinsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -11,13 +9,6 @@ const pinsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_PINS:
             return merge({}, newState, action.pins);
-        case RECEIVE_PIN:
-            return merge({}, newState, { [action.pin.id]: action.pin });
-        case REMOVE_PIN:
-            delete newState[action.pinId];
-            return newState;
-        case CLEAR_PIN_INDEX:
-            return {};
         default:
             return state;
     }

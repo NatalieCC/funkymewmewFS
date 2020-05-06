@@ -1,11 +1,7 @@
 import { combineReducers } from 'redux';
-
-//import benches from './benches_reducer';
-//import reviews from './reviews_reducer';
 import users from './users_reducer';
+import pins from './pins_reducer';
 
-export default combineReducers({
-    //benches,
-    //reviews,
-    users
+export default combineReducers({  
+    pins,users
 });

@@ -1,115 +1,21 @@
 import * as PinApiUtil from "../util/pin_api_util";
 
 export const RECEIVE_PINS = "RECEIVE_PINS";
-export const RECEIVE_PIN = "RECEIVE_PIN";
-export const REMOVE_PIN = "REMOVE_PIN";
-export const RECEIVE_PIN_ERRORS = "RECEIVE_PIN_ERRORS";
-export const CLEAR_PIN_INDEX = "CLEAR_PIN_INDEX";
 
-export const clearPinIndex = () => ({
-    type: CLEAR_PIN_INDEX,
-});
 
-export const receivePins = (payload) => {
+export const receivePins = (pins) => {
     return {
         type: RECEIVE_PINS,
-        users: payload.users,
-        boards: payload.boards,
-        pins: payload.pins,
+        pins
     };
 };
 
-export const receivePin = (payload) => {
-    return {
-        type: RECEIVE_PIN,
-        user: payload.user,
-        board: payload.board,
-        pin: payload.pin,
-    };
-};
-
-export const removePin = (payload) => {
-    return {
-        type: REMOVE_PIN,
-        pinId: payload.pin.id,
-    };
-};
-
-export const receivePinErrors = (errors) => ({
-    type: RECEIVE_PIN_ERRORS,
-    errors
-});
 
 // thunk
 
 export const fetchAllPins = (page) => dispatch => (
-    PinApiUtil.fetchAllPins(page).then(payload => (
-        dispatch(receivePins(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
+    PinApiUtil.fetchAllPins(page)
+    .then(pins => (dispatch(receivePins(pins))
     ))
 );
 
-export const fetchBoardPins = (id, page) => dispatch => (
-    PinApiUtil.fetchBoardPins(id, page).then(payload => (
-        dispatch(receivePins(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
-    ))
-);
-
-export const fetchUserPins = (username, page) => dispatch => (
-    PinApiUtil.fetchUserPins(username, page).then(payload => (
-        dispatch(receivePins(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
-    ))
-);
-
-export const fetchPins = () => dispatch => (
-    PinApiUtil.fetchPins().then(payload => (
-        dispatch(receivePins(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
-    ))
-);
-
-export const fetchPin = id => dispatch => (
-    PinApiUtil.fetchPin(id).then(payload => (
-        dispatch(receivePin(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
-    ))
-);
-
-export const createPin = (formData, boardId) => dispatch => (
-    PinApiUtil.createPin(formData, boardId).then(payload => (
-        dispatch(receivePin(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
-    ))
-);
-
-export const createPinJoin = (pin, boardId) => dispatch => (
-    PinApiUtil.createPinJoin(pin, boardId).then(payload => (
-        dispatch(receivePin(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
-    ))
-);
-
-export const updatePin = pin => dispatch => (
-    PinApiUtil.updatePin(pin).then(payload => (
-        dispatch(receivePin(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
-    ))
-);
-
-export const deletePin = id => dispatch => (
-    PinApiUtil.deletePin(id).then(payload => (
-        dispatch(removePin(payload))
-    ), err => (
-        dispatch(receivePinErrors(err.responseJSON))
-    ))
-);
