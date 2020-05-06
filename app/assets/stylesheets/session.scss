@@ -8,6 +8,7 @@
     justify-content: center;
 
   .form-box {
+    text-align: center;
     align-items: center;
     justify-content: center;   //not present
     width: 430px;
@@ -25,7 +26,8 @@
 
       h2 {
       font-size: 16px;
-      margin-bottom: 20px;
+      //margin-bottom: 20px;
+      align-items: center;
       text-align: center;
       width: 290px;
       }

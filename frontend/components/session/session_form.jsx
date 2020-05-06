@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
                         <img src={window.logo} className="small-logo" />
                     </div>     
                     <h1>Welcome to MewMew Trest</h1>
-                    <h2>Your Inspirations</h2>
+                    <div>Your Inspirations</div>
                         <form onSubmit={this.handleSubmit} className="login-form-box">
                             <div onClick={this.props.closeModal} ></div>
                             {this.renderErrors()}
