@@ -78,5 +78,20 @@
   align-items: center;
 }
 
+.l-err {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  align-items: center;
+  //display: flex;
+  color: orangered;
+  width: 410px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -.4px;
+  margin-bottom: 10px;
+}
+
+
 
 
