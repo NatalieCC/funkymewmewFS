@@ -53,7 +53,7 @@
 }
 
 .login-input {
-  
+  margin: 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -70,10 +70,12 @@
 
 .logo-box {
   width: 410px;
+  margin: 8px;
 }
 
 .small-logo {
-  width: 42.44px;
+  width: 45px;
+  height: 33px;
   justify-content: center;
   align-items: center;
 }

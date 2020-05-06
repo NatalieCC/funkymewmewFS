@@ -52,11 +52,12 @@ input {
   overflow: visible;
   line-height: normal;
 }
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  padding: 10px;
-  border: 0;
-}
+
+// button::-moz-focus-inner,
+// input::-moz-focus-inner {
+//   padding: 10px;
+//   border: 0;
+// }
 
 textarea {
   overflow: auto;
