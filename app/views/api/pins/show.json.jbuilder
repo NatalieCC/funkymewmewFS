@@ -1,2 +1,1 @@
-json.partial! "api/pins/pin", pin: @pin
-//edit based on user
+json.extract! pin, :id, :user_id, :height, :title

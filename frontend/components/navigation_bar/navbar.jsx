@@ -1,32 +1,30 @@
 import React from 'react';
-import { Redirect, Link, NavLink } from 'react-router-dom';
-import SearchBarContainer from '../search_bar/searchBarContainer';
+import { Link } from 'react-router-dom';
 
-class navBar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const navBar = ({ currentUser, logout }) => {
 
-    componentDidMount() {
-        
-    }
-
-    render() {
-        
-        return (
-            <div className="navbar">
-                <NavLink to="/" ><img className="nav-logo" src={window.logo} /></NavLink>
-                <div className="right-nav">
-                    <NavLink exact to="/" className='homelink'>Home</NavLink>
-                    <NavLink
-                        to={`/users/${this.props.currentId}`}
-                        className='profile-link'>{userImg}<p className='username'>{username}</p>
-                    </NavLink>
-                    <a className="logout-button" onClick={() => this.props.logout()}>Log Out</a>
-                </div>
-            </div>
-        );
-    }
+return (
+    <header>
+        <nav>
+            <ul className="navbar">
+                <Link to='/'><h1><img src={window.logo} className="small-logo"/></h1></Link>
+                <Link to="/"><p className="navbar-home">Home</p></Link>
+                <p className="search">
+                    <input
+                        className="search-text"
+                        type="text"
+                        placeholder="what is on your mind?"
+                    />
+                    <i className="fas fa-search" aria-hidden="true"></i>
+                </p>
+                <p className='navbar-notification'><i className="fas fa-bell"></i></p>
+                <p className='navbar-inbox'><i className="fas fa-comment-dots"></i></p>
+            
+                <p><button className='logout-button' onClick={logout}>Log Out</button></p>
+            </ul>
+        </nav>
+    </header>
+)
 }
 
 export default navBar;

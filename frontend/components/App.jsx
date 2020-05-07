@@ -14,12 +14,14 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SigninContainer from './greeting/signin_container';
 import RegisterContainer from './greeting/register_container';
 import PinFeedContainer from './pins/pin_feed_container';
+import NavbarContainer from './navigation_bar/navbar_container';
 
 const App = () => (
     <div>
         <Switch>
             <Route exact path="/" component={RegisterContainer} />
             <Route exact path="/signin" component={SigninContainer} />
+            <Route path='/feed' component={NavbarContainer} />
         </Switch>
         <Switch>
             <Route path="/feed" component={PinFeedContainer} />
