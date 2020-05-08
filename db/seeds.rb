@@ -36,3 +36,10 @@ pin5 = Pin.new({ user_id: user1.id, height: "", title: 'Greece dinning'})
 p5 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/de+dinning.jpg')
 pin5.image.attach(io: p5, filename: 'de_dinning.jpg')
 pin5.save!
+
+pin6 = Pin.new({ user_id: user1.id, height: "", title: 'Buddha and I'})
+p6 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/buddha.jpg')
+pin6.image.attach(io: p6, filename: 'buddha.jpg')
+pin6.save!
+
+
