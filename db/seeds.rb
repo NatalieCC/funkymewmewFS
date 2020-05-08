@@ -46,3 +46,13 @@ pin7 = Pin.new({ user_id: user1.id, height: "", title: 'backyard'})
 p7 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/backyard.jpg')
 pin7.image.attach(io: p7, filename: 'backyard.jpg')
 pin7.save!
+
+pin8 = Pin.new({ user_id: user1.id, height: "", title: 'Paris'})
+p8 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/paris.jpg')
+pin8.image.attach(io: p8, filename: 'paris.jpg')
+pin8.save!
+
+pin9 = Pin.new({ user_id: user1.id, height: "", title: 'butterfly'})
+p9 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/butterfly.jpg')
+pin9.image.attach(io: p9, filename: 'butterly.jpg')
+pin9.save!
