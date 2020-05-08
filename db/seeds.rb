@@ -10,9 +10,9 @@ require 'open-uri'
 User.destroy_all
 Pin.destroy_all
 
-user1 = User.create!([{ username: 'poppy' }, { email: 'poppy@aa.com' },{ password: '123321' }])
+user1 = User.create!({username: 'poppy', email: 'poppy@aa.com',password: '123321'})
 
-pin1 = Pin.create!({ user_id: 1, height: "", title: 'flowers'})
-# p1 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/R9STgtz1WUB3sUsajoVosVoj')
-# pin1.image.attach(io: p1, filename: 'p1')
-# pin1.save!
+pin1 = Pin.new({ user_id: user1.id, height: "", title: 'flowers'})
+p1 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/poppy.jpg')
+pin1.image.attach(io: p1, filename: 'poppy.jpg')
+pin1.save!

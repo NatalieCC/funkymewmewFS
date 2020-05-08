@@ -1,7 +1,13 @@
-export const fetchAllPins = (page) => {
+export const fetchAllPins = () => {
     return $.ajax({
         method: 'GET',
-        url: `api/pins`,
-        data: { page }
+        url: `api/pins`
     });
 };
+
+export const fetchPin = pinId => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/pins/${pinId}`
+    })
+)

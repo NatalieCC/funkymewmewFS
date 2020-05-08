@@ -16,7 +16,7 @@
 
 
  html {
-   background-color: rgb(248, 213, 243);
+   background-color:rgb(226, 192, 221);
    text-size-adjust: none;
  }
 
@@ -84,7 +84,13 @@ h1, h2, h3, h4, h5, h6 {
 // 	box-sizing: border-box;
 // }
 
-
+h1 {
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 80px;
+  line-height: 45px;
+}
 
 
 

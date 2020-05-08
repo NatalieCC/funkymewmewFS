@@ -1,9 +1,9 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session/login_form_container';
-import SignupFormContainer from '../session/signup_form_container';
-import GreetingContainer from '../greeting/greeting_container';
+import LoginFormContainer from '../session/signin_form_container';
+import SignupFormContainer from '../session/register_form_container';
+//import GreetingContainer from '../greeting/greeting_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {

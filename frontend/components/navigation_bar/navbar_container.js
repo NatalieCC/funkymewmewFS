@@ -4,7 +4,7 @@ import Navbar from './navbar';
 
 const mSTP = (state={}) => {
     return ({
-        currentUser: state.session.currentUser,
+        currentUser: state.entities.users[state.session.id],
     });
 };
 

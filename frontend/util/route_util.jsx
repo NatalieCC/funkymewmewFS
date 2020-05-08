@@ -17,13 +17,13 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
         loggedIn ? (
             <Component {...props} />
         ) : (
-                <Redirect to="/login" />
+                <Redirect to="/signin" />
             )
     )} />
 );
 
 const mapStateToProps = state => (
-    { loggedIn: Boolean(state.session.currentUser) }
+    { loggedIn: Boolean(state.session.id) }
 );
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
