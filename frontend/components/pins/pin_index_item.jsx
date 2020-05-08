@@ -9,7 +9,7 @@ class PinIndexItem extends React.Component {
         return (
             <div className='pin-index-box'>
                 <div className='pin-index-image'>
-                    <img src={window.poppy} />
+                    <img src={this.props.pin.imageUrl} />
                 </div>
                 <div className="pin-index-title">{this.props.pin.title}</div>
             </div>
