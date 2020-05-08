@@ -19,18 +19,13 @@ import Modal from './modal/modal';
 
 const App = () => (
     <div>
-      
         <Switch>
             <Route exact path="/" component={RegisterContainer} />
             <Route exact path="/signin" component={SigninContainer} />
-            <ProtectedRoute path='/feed' component={NavbarContainer} />
-        </Switch>
-        <Switch>
-            <Route path="/feed" component={PinFeedContainer} />
+            <ProtectedRoute path="/feed" component={PinFeedContainer} />
         </Switch>
     </div>
 
 );
-
 
 export default App;

@@ -2,9 +2,10 @@ import { logout } from "../../actions/session_actions";
 import { connect } from 'react-redux';
 import Navbar from './navbar';
 
-const mSTP = (state={}) => {
+const mSTP = (state) => {
+    console.log(state);
     return ({
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.entities.users[state.session.currentUserId],
     });
 };
 

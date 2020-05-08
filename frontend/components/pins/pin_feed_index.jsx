@@ -1,5 +1,6 @@
 import React from 'react';
 import PinIndexItem from './pin_index_item';
+import NavbarContainer from '../navigation_bar/navbar_container';
 
 class PinFeedIndex extends React.Component {
     constructor(props) {
@@ -24,8 +25,11 @@ class PinFeedIndex extends React.Component {
         });
 
         return (
-            <div className="pin-container">
-                {pins}
+            <div>
+                <NavbarContainer/>
+                <div className="pin-container">
+                    {pins}
+                </div>
             </div>
         )
     }
