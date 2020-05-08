@@ -10,10 +10,6 @@ class PinFeedIndex extends React.Component {
         //this.addPin = this.addPin.bind(this);
     }
 
-    addPin() {
-        //make a pin form component has this method
-    }
-
 
     componentDidMount() {
         this.props.fetchPins();
@@ -28,7 +24,7 @@ class PinFeedIndex extends React.Component {
         });
 
         return (
-            <div>
+            <div className="pin-container">
                 {pins}
             </div>
         )

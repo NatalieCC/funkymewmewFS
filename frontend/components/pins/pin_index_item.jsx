@@ -1,6 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import pin_feed_container from './pin_feed_container';
 
 class PinIndexItem extends React.Component {
     constructor(props) {
@@ -8,14 +6,15 @@ class PinIndexItem extends React.Component {
     }
 
     render() {
-
         return (
-            <div>
-                <p>{this.props.pin.title}</p>   
-                <img src={this.props.pin.imageUrl}></img>   
-            </div>    
+            <div className='pin-index-box'>
+                <div className='pin-index-image'>
+                    <img src={this.props.pin.imageUrl} />
+                </div>
+                <div className="pin-index-title">{this.props.pin.title}</div>
+            </div>
         )
     }
 }
 
-export default withRouter(PinIndexItem);
+export default PinIndexItem;
