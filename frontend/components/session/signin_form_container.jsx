@@ -7,6 +7,7 @@ import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ errors }) => {
+    // debugger;
     return {
         errors: errors.session,
         formType: 'Log In',
@@ -15,14 +16,15 @@ const mapStateToProps = ({ errors }) => {
 };
 
 const mapDispatchToProps = dispatch => {
+    // debugger;
     return {
         processForm: (user) => dispatch(login(user)),
-        otherForm: (
-            <button onClick={() => dispatch(openModal('signup'))}>
-                Signup
-            </button>
-        ),
-        closeModal: () => dispatch(closeModal()),
+        // otherForm: (
+        //     <button onClick={() => dispatch(openModal('signup'))}>
+        //         Signup
+        //     </button>
+        // ),
+        // closeModal: () => dispatch(closeModal()),
         clearSessionErrors: () => dispatch(clearSessionErrors()),
         demoLogin: demoUser => dispatch(login(demoUser))
     };
