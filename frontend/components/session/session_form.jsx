@@ -4,14 +4,19 @@ import { withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
+        //below is loca state. keep track on its on of what user types in.
+        //global state = redux store
         this.state = {
             username: '',
             password: '',
             email: ''
         };
+        // this.state = props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClearErrors = this.handleClearErrors.bind(this);
-        this.demoLogin = this.demoLogin.bind(this);
+        //this.demoLogin = this.demoLogin.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
+        this._disableInputs = this._disableInputs.bind(this);
     }
 
     update(field) {
@@ -21,7 +26,7 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger;
+        //debugger;
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(() => this.props.history.push("/feed"));
@@ -29,9 +34,11 @@ class SessionForm extends React.Component {
 
     handleClearErrors(e) {
         e.preventDefault();
+        debugger
         this.props.clearSessionErrors();
     }
     componentDidMount() {
+       // debugger
         this.props.clearSessionErrors();
     }
 
@@ -49,16 +56,60 @@ class SessionForm extends React.Component {
         );
     }
 
-    demoLogin(e) {
+    // demoLogin(e) {
+    //     e.preventDefault();
+    //     this.setState({
+    //         username: "poppy",
+    //         email: "poppy@aa.com",
+    //         password: "123321"
+    //     },()=>{
+    //         this.props.processForm(this.state) 
+    //             .then(() => this.props.history.push("/feed"))
+    //     })
+    // }
+
+    handleDemo(e) {
         e.preventDefault();
-        this.setState({
-            username: "poppy",
-            email: "poppy@aa.com",
-            password: "123321"
-        },()=>{
-            this.props.processForm(this.state) 
-                .then(() => this.props.history.push("/feed"))
-        })
+
+        let email = "jerry@greattom.com";
+        let password = "888888";
+
+        //this._disableInputs();
+
+        this.setState({ email: "", password: "" }, () =>
+            this._autoInput("email", email, () =>
+                this._autoInput("password", password, () => {
+                    const demoUser = Object.assign({}, this.state);
+                    this.props.demoLogin(demoUser)
+                        .then(() => this.props.history.push("/feed"))       
+                })
+            )
+        )
+    }
+
+    _disableInputs() {
+        document.getElementById("email").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("form-action").disabled = true;
+        document.getElementById("demo-login").disabled = true;
+    }
+
+    _autoInput(field, text, callback) {
+        const inputChars = text.split("");
+
+        const _addChar = (chars) => {
+            if (chars.length > 0) {
+                let char = chars.shift();
+                let currentInput = this.state[field];
+                this.setState(
+                    { [field]: (currentInput + char) },
+                    () => setTimeout(() => { _addChar(chars) }, 60)
+                )
+            } else {
+                callback()
+            }
+        }
+        _addChar(inputChars);
     }
 
     render() {
@@ -69,7 +120,7 @@ class SessionForm extends React.Component {
                     <div className="logo-box">
                         <img src={window.logo} className="small-logo" />
                     </div>     
-                    <h1>Welcome to MewMew Trest</h1>
+                    <h1 className="shimmer">Welcome to MewMew Trest</h1>
                     <div>Your Inspirations</div>
                         <form onSubmit={this.handleSubmit} className="login-form-box">
                             <div onClick={this.props.closeModal} ></div>
@@ -104,9 +155,12 @@ class SessionForm extends React.Component {
                                     />
                                 </label>
                             <button className="session-submit" type="submit" value={this.props.formType}>{this.props.formType}</button>
-                                <button className="demo-btn" onClick={this.demoLogin}>
+                            {this.props.formType !== "Sign Up" ?
+                                <button className="demo-btn" onClick={this.handleDemo}>
                                     Demo Login
                                 </button>
+                                : null
+                            }
                             </div>
                          </form>
             </div>

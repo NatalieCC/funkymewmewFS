@@ -6,12 +6,13 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = ({ errors }) => {
-    // debugger;
+const mapStateToProps = ( state ) => {
+    //debugger;
     return {
-        errors: errors.session,
+        errors: state.errors.session,
         formType: 'Log In',
         //navLink: <Link to="/signup">Let's sign up!</Link>,
+        // currentUser: state.currentUser
     };
 };
 

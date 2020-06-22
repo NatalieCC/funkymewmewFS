@@ -17,12 +17,15 @@ class PinFeedIndex extends React.Component {
     }
 
     render() {
-        const pins = this.props.pins.map((pin, idx) => {
+        console.log(this.props.pins);
+        const pins = this.props.pins ? this.props.pins.map((pin) => {
+            
             return <PinIndexItem
+
                 pin={pin}
-                key={idx}
+                key={pin.id}
                  />
-        });
+        }) : [];
 
         return (
             <div>

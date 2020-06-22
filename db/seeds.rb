@@ -9,8 +9,11 @@ require 'open-uri'
 
 User.destroy_all
 Pin.destroy_all
+Board.destroy_all
 
-user1 = User.create!({username: 'poppy', email: 'poppy@aa.com',password: '123321'})
+user1 = User.create!({username: 'Jerry', email: 'jerry@greattom.com',password: '888888'})
+file = open("https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/jerry.jpg")
+user1.photo.attach(io: file, filename: "jerry.jpg")
 
 pin1 = Pin.new({ user_id: user1.id, height: "", title: 'la poppies'})
 p1 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/poppy.jpg')
@@ -56,3 +59,23 @@ pin9 = Pin.new({ user_id: user1.id, height: "", title: 'butterfly'})
 p9 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/butterfly.jpg')
 pin9.image.attach(io: p9, filename: 'butterly.jpg')
 pin9.save!
+
+#Boards
+board1 = Board.new({
+  title: "Fantacy Arts",
+  description: "My favorate art pieces",
+  is_public: true,
+  user_id: user1.id
+})
+board1.save!
+
+#PinsOnBoards
+pinsOnBoard0 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin1.id
+})
+
+pinsOnBoard1 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin2.id
+})

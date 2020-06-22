@@ -1,28 +1,28 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { openModal,closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session/signin_form_container';
-import SignupFormContainer from '../session/register_form_container';
-//import GreetingContainer from '../greeting/greeting_container';
 
-function Modal({ modal, closeModal }) {
+import CreateBoardContainer from '../boards/create_board_container';
+import EditBoardContainer from '../boards/edit_board_container';
+
+function Modal({ modal, openModal,closeModal }) {
     if (!modal) {
         return null;
     }
     let component;
     switch (modal) {
-        case 'login':
-            component = <LoginFormContainer />;
+        case 'createBoard':
+            component = <CreateBoardContainer />;
             break;
-        case 'signup':
-            component = <SignupFormContainer />;
-            break;
-        case 'greeting':
-            component = <GreetingContainer />;
-            break;
+        case 'editBoard':
+            component = <EditBoardContainer />;
+            break;    
+        
         default:
             return null;
     }
+
+
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -40,6 +40,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        openModal: modal => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal())
     };
 };

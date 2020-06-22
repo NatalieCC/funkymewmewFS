@@ -16,23 +16,39 @@ class Api::UsersController < ApplicationController
     render "api/users/index"
   end
 
+  # inside includes is the assoication in user model we defined
+  def show
+      @user = User.includes(:boards, :pins).find_by!(username: params[:id])
+      render 'api/users/show'
+  end
+
+  # def show
+  #   @user = selected_user
+  #   render "api/users/show"
+  # end
+
   # def show
   #   render "api/users/show"
   # end
-  
-  # def edit
-    
-  # end
 
-  # def update
-    
-  # end
+  def update
+      @user = current_user
+      @user.update!(user_params)
+      render 'api/users/show'
+  end
 
+  def destroy
+      @user = current_user
+      @user.destroy!
+  end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password,:email)
+    params.require(:user).permit(
+      :username, 
+      :password,
+      :email)
   end
 
   

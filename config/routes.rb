@@ -3,13 +3,14 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show] # api/session/
     resources :users # api/users/
     resources :boards do
-      resources :pins, only: [:create]
-      resources :board_pins, only: [:create]
+      resources :pins, only: [:create]  
     end
-    resources :pins, only: [:destroy, :index, :show, :update]
-    resources :board_pins, only: [:destroy, :index, :show, :update]
+    resources :pins, only: [:create,:destroy, :index, :show, :update]
+    resources :pins_on_boards, only: [:destroy, :create,:index,:show]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "static_pages#root"
 end
+
+#table name needs to = controller name and after resources it  is the talble name,table name is plural of model!

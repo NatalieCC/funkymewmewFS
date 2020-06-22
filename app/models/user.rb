@@ -8,13 +8,15 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  # has_many :boards 
-  # has_many :pins
+  # refer to includes in controller
+  has_many :boards 
+  has_many :pins
+  has_one_attached :photo
   # has_many :boards_pins,
   #   through: :boards,
   #   source: :boards_pins
   
-
+ 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user

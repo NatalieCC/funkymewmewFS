@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import Navbar from './navbar';
 
 const mSTP = (state) => {
-    console.log(state);
+    //debugger
     return ({
-        currentUser: state.entities.users[state.session.currentUserId],
+       //currentUser: state.entities.users[state.session.currentUserId],
+       currentUser: state.session.currentUserId,
     });
 };
 
