@@ -47,7 +47,7 @@ class BoardPin extends React.Component {
             return (
                 <div ref={node => this.node = node} className='profile-visible'>
                     <Link
-                        to={`/${this.props.username}/pin-builder`}
+                        to={`/${this.props.username}/build-pin`}
                         className='create-pin-dropdown'>
                         Create pin
                     </Link>
@@ -77,6 +77,7 @@ class BoardPin extends React.Component {
     render() {
         //debugger
         const { board } = this.props;
+        if(!board) return null;
         //const count = (board) ? board.pin_join_ids.length : '0';
         //const pinTense = (count === 1) ? 'Pin' : 'Pins';
 

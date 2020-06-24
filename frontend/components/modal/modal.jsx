@@ -5,10 +5,12 @@ import { connect } from 'react-redux';
 import CreateBoardContainer from '../boards/create_board_container';
 import EditBoardContainer from '../boards/edit_board_container';
 
-function Modal({ modal, openModal,closeModal }) {
+function Modal({ modal,openModal,closeModal }) {
+    debugger
     if (!modal) {
         return null;
     }
+    
     let component;
     switch (modal) {
         case 'createBoard':

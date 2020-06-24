@@ -19,6 +19,7 @@ import Modal from './modal/modal';
 import ProfileShowContainer from "./profile/profile_show_container";
 import ProfileEditContainer from "./profile/profile_edit_container";
 import BoardPinContainer from "./boards/board_pin_container";
+import PinCreateContainer from "./pins/pin_create_container";
 
 const App = () => (
     <div>
@@ -29,10 +30,11 @@ const App = () => (
             <Route exact path="/signin" component={SigninContainer} />
             <Route exact path="/settings" component={ProfileEditContainer} />
             <ProtectedRoute exact path="/feed" component={PinFeedContainer} />
-            <ProtectedRoute exact path="/boards/:boardId" component={BoardPinContainer} />
+            <ProtectedRoute exact path="/boards/:boardId" component={() => <div><NavbarContainer /><BoardPinContainer /></div>} />
             <ProtectedRoute exact path='/pins/:pinId' component={ () => <div><NavbarContainer /><PinShowContainer /></div> } />
             {/* <ProtectedRoute exact path="/:username" component={ProfileShowContainer} /> */}
             <ProtectedRoute exact path="/:username" component={() => <div><NavbarContainer /><ProfileShowContainer /></div>} />
+            <ProtectedRoute exact path="/:username/build-pin" component={() => <div><NavbarContainer /><PinCreateContainer /></div>} />
         </Switch>
     </div>
 

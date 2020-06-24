@@ -49,16 +49,16 @@ class ProfileShow extends React.Component {
 
     displayDropDown() {
         if (this.state.dropdown) {
+            debugger
             return (
                 <div ref={node => this.node = node} className="profile-visible">
                     <button
                         className="dropdown-item"
-                        onClick={this.showModal}
-                    >
+                        onClick={this.showModal}>
                         Create board
                     </button>
                     <Link
-                        to={`/${this.props.username}/pin-builder`}
+                        to={`/${this.props.username}/build-pin`}
                         className="dropdown-item">
                         Create pin
                     </Link>

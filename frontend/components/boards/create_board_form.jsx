@@ -7,7 +7,7 @@ class CreateBoardForm extends React.Component {
         super(props);
         this.state = {
             board: {
-                title: this.props.board.name || '',
+                title: this.props.board.title || '',
                 description: this.props.board.description || '',
                 id: this.props.board.id,
             },
@@ -18,7 +18,7 @@ class CreateBoardForm extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
+
     //create board
     handleCancel(e) {
         e.preventDefault();
@@ -28,12 +28,15 @@ class CreateBoardForm extends React.Component {
     handleDelete(e) {
         this.props.deleteBoard(this.props.board.id)
             .then(this.props.closeModal())
-            .then(this.props.history.push(`/${this.props.creator.username}`));
+            //.then(this.props.history.push(`/${this.props.username}`));
+            .then(this.props.history.push(`/feed`));
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createBoardAction(this.state.board).then(this.props.closeModal());
+        //this.props.createBoardAction(this.state.board).then(this.props.closeModal());
+        //debugger
+        this.props.action(this.state.board).then(this.props.closeModal());
     }
 
     update(field) {
@@ -98,6 +101,8 @@ class CreateBoardForm extends React.Component {
 
     // onclick close modal
     render() {
+        // debugger
+        // if(!this.state.board.title) return null;
         return (
             <div className='modal-page'>
                 <div className='board-form-box'>
