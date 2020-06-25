@@ -222,7 +222,7 @@ class ProfileEditForm extends React.Component {
                                                 <div className="edit-profile" id="website-username">
                                                     <div className="edit-profile" id="website">
                                                         www.mewmewTrest.com/
-                          </div>
+                                                </div>
                                                     <div className="edit-profile" id="username">
                                                         <input
                                                             type="text"

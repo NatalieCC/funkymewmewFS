@@ -5,7 +5,7 @@ import {fetchBoards} from '../../actions/board_actions';
 import PinCreateForm from './pin_create_form';
 
 const msp = (state, ownProps) => {
-    const currentUser = state.session.currentUserId;
+    const currentUser = state.session.currentUserId || {};
     const username = ownProps.match.params.username;
     const boards = Object.values(state.entities.boards)
     .filter(board => board.user_id === currentUser.id);
