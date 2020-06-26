@@ -8,6 +8,7 @@ class ProfileShow extends React.Component {
         super(props);
         this.state = { dropdown: false, showing: 'boards' };
         this.displayName = this.displayName.bind(this);
+        this.displayDescription = this.displayDescription.bind(this);
         this.showDropdown = this.showDropdown.bind(this);
         this.hideDropdown = this.hideDropdown.bind(this);
         this.showModal = this.showModal.bind(this);
@@ -70,6 +71,19 @@ class ProfileShow extends React.Component {
     displayName() {
         const { currentUser } = this.props;
         return currentUser.username;
+    }
+
+    displayDescription() {
+        const { currentUser } = this.props;
+        if (currentUser.location && currentUser.description) {
+            return [currentUser.location, currentUserr.description].join(" • ");
+        } else if (currentUser.location) {
+            return currentUser.location;
+        } else if (currentUser.description) {
+            return currentUser.description;
+        } else {
+            return null;
+        }
     }
 
     profilePhoto() {
@@ -147,6 +161,7 @@ class ProfileShow extends React.Component {
                                         {this.displayName()}
                                     </h2>
                                     <div className="profile-follows">
+                                        <h4>{`0 followers • 0 following`}</h4> 
                                         {/* <Link to={`/${user.username}/followers`}>
                                             {numFollowers} {followerTense}
                                         </Link>
@@ -155,10 +170,16 @@ class ProfileShow extends React.Component {
                                             {numFollowing} following
                                         </Link> */}
                                     </div>
+
+                                    <h4 className="profile-description">
+                                        {this.displayDescription()}
+                                    </h4>
                                     
                                 </section>
-                                <nav className="profile-buttons">
-                                    
+
+                               
+
+                                <nav className="profile-buttons">                                   
                                     <button className="oval-link"
                                         onClick={this.showBoards.bind(this)} >
                                         Boards
@@ -170,7 +191,7 @@ class ProfileShow extends React.Component {
                                 </nav>
                             </div>
                             <div className="profile-image-container">
-                                { this.profilePhoto() }
+                                {this.profilePhoto()}
                             </div>
                         </div>
                     </div>

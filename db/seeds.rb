@@ -11,7 +11,7 @@ User.destroy_all
 Pin.destroy_all
 Board.destroy_all
 
-user1 = User.create!({username: 'Jerry', email: 'jerry@greattom.com',password: '888888'})
+user1 = User.create!({username: 'Jerry', email: 'jerry@greattom.com',password: '888888',description: 'Tom is my favorite animal!'})
 file = open("https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/jerry.jpg")
 user1.photo.attach(io: file, filename: "jerry.jpg")
 
@@ -63,7 +63,7 @@ pin9.save!
 #Boards
 board1 = Board.new({
   title: "Fantacy Arts",
-  description: "My favorate art pieces",
+  description: "My favorite art pieces",
   is_public: true,
   user_id: user1.id
 })

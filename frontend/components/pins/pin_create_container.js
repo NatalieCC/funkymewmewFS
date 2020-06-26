@@ -6,12 +6,12 @@ import PinCreateForm from './pin_create_form';
 
 const msp = (state, ownProps) => {
     const currentUser = state.session.currentUserId || {};
-    const username = ownProps.match.params.username;
+    //const pin = { "title": "", "description": "", url: "", photo: null };
     const boards = Object.values(state.entities.boards)
     .filter(board => board.user_id === currentUser.id);
 
     return ({
-        currentUser,username,boards
+        currentUser,boards
     });
     
 };

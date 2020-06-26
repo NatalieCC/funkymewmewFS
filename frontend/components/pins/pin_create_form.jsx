@@ -5,24 +5,78 @@ class PinCreateForm extends React.Component {
         super(props);
         this.state = {
             pin: { pin_id: '', description: '', link_url: '', title: '' },
-            boardscroll: false,
-            chooseFile: false,
             
             photoFile: null,
-            photoUrl: null,
+            photoPreview: null,
             photoError: null,
-            photoType: null,
+
+            boardscroll: false,
+            chooseFile: false,
+            boardChoice: false
         };
+
         this.goBack = this.goBack.bind(this);
-        //this.handleBoard = this.handleBoard.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.uploadImage = this.uploadImage.bind(this);
+        this.handleSave = this.handleSave.bind(this);
+
+        
+        this.handleBoard = this.handleBoard.bind(this);
+        this.showBoardScroll = this.showBoardScroll.bind(this);
+        this.displayUploadBox = this.displayUploadBox.bind(this);
+
     }
 
     componentDidMount() {
         this.props.fetchBoards();
     }
 
-    handleSubmit(e) {
+    uploadImage(e) {
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+
+        fileReader.onloadend = () => {
+                this.setState({ photoFile: file, photoPreview: fileReader.result });
+            };
+
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
+        
+    }
+
+    displayPhoto() {
+        //debugger
+        if (this.state.photoPreview) {
+            return (
+                <div className="preview-picture" >
+                    <img src={this.state.photoPreview} className="preview-picture"/>
+                </div>
+            )
+        }
+    }
+
+    displayUploadBox() {
+        if(!this.state.photoPreview) {
+            return(
+                <div className='upload-box'>
+                    <div className='upload-outline'>
+                        <button className='upload-btn'>
+                            <i className='fas fa-arrow-circle-up'></i>
+                        </button>
+                        <p>Click to upload</p>
+                        <input type="file"
+                            onChange={this.uploadImage}>
+                        </input>
+                        <div className="upload-footer">
+                            Recommendation: Use high-quality .jpg files less than 2 MB
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    }
+
+    handleSave(e) {
         e.preventDefault();
         const formData = new FormData();
         formData.append('pin[title]', this.state.pin.title);
@@ -36,31 +90,37 @@ class PinCreateForm extends React.Component {
         );
     }
 
-    // handleBoard(board) {
-    //     this.setState({ boardId: board.id, category: board.title });
-    //     //this.hideBoardScroll();
-    // }
+    handleBoard(board) {
+        this.setState({ boardId: board.id, BoardChoice: board.title });
+        //this.hideBoardScroll();
+    }
 
-    // displayBoardScroll() {
-    //     if(this.state.boardscroll) {
-    //         const boards = this.props.boards.map((board,i) => {
-    //             return(
-    //                 <SelectBoard
-    //                 onSelectBoard={this.handleBoard}
-    //                 board={board}
-    //                 key={i}
-    //                 text='Select'
-    //                 />
-    //             )
-    //         });
+    showBoardScroll(e) {
+        this.setState({ boardscroll: true });
+    }
 
-    //         return (
-    //             <div className='board-scroll-container'>
-    //                 {boards}
-    //             </div>
-    //         )
-    //     }
-    // }
+    displayBoardScroll() {
+        if(this.state.boardscroll) {
+            const boards = this.props.boards.map((board,i) => {
+                return (
+                    <div>board.title</div>
+                    // <SelectBoard
+                    // onSelectBoard={this.handleBoard}
+                    // board={board}
+                    // key={i}
+                    // text='Select'
+                    // />
+                )
+            });
+
+        return (
+            <div className='board-scroll-container'>
+                <h1>88888</h1>
+                {/* {boards} */}
+            </div>
+            )
+        }
+    }
 
     goBack(e) {
         e.preventDefault();
@@ -70,6 +130,13 @@ class PinCreateForm extends React.Component {
     render() {
         const { pin } = this.state;
 
+        const clickSave = (this.state.boardId === null) ? (
+            null
+        ) : (
+                this.handleSave
+            );
+
+
         return (
             <div className='pin-form-buffer'>
                 <div className='pin-form-box'>
@@ -77,32 +144,17 @@ class PinCreateForm extends React.Component {
                         <button
                             className='back-btn'
                             onClick={this.goBack}>
-                            <i className="fas fa-chevron-left"></i>
-                            
+                            <i className="fas fa-chevron-left"></i>                            
                         </button>
-                        <div className='save-btn' onClick={this.handleSubmit} >
+                        <div className='save-btn' onClick={clickSave} >
                             <button className='save-btn'>Save</button>
                         </div>
                     </div>
                     <div className='pin-form'>
                         <div className='pin-form-left'>
                             
-
-                            <div className='upload-box'>
-                                <div className='upload-outline'>
-                                    <button className='upload-btn'>
-                                        <i className='fas fa-arrow-circle-up'></i>
-                                    </button>
-                                    <p>Click to upload</p>
-                                    <input type="file"
-                                        
-                                        >
-                                    </input>
-                                    <div className="upload-footer">
-                                        
-                                    </div>
-                                </div>
-                            </div>
+                            {this.displayPhoto()}
+                            {this.displayUploadBox()}    
                             
                         </div>
                         <div className='pin-form-content'>
@@ -134,14 +186,14 @@ class PinCreateForm extends React.Component {
                             <div
                                 className='board-choices'
                                 onClick={this.showBoardScroll} >
-                                <p>{this.state.choiceDialogue}</p>
+                                <p>{this.state.boardChoice}</p>
                                 <div className='arrow-down'>
                                     <i className='fas fa-chevron-down'></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+                    {this.displayBoardScroll()}  
                 </div>
             </div>
         )
