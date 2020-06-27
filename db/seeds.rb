@@ -74,8 +74,10 @@ pinsOnBoard0 = PinsOnBoard.new({
   board_id: board1.id,
   pin_id: pin1.id
 })
+pinsOnBoard0.save!
 
 pinsOnBoard1 = PinsOnBoard.new({
   board_id: board1.id,
   pin_id: pin2.id
 })
+pinsOnBoard1.save!
