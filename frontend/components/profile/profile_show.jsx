@@ -50,7 +50,7 @@ class ProfileShow extends React.Component {
 
     displayDropDown() {
         if (this.state.dropdown) {
-            debugger
+            // debugger
             return (
                 <div ref={node => this.node = node} className="profile-visible">
                     <button
@@ -173,11 +173,8 @@ class ProfileShow extends React.Component {
 
                                     <h4 className="profile-description">
                                         {this.displayDescription()}
-                                    </h4>
-                                    
+                                    </h4>                           
                                 </section>
-
-                               
 
                                 <nav className="profile-buttons">                                   
                                     <button className="oval-link"

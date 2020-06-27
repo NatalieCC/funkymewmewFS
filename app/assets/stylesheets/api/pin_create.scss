@@ -10,19 +10,20 @@
   justify-content: center;
 
   .pin-form-box {
+   position: relative;
    background-color: white;
    height: 100%;
    padding-top: 44px;
    width: 880px;
-    padding-top: 20px;
-    border-radius: 16px;
-    background-color: #fff;
-    box-sizing: border-box;
-    padding-left: 20px;
-    padding-right: 20px;
-    flex-direction: column;
-    display: flex;
-    height: 630px;
+   padding-top: 20px;
+   border-radius: 16px;
+   background-color: #fff;
+   box-sizing: border-box;
+   padding-left: 20px;
+   padding-right: 20px;
+   flex-direction: column;
+   display: flex;
+   height: 630px;
 
     .pin-form-header {
       box-sizing: border-box;
@@ -104,13 +105,12 @@
 
     .upload-btn {
       box-sizing: border-box;
-       display: flex;
-      // flex-direction: row;
+      display: flex;
       justify-content: center;
       height: 48px;
       width: 48px;
-      // margin-bottom: 14px;
-
+      align-items: center;
+     
       i {
         font-size: 32px;
       }
@@ -389,6 +389,59 @@
       border-radius: 4px;
     }
   }
+}
+
+// display delete after image uploaded
+.delete-image-button-container {
+  position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+  height: 48px;
+  width: 48px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#delete-image-button {
+  margin: 0px;
+  cursor: pointer;  
+  border: 0px;
+  height: 48px;
+  width: 48px;
+  padding: 4px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover > #trash-icon-container {
+    background-color: #e2e2e2;
+  }
+}
+
+#trash-icon-container {
+  height: 50px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+#trash-icon {
+  color: #333;
+  height: 20px;
+  width: 20px;
 }
 
 

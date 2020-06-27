@@ -24,6 +24,8 @@ class PinCreateForm extends React.Component {
         this.showBoardScroll = this.showBoardScroll.bind(this);
         this.displayUploadBox = this.displayUploadBox.bind(this);
 
+        this.deleteImage = this.deleteImage.bind(this);
+
     }
 
     componentDidMount() {
@@ -49,7 +51,16 @@ class PinCreateForm extends React.Component {
         if (this.state.photoPreview) {
             return (
                 <div className="preview-picture" >
-                    <img src={this.state.photoPreview} className="preview-picture"/>
+                    <img src={this.state.photoPreview} />
+
+                    <div className="delete-image-button-container">
+                        <button id="delete-image-button" onClick={this.deleteImage}>
+                            <div id="trash-icon-container">
+                                <i className="fas fa-trash" id="trash-icon"></i>
+                            </div>
+                        </button>
+                    </div>
+
                 </div>
             )
         }
@@ -74,6 +85,10 @@ class PinCreateForm extends React.Component {
                 </div>
             )
         }
+    }
+
+    deleteImage() {
+        this.setState({ photoPreview: null });
     }
 
     handleSave(e) {

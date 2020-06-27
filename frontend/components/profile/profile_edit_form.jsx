@@ -8,7 +8,6 @@ class ProfileEditForm extends React.Component {
         this.state = this._getInitialState();
 
         this._getInitialState = this._getInitialState.bind(this);
-        this.handleCancel = this.handleCancel.bind(this);
         this.handleDone = this.handleDone.bind(this);
         this.handleFile = this.handleFile.bind(this);
     }
@@ -30,11 +29,7 @@ class ProfileEditForm extends React.Component {
         return initialState
     }
 
-    handleCancel(e) {
-        e.preventDefault();
-
-        this.setState(this._getInitialState);
-    }
+    
 
     handleDone(e) {
         e.preventDefault();
@@ -124,13 +119,11 @@ class ProfileEditForm extends React.Component {
                                             <div className="edit-profile" id="buttons-container">
                                                 <div className="edit-profile" id="buttons">
                                                     <div className="edit-profile button-container">
-                                                        <button
-                                                            className={`edit-profile cancel button ${disabled}`}
-                                                            id="cancel-button"
-                                                            onClick={this.handleCancel}
-                                                        >
-                                                            <div className={`edit-profile cancel button-label ${disabled}`}>Cancel</div>
-                                                        </button>
+                                                        <Link
+                                                            className="cancel-button"
+                                                            to={`/${this.props.username}`} >
+                                                            <div className="cancel-button">Cancel</div>
+                                                        </Link>
                                                     </div>
                                                     <div className="edit-profile button-container">
                                                         <button
