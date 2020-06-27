@@ -11,19 +11,16 @@ class Api::PinsOnBoardsController < ApplicationController
         #debugger 
         render 'api/pins/index'
     end
-
-  def create  
-    #@refers to jbuilder
-    @board = Board.find(params[:board_id])
-    pin = Pin.find(params[:pin_id])
-    #pinson board refer to its model
-    @pinjoin = PinsOnBoard.create!(
-      pin_id: pin.id,
-      board_id: board.id,
-    )
-    render 'api/boards/show'
-    
-  end
+  
+    # Method:POST Endpoint: api/pins_on_boards
+    def create
+      @pinsOnBoard = PinsOnBoard.new(pinsOnBoard_params)
+      if @pinsOnBoard.save!
+        render 'api/pins_on_boards/show'
+      else
+        render json: @boardPin.errors.full_messages, status: 422
+      end
+    end
 
   def destroy
     #find only accepts id, if search by other coloums we use find_by
@@ -33,6 +30,9 @@ class Api::PinsOnBoardsController < ApplicationController
     render 'api/boards/show'
   end
 
-   
+   private
+  def pinsOnBoard_params
+    params.require(:pinsOnBoard).permit(:board_id, :pin_id)
+  end
   
 end

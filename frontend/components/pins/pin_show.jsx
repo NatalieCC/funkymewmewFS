@@ -16,7 +16,7 @@ class PinShow extends React.Component {
         this.props.fetchPin(this.props.match.params.pinId)
             //.then(pin => this.setState(this.props.pin)) 
             .then(pin => {
-                pin = pin.pin 
+                pin = pin.pin.pin
                 this.setState({
                     title: pin.title,
                     imageUrl: pin.imageUrl,
