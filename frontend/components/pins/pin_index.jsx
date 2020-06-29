@@ -2,22 +2,28 @@ import React from 'react';
 import PinIndexItem from './pin_index_item';
 import NavbarContainer from '../navigation_bar/navbar_container';
 
-class PinFeedIndex extends React.Component {
+class PinIndex extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //    //?????????????????
-        // };
-        //this.addPin = this.addPin.bind(this);
     }
 
 
     componentDidMount() {
-        this.props.fetchPins();
+        // debugger
+        this.props.clearPinIndex();
+        if (this.props.type === 'Feed') {
+            // debugger
+            this.props.fetchPins();
+        } else if (this.props.type === 'Board') {
+            // fetch pins of a board
+        } else if (this.props.type === 'User') {
+            // fetch pins of a user
+        }
+        
     }
 
     render() {
-        console.log(this.props.pins);
+        
         const pins = this.props.pins ? this.props.pins.map((pin) => {
             
             return <PinIndexItem
@@ -38,4 +44,4 @@ class PinFeedIndex extends React.Component {
     }
 }
 
-export default PinFeedIndex;
+export default PinIndex;

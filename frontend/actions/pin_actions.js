@@ -4,6 +4,11 @@ import * as PinApiUtil from "../util/pin_api_util";
 export const RECEIVE_PINS = "RECEIVE_PINS";
 export const RECEIVE_PIN = "RECEIVE_PIN";
 export const REMOVE_PIN = "REMOVE_PIN";
+export const CLEAR_PIN_INDEX = "CLEAR_PIN_INDEX";
+
+export const clearPinIndex = () => ({
+    type: CLEAR_PIN_INDEX,
+});
 
 //action creators
 const receivePins = (pins) => {
