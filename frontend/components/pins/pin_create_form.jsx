@@ -1,4 +1,5 @@
 import React from 'react';
+import BoardList from './board_list';
 
 class PinCreateForm extends React.Component {
     constructor(props) {
@@ -21,10 +22,12 @@ class PinCreateForm extends React.Component {
 
         
         this.handleBoard = this.handleBoard.bind(this);
-        this.showBoardScroll = this.showBoardScroll.bind(this);
+        this.showBoardList= this.showBoardList.bind(this);
         this.displayUploadBox = this.displayUploadBox.bind(this);
 
         this.deleteImage = this.deleteImage.bind(this);
+
+        this.changeInput = this.changeInput.bind(this);
 
     }
 
@@ -110,28 +113,26 @@ class PinCreateForm extends React.Component {
         //this.hideBoardScroll();
     }
 
-    showBoardScroll(e) {
+    showBoardList(e) {
         this.setState({ boardscroll: true });
     }
 
     displayBoardScroll() {
-        if(this.state.boardscroll) {
+        if (this.state.boardscroll) {
             const boards = this.props.boards.map((board,i) => {
                 return (
-                    <div>board.title</div>
-                    // <SelectBoard
-                    // onSelectBoard={this.handleBoard}
-                    // board={board}
-                    // key={i}
-                    // text='Select'
-                    // />
+                    <BoardList
+                    onBoardLIst={this.handleBoard}
+                    board={board}
+                    key={i}
+                    text='Select'
+                    />
                 )
             });
 
         return (
-            <div className='board-scroll-container'>
-                <h1>88888</h1>
-                {/* {boards} */}
+            <div className='board-scroll-container'>               
+                {boards}
             </div>
             )
         }
@@ -141,6 +142,13 @@ class PinCreateForm extends React.Component {
         e.preventDefault();
         this.props.history.goBack();
     }
+
+    changeInput(field) {
+        return (
+            e => this.setState({ [field]: e.currentTarget.value })
+        );
+    }
+
 
     render() {
         const { pin } = this.state;
@@ -179,14 +187,14 @@ class PinCreateForm extends React.Component {
                                     placeholder='Add your title'
                                     
                                     value={this.state.title}
-                                    //onChange={this.update('title')}
+                                    onChange={this.changeInput('title')}
                                     />
                             </div>
 
                             <div className='pin-description'>
                                 <textarea
                                     placeholder='Tell everyone what your Pin is about'
-                                    //onChange={this.update('description')}
+                                    onChange={this.changeInput('description')}
                                     >
                                 </textarea>
                             </div>
@@ -194,13 +202,13 @@ class PinCreateForm extends React.Component {
                             <div className='pin-url'>
                                 <textarea
                                     placeholder='Add a destination link'
-                                    // onChange={this.update('link_url')}
+                                    onChange={this.changeInput('link_url')}
                                     >
                                 </textarea>
                             </div>
                             <div
                                 className='board-choices'
-                                onClick={this.showBoardScroll} >
+                                onClick={this.showBoardList} >
                                 <p>{this.state.boardChoice}</p>
                                 <div className='arrow-down'>
                                     <i className='fas fa-chevron-down'></i>

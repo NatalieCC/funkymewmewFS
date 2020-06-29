@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter, withRouter } from 'react-router-dom';
 
-
+//user profile click into one board
 class BoardPin extends React.Component {
     constructor(props) {
         super(props);
@@ -13,8 +13,6 @@ class BoardPin extends React.Component {
     }
 
     componentDidMount() {
-        //debugger
-        // this.props.fetchPinsOnBoards(this.props.boardId);
         this.props.fetchBoard(this.props.boardId);
     }
 
