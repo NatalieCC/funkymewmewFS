@@ -530,6 +530,14 @@
   flex-direction: row;
   display: flex;
 }
+#buttons {
+  box-sizing: border-box;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  //align-content: ;
+}
 
 .edit-profile.button-container {
   box-sizing: border-box;
@@ -564,6 +572,8 @@
     background-color: #efefef;
     color: graytext;
     pointer-events: none;
+    margin-bottom: 10px;
+    height: 39px;
   }
 }
 
@@ -839,29 +849,10 @@
   margin-left: 8px;
   padding: 5.5px 4px;
   margin: 0px;
-  //align-items: center;
+  align-items: center;
 
   &:hover {
     background-color:#E2E2E2;
   }
 }
 
-// .done-button {
-//   box-sizing: border-box;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   background-color: #EFEFEF;
-//   border-radius: 8px;
-//   color: #333333;
-//   font-size: 15px;
-//   font-weight: bold;
-//   margin-left: 8px;
-//   padding: 5.5px 4px;
-//   margin: 0px;
-//   //align-items: center;
-
-//   &:hover {
-//     background-color:#E2E2E2;
-//   }
-// }

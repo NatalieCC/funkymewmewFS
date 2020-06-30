@@ -21,12 +21,25 @@
   display: flex;
   justify-content: space-between;
   border-radius: 8px;
+  height: 90%;
   overflow: hidden;
 }
 .img-link img {
-  width: 50%;
+  width: 49.5%;
+  object-fit: cover;
 }
-
+.image-div-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 49.5%;
+  justify-content: space-between;
+   img {
+     width: 100%;
+     max-height: 49.5%;
+     object-fit: cover;
+   }
+}
 
 .board-index {
     display: flex;

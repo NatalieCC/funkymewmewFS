@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BoardIndexItem from "../boards/profile_board_index_item";
+import PinProfileIndexContainer from '../pins/pin_profile_index_container';
 
 
 class ProfileShow extends React.Component {
@@ -139,6 +140,16 @@ class ProfileShow extends React.Component {
         })
     }
 
+    renderPins() {
+        return (
+            <div className="index-buffer">
+                <div className="pin-index">
+                    <PinProfileIndexContainer />
+                </div>
+            </div>
+        )
+    }
+
     render() {
         const { currentUser } = this.props;
 
@@ -146,7 +157,7 @@ class ProfileShow extends React.Component {
         if(this.state.showing === "boards") {
             boardsOrPinsIndex = this.renderBoards();
         }else {
-            boardsOrPinsIndex = <h1>Pins will display here</h1>
+            boardsOrPinsIndex = this.renderPins();
         }
         
         return (

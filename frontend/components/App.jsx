@@ -29,7 +29,7 @@ const App = () => (
             <Route exact path="/" component={NavbarContainer} />
             <Route exact path="/signin" component={SigninContainer} />
             <Route exact path="/settings" component={ProfileEditContainer} />
-            <ProtectedRoute exact path="/feed" component={PinFeedContainer} />
+            <ProtectedRoute exact path="/feed" component={() => <div><NavbarContainer /><PinFeedContainer/></div>} />
             <ProtectedRoute exact path="/boards/:boardId" component={() => <div><NavbarContainer /><BoardPinContainer /></div>} />
             <ProtectedRoute exact path='/pins/:pinId' component={ () => <div><NavbarContainer /><PinShowContainer /></div> } />
             {/* <ProtectedRoute exact path="/:username" component={ProfileShowContainer} /> */}

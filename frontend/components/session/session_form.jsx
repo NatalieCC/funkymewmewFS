@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
 
     handleClearErrors(e) {
         e.preventDefault();
-        debugger
+        //debugger
         this.props.clearSessionErrors();
     }
     componentDidMount() {

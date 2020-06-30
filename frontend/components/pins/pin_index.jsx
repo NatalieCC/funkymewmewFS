@@ -10,24 +10,23 @@ class PinIndex extends React.Component {
 
     componentDidMount() {
         // debugger
-        this.props.clearPinIndex();
+        // this.props.clearPinIndex();
         if (this.props.type === 'Feed') {
             // debugger
             this.props.fetchPins();
         } else if (this.props.type === 'Board') {
             // fetch pins of a board
-        } else if (this.props.type === 'User') {
-            // fetch pins of a user
+        } else if (this.props.type === 'Profile') {
+            // get pins of a user from global state
         }
         
     }
 
     render() {
-        
+        //debugger
         const pins = this.props.pins ? this.props.pins.map((pin) => {
             
             return <PinIndexItem
-
                 pin={pin}
                 key={pin.id}
                  />
@@ -35,8 +34,8 @@ class PinIndex extends React.Component {
 
         return (
             <div>
-                <NavbarContainer/>
-                <div className="pin-container">
+                {/* <NavbarContainer/> */}
+                <div className="index-buffer">
                     {pins}
                 </div>
             </div>

@@ -32,8 +32,11 @@ class ProfileBoardIndexItem extends React.Component {
                     <div className='b-index-frame'>
                         <Link to={`/boards/${this.props.board.id}`} className="img-link">
                             <img src={image0} />
+                            <div className="image-div-inner">
+
                             <img src={image1} />
                             <img src={image2} />
+                            </div>
                         </Link>
                    
                          <div className='b-footer-auth'>
