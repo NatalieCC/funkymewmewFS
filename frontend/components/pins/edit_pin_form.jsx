@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class EditPinForm extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +13,7 @@ class EditPinForm extends React.Component {
       }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDeleteRequest = this.handleDeleteRequest.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.update = this.update.bind(this);
   }
 
@@ -24,7 +23,7 @@ class EditPinForm extends React.Component {
     };
   }
 
-  handleDeleteRequest(e) {
+  handleDelete(e) {
     this.props.openModal('deletePin', this.props.pin.id);
   }
 
@@ -81,7 +80,7 @@ class EditPinForm extends React.Component {
               <div className='buttons-left'>
                 <button
                   className='rectangle-btn'
-                  onClick={this.handleDeleteRequest} >
+                  onClick={this.handleDelete} >
                   Delete
                 </button>
               </div>
