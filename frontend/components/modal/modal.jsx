@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import CreateBoardContainer from '../boards/create_board_container';
 import EditBoardContainer from '../boards/edit_board_container';
 import EditPinFormContainer from "../pins/edit_pin_form_container";
+import SavePinOnBoardFormContainer from '../pins/save_pin_on_board_form_container';
 
 function Modal({ modal,openModal,closeModal }) {
     //debugger
@@ -23,6 +24,10 @@ function Modal({ modal,openModal,closeModal }) {
             break;    
         case 'editPin':
             component = <EditPinFormContainer />
+            break;
+        case 'savePinOnBoard':
+            debugger
+            component = <SavePinOnBoardFormContainer />
             break;
         default:
             return null;
