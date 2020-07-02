@@ -7,7 +7,8 @@ class PinShow extends React.Component {
         //debugger
         // pass in pin preview data
         this.state =  { title: '', description: '', imageUrl: '' };
-        
+        this.showEditModal = this.showEditModal.bind(this);
+        this.showSavePinOnBoardModal = this.showSavePinOnBoardModal.bind(this);
     }
 
     componentDidMount() {
@@ -25,36 +26,73 @@ class PinShow extends React.Component {
             })}) 
     }
 
+    displayEdit() {
+        //debugger
+        if(this.props.pin.user_id === this.props.currentUser.id) {
+            return (
+                <button
+                className='prof-buttons'
+                onClick={this.showEditModal} >
+                    <i className= 'fas fa-pen p2-fas'></i>
+                </button>
+            )
+        }
+    }
+    showEditModal(e) {
+        this.props.openModal('editPin', this.props.pin.id);
+    }
+
+    showSavePinOnBoardModal(e) {
+        this.props.openModal('savePinOnBoard', this.props.pin.id);
+    }
+
+
     render() {
-        //let pin = this.state;
-        
-        return (
-            <div>
-                <Link to='/feed'><i id='back-arrow' className="fas fa-arrow-left"></i></Link>
-                <div className="show-pin-container">
-                    <div className="show-pin-box">
-                        <div className='show-pin-image-container'>
-                            <img src={this.state.imageUrl} alt={this.state.title} />
-                        </div>
+        const { pin } = this.props;
+        const { board } = this.props;
 
-                        <div className='show-pin-info-container'>
-                            <header className="show-pin-header">
-                                <div className="show-pin-header-right">
-                                    <button className='show-pin-save'>Save</button>
-                                </div>
-                            </header>
-
-                            <div className="show-pin-info">
-                                <div className='show-pin-title'>{this.state.title}</div>
-                                <div className='show-pin-description'>{this.state.description}</div>
+        if (pin) {
+            return (
+                <div className='pin-buffer'>
+                    <div className='pin-panel'>
+                        <div className='pin-header'>
+                            <div>
+                                {this.displayEdit()}
                             </div>
+                            <button
+                                className='save-btn'
+                                onClick={this.showSavePinOnBoardModal}>
+                                {/* <i className='fas fa-map-pin'></i> */}
+                                <p>Save</p>
+                            </button>
+                        </div>
+                        <h3>{pin.title}</h3>
+                        <img className='pin-image' src={pin.imageUrl} />
+                        {/* {this.displayLink()} */}
+                        <h5>{pin.description}</h5>
+                        <div className='pin-footer'>
+                            {/* {this.displayOwnerPhoto()} */}
+                            {/* <Link */}
+                                {/* to={`/${pin.owner.username}`}> */}
+                                {/* {this.displayOwnername()} */}
+                            {/* </Link> */}
+                            {/* <p>saved to</p> */}
+                            {/* <Link
+                                to={`/boards/${board.id}`}>
+                                {board.title}
+                            </Link> */}
                         </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div></div>
+            )
+        }
     }
 }
+
 
 export default PinShow;
 

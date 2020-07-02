@@ -1,140 +1,150 @@
 // Place all the styles related to the api/pins controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.show-pin-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  //font-family: sans-serif;
-}
 
-#back-arrow {
-  position: fixed;
-  top: 100px;
-  left: 32px;
-  z-index: 1;
-  background-color: white;
-  //color: #333333;
-  padding: 9px;
-  border-radius: 50%;
-}
-
-#back-arrow:hover {
-  filter: brightness(95%);
-  cursor: pointer;
-}
-
-.show-pin-box {
-  display: flex;
-  min-width: 1000px;
-  height: 750px;
-  border-radius: 24px;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 5px;
-  background-color: white;
-  overflow: hidden;
-  position: relative;
-}
-
-.show-pin-image-container {
-  width: 508px;
-  max-height: 770px;
-  padding: 20px;
-  position: relative;
+.pin-buffer {
   box-sizing: border-box;
-  overflow: hidden;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  border-radius: 32px 0 0 32px;
-  @media (max-width: 1056px) {
-    border-radius: 32px 32px 0 0;
-  }
-}
-.show-pin-info-container {
-  flex: 50%;
-  overflow: hidden;
-}
-
-.show-pin-image-container img {
-  width: 100%;
+  //background: linear-gradient(0deg, white 0%, #EFEFEF 100%);
+  background: rgb(225, 193, 220);
+  //opacity: 0.2;
+  //background: hsla(0, 100%, 30%, 0.3);
   height: 100%;
 }
 
-.show-pin-header {
-  position: relative;
-  min-height: 72px;
-  padding: 20px 20px 16px 28px;
-  border-radius: 0 32px 32px 0;
+.pin-panel {
   box-sizing: border-box;
-  background-color: #fff;
   display: flex;
-  justify-content: space-between;
-}
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  background-color: rgba(80,80,80,.25);
+  border-radius: 8px;
+  //box-shadow: #EFEFEF 0px 4px 4px;
+  box-sizing: border-box;
+  height: fit-content;
+  margin: 40px 0px;
+  padding: 16px 24px;
+  width: 630px;
 
-.show-edit {
-  opacity: 1;
-  color: #333333;
-  padding: 16px;
-  background-color: white;
-}
+  .pin-header {
+    box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+    justify-content: space-between;
+    width: 100%;
 
-.show-edit:hover {
-  filter: brightness(95%);
-  border-radius: 50%;
-  cursor: pointer;
-}
+    i {
+      font-size: 18px;
+    }
+  }
 
+  h3 {
+    color:  #444444;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 12px 0px;
+  }
 
-.show-pin-header-right button {
-    //position: absolute;
-    //right: 15px;
-    cursor: pointer;
-    //margin-left: 12px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    //padding: 0 12px;
-    -webkit-box-align: center;
-    //display: flex;
+ .pin-image {
+    box-sizing: border-box;
+    padding: 12px 16px;
+    width: 100%;
+ }
+  img {
+    border-radius: 8px;
+  }
+
+  h5 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 12px 0px;
+    margin: 0px;
+  }
+
+  .pin-link-box {
+    border-bottom: 1px solid #EFEFEF;
+  }
+
+  .pin-link {
+    box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
     align-items: center;
-    //flex: 0 0 auto;
-    background-color: #e60023
+    background-color: #EFEFEF;
+    border-radius: 12px;
+    box-sizing: border-box;
+    color:  #444444;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 32px;
+    justify-content: center;
+    margin: 12px 0px;
+    padding: 4px;
+    width: 582px;
+
+    &:hover {
+      background-color:#E2E2E2;
+    }
+
+    i {
+      margin-right: 8px;
+    }
+  }
+
+  .pin-footer {
+    box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 0px;
+    width: 582px;
+
+    .user-thumbnail {
+      border-radius: 50%;
+      height: 40px;
+      margin-right: 8px;
+      width: 40px;
+    }
+
+    a {
+      cursor: pointer;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    p {
+      margin-right: 5px;
+    }
+  }
 }
 
-
-.show-pin-save {
-  //background-color: rgb(168, 23, 216);
-  position: absolute; 
-  right: 25px;
-  width: 15%;
+.save-btn{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border-radius: 10px;
   color: white;
-  font-size: 18px;
-  padding: 10px;
-  //border-radius: 0 16px 16px 0;
-}
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 40px;
+  padding: 10px 14px;
+  font-size: 15px;
+  width: 10%;
 
-.show-pin-save:hover {
-  filter: brightness(90%);
-  color: white;
-  //border-radius: 0 16px 16px 0;
-}
+  &:hover {
+    background-color: red;
+  }
 
-.fas fa-arrow-left {
-  top: 32px;
-  left: 32px;
-}
-
-.show-pin-info {
-  padding: 24px;
-}
-
-.show-pin-title {
-  font-size: 36px;
-  margin-bottom: 12px;
-}
-
-.show-pin-description {
-  font-weight: 500;
 }

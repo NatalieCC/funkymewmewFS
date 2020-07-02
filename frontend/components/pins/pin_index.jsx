@@ -38,13 +38,14 @@ class PinIndex extends React.Component {
 
         return (
           //   <div className="index-buffer">
+        <div className="pin-index container">
           <div className="pin-index" id="grid-container">
             <div className="pin-index masonry" id="grid">
               {pins}
             </div>
           </div>
-          // {/* <div className="index-buffer">{pins}</div> */}
-          //   </div>
+           {/* <div className="index-buffer">{pins}</div> */}
+        </div>
         );
     }
 }
