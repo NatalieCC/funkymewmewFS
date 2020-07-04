@@ -114,17 +114,17 @@ class PinIndexItem extends React.Component {
     return (
       // <Link to={`/pins/${this.props.pin.id}`}>
       <div
-        className="pin-index-box"
-        id={`${this.state.id}`}
+        // className="pin-index-box"
+        className={`p-index-frame`}
+        // id={`${this.state.id}`}
         onClick={this.toPinShow}
         onMouseEnter={this.turnOnVisibility}
-        onMouseLeave={this.turnOffVisibility}
-      >
+        onMouseLeave={this.turnOffVisibility}>
         <div className="pin-index-image">
           <img src={this.props.pin.imageUrl} className="masonry-image" />
-          {this.displayLinks()}
         </div>
         <div className="pin-index-title">{this.props.pin.title}</div>
+        {this.displayLinks()}
       </div>
       //</Link>
     );
