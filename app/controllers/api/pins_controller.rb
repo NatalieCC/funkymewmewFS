@@ -29,22 +29,13 @@ class Api::PinsController < ApplicationController
     render :show
   end
 
-  def edit
-    @pin = Pin.find(params[:id])
-    if @pin.user_id == current_user.id
-      render :edit
-    else
-      render 'api/pins/pin'
-    end
-  end
-
   def update
-    @pin = Pin.find(params[:id])
+    @pin = current_user.pins.find(params[:id])
 
-    if (@pin.user_id === current_user.id && @pin.update(pin_params))
-      render 'api/pins/pin'
+    if @pin.update(pin_params)
+      render "api/pins/show"
     else
-      render json: [@pin.errors.full_messages], status: 422
+      render json: ["Can't edit this pin!"], status: 401
     end
   end
 
