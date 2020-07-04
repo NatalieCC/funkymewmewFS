@@ -12,11 +12,11 @@ class Api::BoardsController < ApplicationController
       render 'api/boards/show'
     end
 
-    # def update
-    #   @board = current_user.boards.find(params[:id])
-    #   @board.update!(board_params)
-    #   render 'api/boards/show'
-    # end
+    def update
+      @board = current_user.boards.find(params[:id])
+      @board.update!(board_params)
+      render 'api/boards/show'
+    end
 
     def create
       print "BoardsController create"
