@@ -12,9 +12,9 @@ class ProfileBoardIndexItem extends React.Component {
             this.props.board.pin_ids.includes(pin.id)
         })
         
-        let image0;
-        let image1;
-        let image2;
+        let image0 = "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/grid0.png";
+        let image1 = "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/grid0.png";
+        let image2 = "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/grid0.png";
         let cover_urls = this.props.board.cover_urls;
         if (cover_urls[0]) {
             image0 = cover_urls[0];
@@ -33,9 +33,8 @@ class ProfileBoardIndexItem extends React.Component {
                         <Link to={`/boards/${this.props.board.id}`} className="img-link">
                             <img src={image0} />
                             <div className="image-div-inner">
-
-                            <img src={image1} />
-                            <img src={image2} />
+                                <img src={image1} />
+                                <img src={image2} />
                             </div>
                         </Link>
                    

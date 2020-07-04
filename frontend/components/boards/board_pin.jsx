@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter, withRouter } from 'react-router-dom';
-
+import PinOnBoardContainer from '../pins/pin_on_board_container';
 //user profile click into one board
 class BoardPin extends React.Component {
     constructor(props) {
@@ -102,10 +102,10 @@ class BoardPin extends React.Component {
                         </div>
                     </div>
                     <div className='index-buffer'>
-                        {/* <PinBoardIndexContainer
-                            creator={this.props.creator}
-                            board={this.props.board} */}
-                        {/* /> */}
+                        <PinOnBoardContainer />
+                            {/* creator={this.props.creator}
+                            board={this.props.board} */} 
+                         
                     </div>
                 </div>
             )

@@ -7,6 +7,7 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
+
 import RegisterFormContainer from './session/register_form_container';
 import SigninFormContainer from './session/signin_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -22,6 +23,7 @@ import BoardPinContainer from "./boards/board_pin_container";
 import PinCreateContainer from "./pins/pin_create_container";
 import SplashContainer from './splash_container';
 
+
 const App = () => (
     <div>
         <Modal />
@@ -36,6 +38,7 @@ const App = () => (
             {/* <ProtectedRoute exact path="/:username" component={ProfileShowContainer} /> */}
             <ProtectedRoute exact path="/:username" component={() => <div><NavbarContainer /><ProfileShowContainer /></div>} />
             <ProtectedRoute exact path="/:username/build-pin" component={() => <div><NavbarContainer /><PinCreateContainer /></div>} />
+        
         </Switch>
     </div>
 
