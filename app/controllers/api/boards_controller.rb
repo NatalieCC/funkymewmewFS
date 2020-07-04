@@ -19,18 +19,21 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
-      print "BoardsController create"
       @board = Board.new(board_params)
       @board.user_id = current_user.id
       @board.save!
       render 'api/boards/show'
     end
 
-    # def destroy
-    #   @board = current_user.boards.find(params[:id])
-    #   @board.destroy
-    #   render 'api/boards/show'
-    # end
+    def destroy
+      @board = current_user.boards.find(params[:id])
+      if @board
+        @board.destroy
+        render "api/boards/show"
+      else
+        render json: ["Can't delete this board!"], status: 401
+      end
+    end
 
     private
 
