@@ -26,7 +26,7 @@ function Modal({ modal,openModal,closeModal }) {
             component = <EditPinFormContainer />
             break;
         case 'savePinOnBoard':
-            debugger
+            // debugger
             component = <SavePinOnBoardFormContainer />
             break;
         default:

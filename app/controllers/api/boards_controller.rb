@@ -1,8 +1,9 @@
 class Api::BoardsController < ApplicationController
-    # def index
-    #   @boards = Board.all.includes(:user, :board_pins, :pins)
-    #   render 'api/boards/index'
-    # end
+  
+    def index
+      @boards = Board.all.includes(:user, :pins_on_boards, :pins)
+      render 'api/boards/index'
+    end
 
     def show
       print "BoardsController show"

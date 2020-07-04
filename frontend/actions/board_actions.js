@@ -10,9 +10,10 @@ export const RECEIVE_BOARD_PINS = 'RECEIVE_BOARD_PINS';
 export const receiveBoards = (payload) => {
     return {
         type: RECEIVE_BOARDS,
-        users: payload.users,
-        boards: payload.boards,
-        pins: payload.pins,
+        // users: payload.users,
+        // boards: payload.boards,
+        // pins: payload.pins,
+        boards: payload
     };
 };
 

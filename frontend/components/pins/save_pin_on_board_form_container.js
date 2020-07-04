@@ -14,7 +14,7 @@ const mSTP = (state, ownProps) => {
     const pin = state.entities.pins[pinId];
     const boards = Object.values(state.entities.boards)
         .filter(board => board.user_id === currentUser.id);
-    debugger
+    // debugger
     return ({
         currentUser, pin, boards
     });
