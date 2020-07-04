@@ -8,6 +8,7 @@ class Api::BoardsController < ApplicationController
     def show
       print "BoardsController show"
       @board = Board.includes(:user, :pins_on_boards, :pins).find(params[:id])
+      # debugger
       render 'api/boards/show'
     end
 
