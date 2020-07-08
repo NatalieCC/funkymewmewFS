@@ -8,7 +8,7 @@ const msp = (state, ownProps) => {
     return (
         {
             type: 'Board',
-            pins: Object.values(state.entities.pins)
+            // pins: Object.values(state.entities.pins)
         }
     )       
 };

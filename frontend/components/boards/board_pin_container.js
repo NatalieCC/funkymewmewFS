@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 
 const msp = (state, ownProps) => {
     // username: ownProps.match.params.username,
+    //we are reading boardId in the url, which reads as below. ownprops has 
+    //access from history, thats how we know url. the oppostiote of 'push' history.
     const boardId = ownProps.match.params.boardId;
     const pins = Object.values(state.entities.pins);
     const currentUser = state.entities.users[state.session.id];

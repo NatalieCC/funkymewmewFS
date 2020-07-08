@@ -67,7 +67,7 @@ class PinIndexItem extends React.Component {
   }
 
   showSavePinOnBoardModal(e) {
-    debugger
+    //debugger
     e.stopPropagation();
     this.props.openModal('savePinOnBoard', this.props.pin.id);
   }

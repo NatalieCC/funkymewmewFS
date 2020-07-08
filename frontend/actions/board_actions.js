@@ -18,9 +18,10 @@ export const receiveBoards = (payload) => {
 };
 
 export const receiveBoard = (payload) => {
+    //debugger
     return {
         type: RECEIVE_BOARD,
-        user: payload.user,
+        //user: payload.user,
         board: payload.board,
         pins: payload.pins,
     };

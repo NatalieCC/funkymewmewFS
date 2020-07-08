@@ -6,6 +6,16 @@ import {
 } from '../actions/pin_actions';
 
 import {RECEIVE_USER} from '../actions/user_actions';
+import {RECEIVE_BOARD} from '../actions/board_actions';
+//whenever we fetch a borad, we also fecth a board's pins; when we get the data from the db, there 
+//will be board and pins.
+//so we need the pin and boards reducer listending to the recieve board action.
+//the board reducer will take the board data and put it in the board slice of state in the redux strore.
+//the pin reducer will do same but with the pin data and put in the pin slice
+//of state in the redux store. same thing like line 8.
+//every single action hits everything single reducer, but not every reducer will do someting about it.
+//if debugger in every reducer, evertime u refresh, it will hit every reducer, but not 
+//every reducer will do something.
 
 const pinsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -28,6 +38,12 @@ const pinsReducer = (state = {}, action) => {
             return newState;
         case CLEAR_PIN_INDEX:
             return {};
+        case RECEIVE_BOARD:
+            if (action.pins) {
+                return action.pins;
+            } else {
+                return {};
+            }
         default:
             return state;
     }
