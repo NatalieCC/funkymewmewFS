@@ -73,7 +73,7 @@ class CreateBoardForm extends React.Component {
         } else {
             return (
                 <button
-                    className={'rectangle-btn save-btn'}
+                    className={'rectangle-btn'}
                     onClick={this.handleSubmit} >
                     {this.props.buttonText}
                 </button>
@@ -136,7 +136,7 @@ class CreateBoardForm extends React.Component {
                                 className='rectangle-btn'
                                 onClick={this.handleCancel} >
                                 Cancel
-              </button>
+                            </button>
                             {this.displayActionButton()}
                         </div>
                     </div>

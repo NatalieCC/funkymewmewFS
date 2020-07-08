@@ -91,7 +91,7 @@ class EditPinForm extends React.Component {
                   Cancel
                 </button>
                 <button
-                  className={'rectangle-btn save-btn'}
+                  className={'rectangle-btn'}
                   onClick={this.handleSubmit} >
                   Save
                 </button>

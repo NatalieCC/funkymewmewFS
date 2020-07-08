@@ -169,8 +169,8 @@ class PinCreateForm extends React.Component {
                             onClick={this.goBack}>
                             <i className="fas fa-chevron-left"></i>                            
                         </button>
-                        <div className='save-btn' onClick={clickSave} >
-                            <button className='save-btn'>Save</button>
+                        <div className='create-save-btn' onClick={clickSave} >
+                            <button className='create-save-btn'>Save</button>
                         </div>
                     </div>
                     <div className='pin-form'>
