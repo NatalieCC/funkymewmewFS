@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class BoardList extends React.Component {
     constructor(props) {
         super(props);
@@ -44,7 +43,7 @@ class BoardList extends React.Component {
                 onMouseEnter={this.turnOnVisibility}
                 onMouseLeave={this.turnOffVisibility}
                 value={board.id}>
-                <p>{board.name}</p>
+                <p>{board.title}</p>
                 {this.displayLinks()}
             </div>
         )

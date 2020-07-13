@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     const currentUser = state.session.currentUserId || {};
     const pinId = ownProps.match.params.pinId;
     const pin = state.entities.pins[pinId];
-
+    //const pin = state.entities.pins.pin.pin;
+    
     // let board;
     // let owner;
     // if(pin) {
@@ -17,8 +18,9 @@ const mapStateToProps = (state, ownProps) => {
     //     board = state.entities.boards;
     //     owner = state.entities.pins[pinId].user_id;
     // }
-
+    //debugger
     return {
+        
         //pin: state.entities.pins[ownProps.match.params.pinId],
         //currentUser,owner,board,pin,pinId
         pin,currentUser    

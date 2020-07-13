@@ -7,6 +7,7 @@ class Pin < ApplicationRecord
   has_many :pins_on_boards, dependent: :destroy
   has_many :boards, through: :pins_on_boards, source: :board
 
+
   def has_image
     unless self.image.attached?
       errors[:image] << 'Attach an Image ^.^'

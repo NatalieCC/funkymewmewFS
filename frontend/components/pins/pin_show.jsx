@@ -17,18 +17,20 @@ class PinShow extends React.Component {
         this.props.fetchPin(this.props.match.params.pinId)
             //.then(pin => this.setState(this.props.pin)) 
             .then(pin => {
+                //debugger
                 pin = pin.pin.pin
                 this.setState({
                     title: pin.title,
                     imageUrl: pin.imageUrl,
                     description: pin.description,
-                
+                    //user_id: pin.user_id,
             })}) 
     }
 
     displayEdit() {
         //debugger
         if(this.props.pin.user_id === this.props.currentUser.id) {
+        //if(this.state.user_id === this.props.currentUser.id) {
             return (
                 <button
                 className='prof-buttons'
@@ -39,6 +41,7 @@ class PinShow extends React.Component {
         }
     }
     showEditModal(e) {
+        //debugger
         this.props.openModal('editPin', this.props.pin.id);
     }
 
@@ -49,9 +52,11 @@ class PinShow extends React.Component {
 
     render() {
         const { pin } = this.props;
+        //const {title,imageUrl,description} = this.state;
         const { board } = this.props;
-
-        if (pin) {
+        //debugger
+        //if user add a non existent pinId in url then if should handle?
+        if (true) {
             return (
                 <div className='pin-buffer'>
                     <div className='pin-panel'>
@@ -94,5 +99,5 @@ class PinShow extends React.Component {
 }
 
 
-export default PinShow;
+export default withRouter(PinShow);
 

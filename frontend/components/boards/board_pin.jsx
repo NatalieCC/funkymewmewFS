@@ -23,7 +23,8 @@ class BoardPin extends React.Component {
 //if props changed for the component, then the below will run.
 //we still have accesss to previous props
 //when user change the url, we are getting the boardId from the url(look at board_pin_container line11)
-//so the boardId changes. that triggers CDU (when any props change).
+//so the boardId changes. that triggers CDU (when any props change). and this will
+//show the corresponding pins of the new boardId we put in the url.
 
     componentDidUpdate(prevProps) {
         //check if it is the boardId thats been changed

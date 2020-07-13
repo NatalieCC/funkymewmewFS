@@ -65,7 +65,7 @@
     width: 80%;
 
     i {
-      font-size: 20px;
+      font-size: 14px;
     }
 
     .p-btn{
@@ -78,6 +78,8 @@
       border-radius: 50%;
       height: 40px;
       width: 40px;
+      color: gray;
+      font-size: 16px;
 
       &:hover {
         background-color: #E2E2E2;

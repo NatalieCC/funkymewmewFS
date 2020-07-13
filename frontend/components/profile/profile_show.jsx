@@ -88,7 +88,12 @@ class ProfileShow extends React.Component {
     }
 
     profilePhoto() {
+        //debugger
+        if(this.props.location && this.props.location.state) {
+            return <img src={this.props.location.state.photo} className="profile-image" />
+        }
         const { currentUser } = this.props;
+        debugger
         if (currentUser.photo) {
             return (
                 <img src={currentUser.photo} className="profile-image" />
@@ -118,11 +123,13 @@ class ProfileShow extends React.Component {
     }
 
     showPins(e) {
-        this.setState({ showing: 'pins' })
+        //this.setState({ showing: 'pins' })
+        this.props.history.push(`/${this.props.username}/pins`)
     }
 
     showBoards(e) {
-        this.setState({ showing: 'boards' })
+        //this.setState({ showing: 'boards' })
+        this.props.history.push(`/${this.props.username}`)
     }
 //{} is saying excute Javascript instead of jsx
 //used forEach returns enumerable, so should use map which returns array.
@@ -154,7 +161,8 @@ class ProfileShow extends React.Component {
         const { currentUser } = this.props;
 
         let boardsOrPinsIndex;
-        if(this.state.showing === "boards") {
+        //if(this.state.showing === "boards") {
+        if (this.props.path !== "/:username/pins") {
             boardsOrPinsIndex = this.renderBoards();
         }else {
             boardsOrPinsIndex = this.renderPins();

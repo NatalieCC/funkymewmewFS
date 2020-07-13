@@ -7,7 +7,7 @@ import ProfileShow from "./profile_show";
 import {withRouter} from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+     //debugger
     return {
         //currentUser: state.entities.users[state.session.currentUserId],
         currentUser: state.session.currentUserId,
@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
         //take the boards from the redux store
         boards: Object.values(state.entities.boards),
         // boardsPins: state.entities.boardsPins,
-        pins: Object.values(state.entities.pins)
+        pins: Object.values(state.entities.pins),
+        path: ownProps.match.path,
     }
 };
 

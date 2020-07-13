@@ -12,6 +12,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_USERS:
             return action.users;
         case RECEIVE_USER:
+            //debugger 
             return Object.assign(nextState, action.payload.user);  
         // case RECEIVE_BOARD:
         //     return Object.assign({}, state, { [action.author.id]: action.author });

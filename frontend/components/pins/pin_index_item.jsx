@@ -81,9 +81,9 @@ class PinIndexItem extends React.Component {
             <div className="p-links visible">
               {/* need link url for pin  */}
               <div className="top-links">
-                <button className="save-btn" onClick={this.showSavePinOnBoardModal}>
+                <button className="main-save-btn" onClick={this.showSavePinOnBoardModal}>
                   {/* <i className="fas fa-map-pin"></i> */}
-                  <p>Save</p>
+                  Save
                 </button>
               </div>
             </div>

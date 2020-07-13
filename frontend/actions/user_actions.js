@@ -35,7 +35,10 @@ export const fetchUser = id => dispatch => (
 
 export const updateUser = (user, id) => dispatch => (
     UserAPIUtil.updateUser(user, id).then(
-        user => dispatch(receiveUser(user)),
+        user => {
+            //debugger 
+            return dispatch(receiveUser(user))
+        },
         //err => dispatch(receiveUserErrors(err.responseJSON))
     )
 );

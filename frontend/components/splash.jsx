@@ -12,16 +12,15 @@ class Splash extends React.Component {
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/Venice.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/abstract.jpg",
                 // "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/de+dinning.jpg",
-                
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/backyard.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/poppy.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/butterfly.jpg",
-                
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/window.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/huaban.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/one.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/light.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/fruit.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/bench.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/forest.jpg",
             ]
         };

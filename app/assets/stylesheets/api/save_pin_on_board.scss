@@ -1,27 +1,14 @@
-%flex-row {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-%flex-column {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .boardpin-form {
   background-color: white;
   border-radius: 8px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  max-height: 586px;
+  max-height: 560px;
   width: 730px;
 
   .boardpin-header {
     box-sizing: border-box;
-    padding: 20px 50px;
+    padding: 20px 100px;
     position: relative;
     width: 100%;
 
@@ -30,22 +17,24 @@
       position: absolute;
     }
 
-    h3 {
-      font-size: 22px;
-      margin: 0px;
-      text-align: center;
-    }
+    
   }
 }
 
 .boardpin-body {
-  @extend %flex-row;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: flex-start;
   justify-content: space-between;
 }
 
 .boardpin-left {
-  @extend %flex-column;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 12px;
   width: 300px;
@@ -66,7 +55,10 @@
   width: 430px;
 
   .board-scroll-container-2 {
-  @extend %flex-column;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   height: 520px;
@@ -74,9 +66,11 @@
   width: 420px;
 
   .board-option {
-    @extend %flex-row;
-    align-items: center;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     height: 52px;
     justify-content: space-between;
@@ -91,12 +85,15 @@
 
     p {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
     }
 
     .select-btn {
-      @extend %flex-row;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
       align-items: center;
       background-color: red;
       border-radius: 4px;
@@ -104,8 +101,29 @@
       font-size: 14px;
       font-weight: 500px;
       height: 36px;
-      padding: 8px 12px;
+      //padding: 8px 12px;
+      width: 15%;
+      margin-bottom: 8px;
     }
   }
 }
 }
+.board-cancel-btn-spob {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 298px;
+  background-color: white;
+  color:gray;  
+  width: 40px;
+  i {
+    font-size: 24px;
+    color: gray;
+  }
+}
+h3 {
+      font-size: 23px;
+      margin: 0px;
+      text-align: center;
+      color: black;
+    }
+

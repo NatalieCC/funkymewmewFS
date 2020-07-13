@@ -5,12 +5,21 @@ import { Link, NavLink } from "react-router-dom";
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-
+        //this.state = this.props.currentUser;
     }
     
+    // componentDidUpdate(prevProps) {
+    //     console.log(prevProps,this.props)
+    //     if(prevProps.currentUser.photo != this.props.currentUser.photo) {
+    //         this.setState(this.props.currentUser);
+    //     }
+    // }
+
     render() {
         const { currentUser, logout } = this.props;
-        //console.log("test");
+        // const { logout } = this.props;
+        // const currentUser = this.state;
+    
         const profilePhoto = (currentUser && currentUser.photo) ? (
             <img src={currentUser.photo} alt="profile-pic" id="profile-icon" />
         ) : (

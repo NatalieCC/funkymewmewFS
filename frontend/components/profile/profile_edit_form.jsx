@@ -32,6 +32,7 @@ class ProfileEditForm extends React.Component {
     
 
     handleDone(e) {
+        //debugger
         e.preventDefault();
         const details = Object.assign({}, this.state);
         delete details["id"];
@@ -46,10 +47,15 @@ class ProfileEditForm extends React.Component {
         }
         // debugger;
         this.props.updateUser(formData, this.state.id)
-            .then(() => location.reload(false))
+            // .then(() => location.reload(false))
+            .then((user) => {
+                //debugger
+                this.setState(user.payload.user)
+            });
     }
 
     handleFile(e) {
+    
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -69,11 +75,13 @@ class ProfileEditForm extends React.Component {
 
     render() {
         const { currentUser } = this.props;
+
         const profilePhoto = (this.state.photo) ? (
             <img src={this.state.photo} alt="profile_photo" className="edit-profile" id="photo" />
         ) : (
                 <i className="fas fa-user-circle" id="photo"></i>
             );
+
         const displayPhoto = (this.state.photoPreview) ? (
             <img src={this.state.photoPreview} className="edit-profile" id="photo" />
         ) : (
@@ -90,7 +98,7 @@ class ProfileEditForm extends React.Component {
                         <div id="back-button-padding">
                             <div id="back-button-position">
                                 <div id="back-button-container">
-                                    <NavLink to={`/${currentUser.username}`} id="user-profile-link">
+                                    <NavLink to={{pathname: `/${currentUser.username}`, state: this.state}} id="user-profile-link">
                                         <div id="back-icon-container-shadow">
                                             <div id="back-icon-container">
                                                 <i className="fas fa-arrow-left" id="back-icon"></i>

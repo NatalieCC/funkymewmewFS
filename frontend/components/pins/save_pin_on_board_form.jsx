@@ -53,7 +53,7 @@ class SavePinOnBoardForm extends React.Component {
                     <div className='boardpin-header'>
                         <h3>Choose board</h3>
                         <button
-                            className='board-cancel-btn'
+                            className='board-cancel-btn-spob'
                             onClick={() => this.props.closeModal()} >
                             <i class="fas fa-times"></i>
                         </button>
