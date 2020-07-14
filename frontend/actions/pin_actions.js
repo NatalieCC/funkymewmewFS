@@ -20,7 +20,7 @@ const receivePins = (pins) => {
 
 const receivePin = pin => ({
     type: RECEIVE_PIN,
-    pin
+    payload : pin,
 });
 
 const removePin = pinId => ({

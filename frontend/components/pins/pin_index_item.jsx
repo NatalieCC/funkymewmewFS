@@ -8,7 +8,7 @@ class PinIndexItem extends React.Component {
   constructor(props) {
     //debugger
     super(props);
-    this.state = { visible: false };
+    this.state = { visible: false, pin: this.props.pin };
     this.turnOffVisibility = this.turnOffVisibility.bind(this);
     this.turnOnVisibility = this.turnOnVisibility.bind(this);
     this.displayLinks = this.displayLinks.bind(this);
@@ -44,6 +44,15 @@ class PinIndexItem extends React.Component {
       window.addEventListener(e, this.resizeGridItem)
     );
   }
+
+  // componentDidUpdate(prevProps) {
+  //   console.log(prevProps.pin,this.props.pin)
+  //   if (prevProps.pin.title != this.props.pin.title) {
+  //     debugger
+  //     this.setState(this.props.pin.title);
+  //   }
+  // }
+
 
   turnOffVisibility(e) {
     // debugger
@@ -121,9 +130,9 @@ class PinIndexItem extends React.Component {
         onMouseEnter={this.turnOnVisibility}
         onMouseLeave={this.turnOffVisibility}>
         <div className="pin-index-image">
-          <img src={this.props.pin.imageUrl} className="masonry-image" />
+          <img src={this.state.pin.imageUrl} className="masonry-image" />
         </div>
-        <div className="pin-index-title">{this.props.pin.title}</div>
+        <div className="pin-index-title">{this.state.pin.title}</div>
         {this.displayLinks()}
       </div>
       //</Link>

@@ -93,7 +93,7 @@ class ProfileShow extends React.Component {
             return <img src={this.props.location.state.photo} className="profile-image" />
         }
         const { currentUser } = this.props;
-        debugger
+        //debugger
         if (currentUser.photo) {
             return (
                 <img src={currentUser.photo} className="profile-image" />

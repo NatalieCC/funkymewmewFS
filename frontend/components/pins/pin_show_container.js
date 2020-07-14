@@ -19,8 +19,7 @@ const mapStateToProps = (state, ownProps) => {
     //     owner = state.entities.pins[pinId].user_id;
     // }
     //debugger
-    return {
-        
+    return {   
         //pin: state.entities.pins[ownProps.match.params.pinId],
         //currentUser,owner,board,pin,pinId
         pin,currentUser    

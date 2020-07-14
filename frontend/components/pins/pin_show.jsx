@@ -18,19 +18,20 @@ class PinShow extends React.Component {
             //.then(pin => this.setState(this.props.pin)) 
             .then(pin => {
                 //debugger
-                pin = pin.pin.pin
+                pin = pin.payload.pin
                 this.setState({
                     title: pin.title,
                     imageUrl: pin.imageUrl,
                     description: pin.description,
-                    //user_id: pin.user_id,
+                    user_id: pin.user_id,
+                    pin_id: pin.id,
             })}) 
     }
 
     displayEdit() {
         //debugger
-        if(this.props.pin.user_id === this.props.currentUser.id) {
-        //if(this.state.user_id === this.props.currentUser.id) {
+        //if(this.props.pin.user_id === this.props.currentUser.id) {
+        if(this.state.user_id === this.props.currentUser.id) {
             return (
                 <button
                 className='prof-buttons'
@@ -43,6 +44,7 @@ class PinShow extends React.Component {
     showEditModal(e) {
         //debugger
         this.props.openModal('editPin', this.props.pin.id);
+        //this.props.openModal('editPin', this.state.pin_id);
     }
 
     showSavePinOnBoardModal(e) {
@@ -51,8 +53,8 @@ class PinShow extends React.Component {
 
 
     render() {
-        const { pin } = this.props;
-        //const {title,imageUrl,description} = this.state;
+        //const { pin } = this.props;
+        const {title,imageUrl,description} = this.state;
         const { board } = this.props;
         //debugger
         //if user add a non existent pinId in url then if should handle?
@@ -71,10 +73,10 @@ class PinShow extends React.Component {
                                 <p>Save</p>
                             </button>
                         </div>
-                        <h3>{pin.title}</h3>
-                        <img className='pin-image' src={pin.imageUrl} />
+                        <h3>{title}</h3>
+                        <img className='pin-image' src={imageUrl} />
                         {/* {this.displayLink()} */}
-                        <h5>{pin.description}</h5>
+                        <h5>{description}</h5>
                         <div className='pin-footer'>
                             {/* {this.displayOwnerPhoto()} */}
                             {/* <Link */}
