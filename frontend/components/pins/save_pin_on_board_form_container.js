@@ -2,6 +2,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 //import { createPinJoin } from '../../actions/pin_actions';
 import { fetchBoards } from '../../actions/board_actions';
+import { savePinOntoBoard } from '../../actions/pins_on_board_actions';
 import SavePinOnBoardForm from './save_pin_on_board_form';
 import { closeModal } from '../../actions/modal_actions';
 
@@ -21,7 +22,8 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-    //createPinJoin: (pin, boardId) => dispatch(createPinJoin(pin, boardId)),
+    //='s right side is what we get from actions
+    savePinOntoBoard: (pinOnBoard) => dispatch(savePinOntoBoard(pinOnBoard)),
     fetchBoards: () => dispatch(fetchBoards()),
     closeModal: (modal) => dispatch(closeModal(modal)),
 });

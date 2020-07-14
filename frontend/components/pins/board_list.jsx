@@ -29,6 +29,7 @@ class BoardList extends React.Component {
                     className='select-btn'
                     onClick={this.handleBoard}>
                     {this.props.text}
+                    {/* see this.props,you know someone is giving it to this Component */}
                 </button>
             )
         }

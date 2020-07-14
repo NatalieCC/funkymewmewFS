@@ -17,26 +17,25 @@ class PinIndexItem extends React.Component {
     this.showEditModal = this.showEditModal.bind(this);
     //debugger set here page then get stuck forever why?
     this.showSavePinOnBoardModal = this.showSavePinOnBoardModal.bind(this);
-
-    this.resizeGridItem = this.resizeGridItem.bind(this);
+    //this.resizeGridItem = this.resizeGridItem.bind(this);
   }
 
-    resizeGridItem() {
-      let item = document.getElementById(this.state.id);
-      let grid = document.getElementById("grid");
-      let rowHeight = parseInt(
-        window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
-      );
-      let rowGap = parseInt(
-        window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
-      );
-      let itemImg = item.querySelector(".masonry-image");
-      let rowSpan = Math.ceil(
-        (itemImg.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap)
-      );
-      // if (this.state.title !== '') rowSpan += 2;
-      item.style.gridRowEnd = "span " + rowSpan;
-    }
+    // resizeGridItem() {
+    //   let item = document.getElementById(this.state.id);
+    //   let grid = document.getElementById("grid");
+    //   let rowHeight = parseInt(
+    //     window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
+    //   );
+    //   let rowGap = parseInt(
+    //     window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
+    //   );
+    //   let itemImg = item.querySelector(".masonry-image");
+    //   let rowSpan = Math.ceil(
+    //     (itemImg.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap)
+    //   );
+    //   // if (this.state.title !== '') rowSpan += 2;
+    //   item.style.gridRowEnd = "span " + rowSpan;
+    // }
 
   componentDidMount() {
     setTimeout(() => this.resizeGridItem(), 1500);
@@ -45,13 +44,13 @@ class PinIndexItem extends React.Component {
     );
   }
 
-  // componentDidUpdate(prevProps) {
-  //   console.log(prevProps.pin,this.props.pin)
-  //   if (prevProps.pin.title != this.props.pin.title) {
-  //     debugger
-  //     this.setState(this.props.pin.title);
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    console.log(prevProps.pin,this.props.pin)
+    if (prevProps.pin.title != this.props.pin.title) {
+      debugger
+      this.setState(this.props.pin.title);
+    }
+  }
 
 
   turnOffVisibility(e) {

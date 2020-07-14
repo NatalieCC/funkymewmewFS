@@ -32,6 +32,7 @@ class Api::PinsOnBoardsController < ApplicationController
 
    private
   def pinsOnBoard_params
+    #:pinsOnBoard refers to api Form Data in Chrome's Headers in Network
     params.require(:pinsOnBoard).permit(:board_id, :pin_id)
   end
   

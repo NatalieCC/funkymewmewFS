@@ -1,11 +1,13 @@
 // Save pin to board
-// export const createBoardPin = boardPin => (
-//     $.ajax({
-//         method: "POST",
-//         url: `/api/boards_pins`,
-//         data: { boardPin }
-//     })
-// );
+// pinOnBoard appears in Chrom network Form Data header
+// its controller requires :pinsOnBoard
+export const savePinOnBoard = pinsOnBoard => (
+    $.ajax({
+        method: "POST",
+        url: `/api/pins_on_boards`,
+        data: { pinsOnBoard }
+    })
+);
 
 //delete pin from board
 // export const deleteBoardPin = boardPinId => (

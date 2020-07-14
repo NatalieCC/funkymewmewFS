@@ -10,22 +10,26 @@ class SavePinOnBoardForm extends React.Component {
             description: pin.description || '',
             pin_id: pin.id
         };
-        this.handleBoard = this.handleBoard.bind(this);
+        this.handleOnSelectBoard = this.handleOnSelectBoard.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchBoards();
     }
 
-    handleBoard(board) {
-        this.props.createPinJoin(this.state, board.id).then(this.props.closeModal());
+    handleOnSelectBoard(board) {
+        const pinOnBoard = {
+            pin_id: this.state.pin_id,
+            board_id: board.id
+        }
+        this.props.savePinOntoBoard(pinOnBoard).then(this.props.closeModal());
     }
 
     displayBoardList() {
         const boards = this.props.boards.map((board, i) => {
             return (
                 <BoardList
-                    onSelectBoard={this.handleBoard}
+                    onSelectBoard={this.handleOnSelectBoard}
                     board={board}
                     key={i}
                     text='Save'
@@ -63,7 +67,7 @@ class SavePinOnBoardForm extends React.Component {
                             <img className='boardpin-pic' src={this.props.pin.imageUrl} />
                             <div className='pin-title'>
                                 <textarea
-                                    className='input'
+                                    className='input-title'
                                     name="Pin Title"
                                     value={this.state.title}
                                     onChange={this.update('title')}

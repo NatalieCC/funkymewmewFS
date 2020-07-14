@@ -117,6 +117,8 @@ class PinCreateForm extends React.Component {
         this.setState({ boardscroll: true });
     }
 
+    //to display a view,return of a function 这function就变成了什么。
+    //whoever called this function can get such view.
     displayBoardScroll() {
         if (this.state.boardscroll) {
             const boards = this.props.boards.map((board,i) => {
