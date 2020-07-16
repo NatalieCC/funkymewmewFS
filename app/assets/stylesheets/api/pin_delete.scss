@@ -1,0 +1,79 @@
+.form-buffer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.delete-form {
+    height: 190px;
+    width: 414px;
+    background-color: white;
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+    .delete-header {
+      box-sizing: border-box;
+      //padding: 20px 50px;
+      width: 100%;
+
+      p {
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+
+    .delete-body {
+      box-sizing: border-box;
+      padding-left: 9px; 
+      font-size: 14px;
+      border-bottom: 1px solid #EFEFEF;
+      border-top: 1px solid #EFEFEF;
+    }
+
+.delete-footer {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: 7px;
+      align-items: center;
+    }
+
+.delete-pin-cancel-button{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: EFEFEF;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 15px;
+  font-weight: bold;
+  width: 20%;
+  margin-right:8px;
+  padding: 10px 14px;
+}
+.delete-pin-button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 9px;
+  padding: 10px 14px;
+  background-color: rgb(192, 60, 60);
+  width: 30%;
+}
+  
+
+
