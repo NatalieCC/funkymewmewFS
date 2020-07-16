@@ -43,7 +43,7 @@ class ProfileShow extends React.Component {
                     <Link
                         to={`/settings`}
                         className="prof-buttons" >
-                        <i className="fas fa-pen p2-fas"></i>
+                        <i className="fas fa-pencil-alt" style={{ color: " #8E8E8E" }}></i>
                     </Link>
                 </nav>
             ) 
@@ -159,12 +159,16 @@ class ProfileShow extends React.Component {
 
     render() {
         const { currentUser } = this.props;
-
+        let boardButton = 'link-selected';
+        let pinButton = '';
         let boardsOrPinsIndex;
         //if(this.state.showing === "boards") {
         if (this.props.path !== "/:username/pins") {
+            //pinButton = '';
             boardsOrPinsIndex = this.renderBoards();
-        }else {
+        } else {
+            boardButton = '';
+            pinButton += 'link-selected';
             boardsOrPinsIndex = this.renderPins();
         }
         
@@ -196,11 +200,13 @@ class ProfileShow extends React.Component {
                                 </section>
 
                                 <nav className="profile-buttons">                                   
-                                    <button className="oval-link"
+                                    <button 
+                                        className={boardButton+' oval-link' }
                                         onClick={this.showBoards.bind(this)} >
                                         Boards
                                     </button>
-                                    <button className="oval-link"
+                                    <button 
+                                        className={pinButton + ' oval-link' }
                                         onClick={this.showPins.bind(this)} >
                                         Pins
                                     </button>
@@ -226,3 +232,7 @@ class ProfileShow extends React.Component {
     };
 
 export default ProfileShow;
+
+//<div> grabElementbyId
+//.classList.add .classList.remove
+//eventListner when an item gets clicked use above minipulate css

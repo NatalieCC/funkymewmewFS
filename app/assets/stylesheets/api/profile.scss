@@ -158,20 +158,20 @@
   padding-bottom: 8px;
   padding-top: 8px;
 }
-.oval-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80px;
-  box-sizing: border-box;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700px;
-  height: 40px;
-  justify-content: center;
-  padding: 8px 16px;
-}
+// .oval-link {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 80px;
+//   box-sizing: border-box;
+//   border-radius: 999px;
+//   cursor: pointer;
+//   font-size: 16px;
+//   font-weight: 700px;
+//   height: 40px;
+//   justify-content: center;
+//   padding: 8px 16px;
+// }
 
 
 .p2-fas {
@@ -291,25 +291,27 @@
 }
 
 .oval-link {
-  margin-right: 15px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   border-radius: 999px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 700px;
   height: 40px;
   justify-content: center;
   padding: 8px 16px;
+  background-color: transparent;
 }
 
 .oval-link:hover {
-  background-color: rgba(80,80,80,.25);
+  //background-color: rgba(80,80,80,.25);
+  text-decoration: underline;
 }
 
 .link-selected {
-  background-color:#EFEFEF;;
+  background-color:#EFEFEF !important;
 }
 
 .prof-plus {

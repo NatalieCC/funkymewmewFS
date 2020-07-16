@@ -36,7 +36,7 @@ class PinShow extends React.Component {
                 <button
                 className='prof-buttons'
                 onClick={this.showEditModal} >
-                    <i className= 'fas fa-pen p2-fas'></i>
+                    <i className='fas fa-pencil-alt' style={{ color: "#333333" }}></i>
                 </button>
             )
         }

@@ -47,7 +47,7 @@ class BoardPin extends React.Component {
                     <button
                         className='prof-buttons'
                         onClick={this.editBoardModal}> 
-                        <i className='fas fa-pen p2-fas'></i>
+                        <i className='fas fa-pencil-alt' style={{ color: "#8E8E8E" }}></i>
                     </button>
                 </nav>   
         )
