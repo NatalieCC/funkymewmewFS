@@ -44,13 +44,13 @@ class PinIndexItem extends React.Component {
     );
   }
 
-  componentDidUpdate(prevProps) {
-    console.log(prevProps.pin,this.props.pin)
-    if (prevProps.pin.title != this.props.pin.title) {
-      debugger
-      this.setState(this.props.pin.title);
-    }
-  }
+  // shouldComponentUpdate(prevProps) {
+  //   console.log(prevProps.pin,this.props.pin)
+  //   if (prevProps.pin.title != this.props.pin.title) {
+  //     debugger
+  //     this.setState(this.props.pin.title);
+  //   }
+  // }
 
 
   turnOffVisibility(e) {
@@ -106,7 +106,7 @@ class PinIndexItem extends React.Component {
                   Save
                 </button>
                 <button className="p-btn" onClick={this.showEditModal}>
-                  <i className="fas fa-pen"></i>
+                  <i className='fas fa-pencil-alt' style={{ color: "#333333" }}></i>
                 </button>
               </div>
             </div>
