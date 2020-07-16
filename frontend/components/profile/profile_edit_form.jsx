@@ -129,7 +129,8 @@ class ProfileEditForm extends React.Component {
                                                     <div className="edit-profile button-container">
                                                         <Link
                                                             className="cancel-button"
-                                                            to={`/${this.props.username}`} >
+                                                            // to={`/${this.props.username}`} >
+                                                            to={`/${currentUser.username}`} >
                                                             <div className="cancel-button">Cancel</div>
                                                         </Link>
                                                     </div>
