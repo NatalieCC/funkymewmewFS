@@ -13,7 +13,7 @@ class EditPinForm extends React.Component {
       }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    this.openDeletePin = this.openDeletePin.bind(this);
     this.update = this.update.bind(this);
   }
 
@@ -23,7 +23,7 @@ class EditPinForm extends React.Component {
     };
   }
 
-  handleDelete(e) {
+  openDeletePin(e) {
     this.props.openModal('deletePin', this.props.pin.id);
   }
 
@@ -41,6 +41,7 @@ class EditPinForm extends React.Component {
       )
     }
   }
+  
 
   render() {
     const { pin } = this.state;
@@ -80,7 +81,7 @@ class EditPinForm extends React.Component {
               <div className='buttons-left'>
                 <button
                   className='rectangle-btn'
-                  onClick={this.handleDelete} >
+                  onClick={this.openDeletePin} >
                   Delete
                 </button>
               </div>
