@@ -316,6 +316,9 @@
 
 .prof-plus {
   position: relative;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .profile-visible {
