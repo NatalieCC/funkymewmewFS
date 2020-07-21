@@ -13,7 +13,7 @@ class PinCreateForm extends React.Component {
 
             boardscroll: false,
             chooseFile: false,
-            boardChoice: false
+            boardChoice: 'Choose a board (required)'
         };
 
         this.goBack = this.goBack.bind(this);
@@ -28,7 +28,8 @@ class PinCreateForm extends React.Component {
         this.deleteImage = this.deleteImage.bind(this);
 
         this.changeInput = this.changeInput.bind(this);
-
+        this.hideBoardScroll = this.hideBoardScroll.bind(this);
+        this.changeInput = this.changeInput.bind(this);
     }
 
     componentDidMount() {
@@ -95,22 +96,29 @@ class PinCreateForm extends React.Component {
     }
 
     handleSave(e) {
+         
         e.preventDefault();
         const formData = new FormData();
         formData.append('pin[title]', this.state.pin.title);
         formData.append('pin[description]', this.state.pin.description);
         formData.append('pin[link_url]', this.state.pin.link_url);
-        formData.append('pin[picture]', this.state.photoFile);
+        formData.append('pin[image]', this.state.photoFile);
         formData.append('pin[row_height]', this.state.row_height);
-        
+        formData.append('board_id', this.state.boardId);
+        formData.append('pin[user_id]', this.props.currentUser.id);
+        debugger
         this.props.createPin(formData, this.state.boardId)
         .then( () => this.props.history.push(`/boards/${this.state.boardId}`)
         );
     }
 
+    hideBoardScroll(e) {
+        this.setState({ boardscroll: false });
+    }
+
     handleBoard(board) {
-        this.setState({ boardId: board.id, BoardChoice: board.title });
-        //this.hideBoardScroll();
+        this.setState({ boardId: board.id, boardChoice: board.title });
+        this.hideBoardScroll();
     }
 
     showBoardList(e) {
@@ -124,7 +132,7 @@ class PinCreateForm extends React.Component {
             const boards = this.props.boards.map((board,i) => {
                 return (
                     <BoardList
-                    onBoardLIst={this.handleBoard}
+                    onSelectBoard={this.handleBoard}
                     board={board}
                     key={i}
                     text='Select'
@@ -146,9 +154,23 @@ class PinCreateForm extends React.Component {
     }
 
     changeInput(field) {
+        //debugger
+        
         return (
-            e => this.setState({ [field]: e.currentTarget.value })
+            e => {
+                // below is like merge
+                let newState = Object.assign({}, this.state.pin);
+                newState[field] = e.currentTarget.value;
+                //debugger
+                // return this.setState({ pin:  {newState}  })
+                //above is equal to {newState: newState}
+                return this.setState({ pin:  newState  })
+            } 
         );
+        // return (e) => {
+        //     this.setState({
+        //         pin: { ...this.state.pin, [field]: e.currentTarget.value }
+        //     });
     }
 
 
