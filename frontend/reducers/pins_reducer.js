@@ -24,7 +24,7 @@ const pinsReducer = (state = {}, action) => {
     //line 11 newState,  newState[currentPin.id] = currentPin return newState
     switch (action.type) {
         case RECEIVE_USER:
-            return action.payload.pins;
+            return action.payload.pins || {};
         case RECEIVE_PINS:
             //debugger
             action.pins.map(currentPin => {
