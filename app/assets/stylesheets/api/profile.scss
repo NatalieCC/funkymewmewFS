@@ -311,7 +311,7 @@
 }
 
 .link-selected {
-  background-color:#EFEFEF !important;
+  background-color: #efefef !important;
 }
 
 .prof-plus {
@@ -785,6 +785,7 @@
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   min-height: 40px; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .edit-profile#username-container {
@@ -859,5 +860,22 @@
   &:hover {
     background-color:#E2E2E2;
   }
+}
+
+.profile-name-initial {
+  background-color: #8e8e8e;
+  width: 106px;
+  border-radius: 50%;
+  height: 106px;
+  object-fit: cover;
+}
+.initial {
+  //background-color: #8e8e8e;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: hsla(0, 100%, 30%, 0.3);
+  font-size: 80px;
+  font-weight: bold;
+  margin-left: 28.4px;
+  margin-top: 5.7px;  
 }
 

@@ -100,7 +100,9 @@ class ProfileShow extends React.Component {
             )
         } else {
             return (
-                <i className="fas fa-user-circle" id="profile-photo" style={{ "color": "#8e8e8e" }}></i>
+                <div className="profile-name-initial" >
+                <div className="initial"> {this.props.currentUser.username[0].toUpperCase()} </div>
+            </div>
             )
         }
     }
@@ -139,12 +141,13 @@ class ProfileShow extends React.Component {
 //model have associatins commented back in and controller, but needs to have them in jbuilder.
     renderBoards() {
         //debugger
-        //const { currentUser } = this.props;
-       return this.props.boards.map((board) => {
+        //const { currentUser } = this.props;    
+       return (this.props.boards.map((board) => {
             return (
                 <BoardIndexItem board={board} pins={this.props.pins} />
             )
         })
+       )
     }
 
     renderPins() {
@@ -223,7 +226,9 @@ class ProfileShow extends React.Component {
                     {component}
                 </div> */}
                 <div className="index-buffer">
-                    {boardsOrPinsIndex}
+                    <div className='board-index'>
+                        {boardsOrPinsIndex}
+                    </div>
                 </div>
             </div>
         )
