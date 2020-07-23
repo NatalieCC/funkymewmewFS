@@ -57,7 +57,8 @@ class PinIndexItem extends React.Component {
     // debugger
     this.setState({ visible: false });
   }
-
+ 
+  //onMouseEvent update local state to update entire view
   turnOnVisibility(e) {
     // debugger
     this.setState({ visible: true });
@@ -127,12 +128,13 @@ class PinIndexItem extends React.Component {
         // id={`${this.state.id}`}
         onClick={this.toPinShow}
         onMouseEnter={this.turnOnVisibility}
-        onMouseLeave={this.turnOffVisibility}>
-        <div className="pin-index-image">
-          <img src={this.state.pin.imageUrl} className="masonry-image" />
-        </div>
-        <div className="pin-index-title">{this.state.pin.title}</div>
-        {this.displayLinks()}
+        onMouseLeave={this.turnOffVisibility}
+        >
+          <div className="pin-index-image">
+            <img src={this.state.pin.imageUrl} className="masonry-image" />
+          </div>
+          <div className="pin-index-title">{this.state.pin.title}</div>
+          {this.displayLinks()}
       </div>
       //</Link>
     );
