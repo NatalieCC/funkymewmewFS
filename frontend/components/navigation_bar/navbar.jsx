@@ -21,9 +21,10 @@ class NavBar extends React.Component {
         // const currentUser = this.state;
     
         const profilePhoto = (currentUser && currentUser.photo) ? (
-            <img src={currentUser.photo} alt="profile-pic" id="profile-icon" />
+            <img src={currentUser.photo} alt="profile-pic" id="profile-icon-main" />
         ) : (
-                <i className="fas fa-user-circle" id="profile-icon" style={{ "color": "#8e8e8e" }}></i>
+                //<i className="fas fa-user-circle" id="profile-icon" style={{ "color": "#8e8e8e" }}></i>
+                <div className="profile-icon">{currentUser.username[0].toUpperCase()}</div>
             );
         
         return !currentUser ? (
