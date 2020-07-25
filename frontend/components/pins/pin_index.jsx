@@ -54,28 +54,27 @@ class PinIndex extends React.Component {
     render() {
         //debugger
         const pins = this.props.pins ? this.props.pins.map((pin) => {
-        // const identifier = this.props.identifier;   
+            
             return (
               <PinIndexItem
                 pin={pin}
                 key={pin.id}
                 type={this.props.type}
                 openModal={this.props.openModal}
-                // identifier={identifier}
               />
             );
         }) : [];
 
         return (
           //   <div className="index-buffer">
-          <div className="pin-index-container">
-            {/* <div className="pin-index" id="grid-container">
-              <div className="pin-index masonry" id="grid" ref='Masonry'> */}
-                {pins}
-              {/* </div> */}
-            {/* </div> */}
-            {/* <div className="index-buffer">{pins}</div> */}
+        <div className="pin-index container">
+          <div className="pin-index" id="grid-container">
+            <div className="pin-index masonry" id="grid" ref='Masonry'>
+              {pins}
+            </div>
           </div>
+           {/* <div className="index-buffer">{pins}</div> */}
+        </div>
         );
     }
 }

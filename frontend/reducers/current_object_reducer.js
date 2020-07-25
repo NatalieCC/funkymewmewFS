@@ -4,7 +4,8 @@ const currentObjectReducer = (state = null, action) => {
   Object.freeze(state);
     //debugger;
   switch (action.type) {
-    case OPEN_MODAL: 
+    case OPEN_MODAL:
+      
       return action.objectId || state;
     case CLOSE_MODAL:
       return null;

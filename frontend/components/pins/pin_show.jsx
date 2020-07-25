@@ -43,7 +43,7 @@ class PinShow extends React.Component {
     }
     showEditModal(e) {
         //debugger
-        this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': this.props.location.state.type });
+        this.props.openModal('editPin', this.props.pin.id);
         //this.props.openModal('editPin', this.state.pin_id);
     }
 
