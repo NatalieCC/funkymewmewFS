@@ -37,6 +37,8 @@ const pinsReducer = (state = {}, action) => {
             newState[action.payload.pin.id] = action.payload.pin;
             return newState;
         case REMOVE_PIN:
+            //debugger
+            //console.log(888)
             delete newState[action.pinId];
             return newState;
         case CLEAR_PIN_INDEX:
