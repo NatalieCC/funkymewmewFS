@@ -56,6 +56,8 @@ export const updatePin = pin => dispatch => (
 
 export const deletePin = pinId => dispatch => (
     PinApiUtil.deletePin(pinId).then(
-        pin => dispatch(removePin(pin.id))
+        payload => dispatch(removePin(payload.pin.id))
     )
 );
+
+//{'bear': 180}

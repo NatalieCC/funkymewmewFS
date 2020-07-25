@@ -6,17 +6,16 @@ class Api::PinsController < ApplicationController
   end
 
   def create
-    
+    #debugger
     board = Board.find(params[:board_id])
     pin = Pin.create!(pin_params)
-    @pinjoin = PinJoin.create!(
+    @pinjoin = PinsOnBoard.create!(
       pin_id: pin.id,
       board_id: board.id,
       description: params[:pin][:description],
-      title: params[:pin][:title]
+      #title: params[:pin][:title]
     )
-    render 'api/pins/pin'
-    
+    render 'api/pins/pin'  
   end
 
   def index
@@ -41,8 +40,14 @@ class Api::PinsController < ApplicationController
 
   def destroy
     @pin = Pin.find(params[:id])
-    @pin.destroy
-    render 'api/pins/pin'
+    #@pin.destroy
+    #render 'api/pins/pin'
+    if @pin
+        @pin.destroy
+        render "api/pins/show"
+      else
+        render json: ["Can't delete this board!"], status: 401
+      end
   end
 
     private
