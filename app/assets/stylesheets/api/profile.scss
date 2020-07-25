@@ -51,13 +51,13 @@
     padding-top: 8px;
     width: 100%;
 
-    .profile-image {
-      border-radius: 50%;
-      cursor: pointer;
-      height: 40px;
-      margin-right: 8px;
-      width: 40px;
-    }
+    // .profile-image {
+    //   border-radius: 50%;
+    //   cursor: pointer;
+    //   height: 40px;
+    //   margin-right: 8px;
+    //   width: 40px;
+    // }
 
     .profile-standin {
       background-color: white;
@@ -221,7 +221,7 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 60px;
-  //justify-content: center;
+  position: relative;
   align-items: center;
   background-color: gray;
   border-radius: 50%;
@@ -229,12 +229,13 @@
   width: 106px;
   
 
-  .profile-image {
+.profile-image {
     width: 106px;
-    //position: absolute;
+    position: absolute;
     border-radius: 50%;
     height: 106px;
     object-fit: cover;
+    //margin-left: -8px;
   }
 
   .profile-standin {
@@ -646,7 +647,7 @@
   height: 100%;
   max-height: 100%;
   width: auto;
-  margin-left: -15px;
+  margin-left: -23px;
 }
 
 .fa-user-circle#photo {
