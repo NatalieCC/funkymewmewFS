@@ -8,6 +8,7 @@ class PinIndexItem extends React.Component {
   constructor(props) {
     //debugger
     super(props);
+    //visible= is mouth on hover?
     this.state = { visible: false, pin: this.props.pin };
     this.turnOffVisibility = this.turnOffVisibility.bind(this);
     this.turnOnVisibility = this.turnOnVisibility.bind(this);
@@ -66,13 +67,17 @@ class PinIndexItem extends React.Component {
 
   toPinShow(e) {
     //console.log("to pin show");
-    this.props.history.push(`/pins/${this.props.pin.id}`);
+    
+    this.props.history.push({
+      pathname: `/pins/${this.props.pin.id}`,
+      state: { 'pinId': this.props.pin.id, 'type': this.props.type }
+    });
   }
 
   showEditModal(e) {
     //debugger
     e.stopPropagation();
-    this.props.openModal("editPin", this.props.pin.id);
+    this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': this.props.type });
   }
 
   showSavePinOnBoardModal(e) {
@@ -87,7 +92,7 @@ class PinIndexItem extends React.Component {
       switch (this.props.type) {
         case "Feed":
           return (
-            <div className="p-links visible">
+            <div className="p-links">
               {/* need link url for pin  */}
               <div className="top-links">
                 <button className="main-save-btn" onClick={this.showSavePinOnBoardModal}>
@@ -100,7 +105,7 @@ class PinIndexItem extends React.Component {
         case "Profile":
         case "Board":
           return (
-            <div className="p-links visible" >
+            <div className="p-links" >
               <div className="top-links">
                 <button className="main-save-btn" onClick={this.showSavePinOnBoardModal}>
                   {/* <i className="fas fa-map-pin"></i> */}
@@ -124,7 +129,7 @@ class PinIndexItem extends React.Component {
       // <Link to={`/pins/${this.props.pin.id}`}>
       <div
         // className="pin-index-box"
-        className={`p-index-frame`}
+        className="p-index-frame"
         // id={`${this.state.id}`}
         onClick={this.toPinShow}
         onMouseEnter={this.turnOnVisibility}
