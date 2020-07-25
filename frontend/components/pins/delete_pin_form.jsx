@@ -33,13 +33,12 @@ class DeletePinForm extends React.Component {
         if (this.props.type == 'Feed') {
             this.props.deletePin(this.props.pinId)
             .then(this.props.closeModal())
-            // .then(this.props.history.push(`/feed`))
-                .then(window.location.href = `http://localhost:3000/#/feed`)
+            .then(this.props.history.push(`/feed`))
         }
         if (this.props.type == 'Profile') {
             this.props.deletePin(this.props.pinId)
             .then(this.props.closeModal())
-            .then(window.location.href = `http://localhost:3000/#/${this.props.username}/pins`)
+            .then(this.props.history.push(`/${this.props.username}/pins`))
         }
         // if (this.props.type == 'pin') path = `/${this.props.username}/pins`; 
         
