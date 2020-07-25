@@ -9,7 +9,7 @@ const mSTP = (state) => {
     return (
         {
             type: 'Profile',
-            pins: Object.values(state.entities.pins)
+            pins: Object.values(state.entities.pins),
         }
     )
 };

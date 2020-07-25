@@ -24,12 +24,16 @@ class EditPinForm extends React.Component {
   }
 
   openDeletePin(e) {
-    this.props.openModal('deletePin', this.props.pin.id);
+    //this.props.openModal('deletePin', this.props.pin.id);
+    this.props.openModal('deletePin', {'pinId':this.props.pin.id, 'type': this.props.type});
   }
 
   handleSubmit(e) {
+    //debugger
     e.preventDefault();
-    this.props.updatePin(this.state.pin).then(this.props.closeModal());
+    this.props.updatePin(this.state.pin)
+    // .then(this.props.closeModal());
+    .then(() => document.location.reload());
   }
 
   displayPhoto() {

@@ -66,8 +66,7 @@ class PinIndexItem extends React.Component {
   }
 
   toPinShow(e) {
-    //console.log("to pin show");
-    
+    //console.log("to pin show");    
     this.props.history.push({
       pathname: `/pins/${this.props.pin.id}`,
       state: { 'pinId': this.props.pin.id, 'type': this.props.type }

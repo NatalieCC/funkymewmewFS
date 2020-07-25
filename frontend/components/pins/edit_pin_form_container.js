@@ -5,12 +5,14 @@ import EditPinForm from './edit_pin_form';
 import { closeModal, openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-  debugger
-  const pinId = state.ui.currentObject;
+  //debugger
+  const pinId = state.ui.currentObject['pinId'];
+  const type = state.ui.currentObject['type'];
   //const pin = state.entities.pins[pinId];
   //const pin = state.entities.pins[pinId] || state.entities.pins.pin.pin;
   const pin = state.entities.pins[pinId];
   const currentUser = state.session.currentUserId || {};
+  
   //const users = Object.values(state.entities.users);
   
 //   let creator;
@@ -19,9 +21,9 @@ const msp = (state, ownProps) => {
 //     const user = users.filter(user => user.id === pin.creator.id)[0];
 //     creator = user.username;
 //   }
-  debugger
+  //debugger
   return ({
-    pin, currentUser
+    pin, currentUser,type
   });
 };
 
