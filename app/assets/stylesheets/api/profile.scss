@@ -850,6 +850,7 @@
   border-radius: 50%;
   height: 106px;
   object-fit: cover;
+  justify-content: center;
 }
 
 .initial {
@@ -858,7 +859,9 @@
   color: hsla(0, 100%, 30%, 0.3);
   font-size: 80px;
   font-weight: bold;
-  margin-left: 29px;
-  margin-top: 5.7px;  
+  text-align: center;
+  height: 106px;
+  align-content: center;
+  line-height: 1.3;
 }
 
