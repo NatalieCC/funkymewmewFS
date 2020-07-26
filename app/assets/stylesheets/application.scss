@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
+.input:focus {
+    outline: none !important;
+    //border:2px outset red;
+    box-shadow: 0 0 10px #719ECE;
+}
 
 
 
