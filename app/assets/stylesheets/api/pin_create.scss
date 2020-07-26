@@ -344,9 +344,9 @@
 .board-scroll-container {
   background-color: white;
   box-sizing: border-box;
-  height: 510px;
+  height: 480px;
   margin-left: 380px;
-  margin-top: -510px;
+  margin-top: -480px;
   overflow: scroll;
   position: relative;
   width: 420px;
@@ -363,6 +363,7 @@
     cursor: pointer;
     width: 400px;
     height: 52px;
+    color:rgb(40,40,40);
 
     &:hover {
       background-color:  #EFEFEF;
