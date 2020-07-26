@@ -7,21 +7,26 @@ class Splash extends React.Component {
             images: [
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/paris.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/buddha.jpg",
-                
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/girl.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/dearMaple.jpg",
-                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/Venice.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/roses.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/abstract.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/bike.jpg",
                 // "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/de+dinning.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/backyard.jpg",
-                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/poppy.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/maple.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/butterfly.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/poppy.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/bench.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/window.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/huaban.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/one.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/light.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/fruit.jpg",
-                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/bench.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/kid2.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/Venice.jpg",
                 "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/forest.jpg",
+                "https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/kid.jpg",
             ]
         };
     }
