@@ -11,7 +11,15 @@ User.destroy_all
 Pin.destroy_all
 Board.destroy_all
 
-user1 = User.create!({username: 'Jerry', email: 'jerry@greattom.com',password: '888888',description: 'Tom is my favorite animal!'})
+user1 = User.create!({
+  username: 'Jinx_Jerry',
+  first_name: 'Jerry',
+  last_name: 'Jinx', 
+  email: 'jerry@greattom.com',
+  password: '888888',
+  location: 'Silicon Valley',
+  description: 'Tommy is my favorite animal!'})
+
 file = open("https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/jerry.jpg")
 user1.photo.attach(io: file, filename: "jerry.jpg")
 
