@@ -53,7 +53,8 @@ class Api::UsersController < ApplicationController
       :email,
       :first_name,
       :last_name,
-      :location
+      :location,
+      :description
       )
   end
 

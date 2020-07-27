@@ -45,11 +45,11 @@ class ProfileEditForm extends React.Component {
         for (let key in details) {
             formData.append(`user[${key}]`, details[key])
         }
-        // debugger;
+        debugger;
         this.props.updateUser(formData, this.state.id)
             // .then(() => location.reload(false))
             .then((user) => {
-                //debugger
+                debugger
                 this.setState(user.payload.user)
             });
     }
