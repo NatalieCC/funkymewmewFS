@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, length: { maximum: 30 }
   validates :password, length: { minimum: 6 }, allow_nil: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP } 
+  validates :first_name, :last_name, length: { maximum: 30 }
+  validates :location, length: { maximum: 50 }
 
   after_initialize :ensure_session_token
 

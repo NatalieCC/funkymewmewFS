@@ -50,7 +50,10 @@ class Api::UsersController < ApplicationController
       :username, 
       :password,
       :photo,
-      :email
+      :email,
+      :first_name,
+      :last_name,
+      :location
       )
   end
 
