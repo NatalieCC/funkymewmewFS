@@ -77,7 +77,7 @@ class ProfileShow extends React.Component {
     displayDescription() {
         const { currentUser } = this.props;
         if (currentUser.location && currentUser.description) {
-            return [currentUser.location, currentUserr.description].join(" • ");
+            return [currentUser.location, currentUser.description].join(" • ");
         } else if (currentUser.location) {
             return currentUser.location;
         } else if (currentUser.description) {
@@ -93,16 +93,16 @@ class ProfileShow extends React.Component {
             return <img src={this.props.location.state.photo} className="profile-image" />
         }
         const { currentUser } = this.props;
-        //debugger
         if (currentUser.photo) {
             return (
                 <img src={currentUser.photo} className="profile-image" />
             )
         } else {
+            debugger 
             return (
                 <div className="profile-name-initial" >
-                <div className="initial"> {this.props.currentUser.username[0].toUpperCase()} </div>
-            </div>
+                    <div className="initial"> {this.props.currentUser.username[0].toUpperCase()} </div>
+                </div>
             )
         }
     }
@@ -174,7 +174,7 @@ class ProfileShow extends React.Component {
             pinButton += 'link-selected';
             boardsOrPinsIndex = this.renderPins();
         }
-        
+
         return (
             <div>
                 <div className="profile-buffer">
