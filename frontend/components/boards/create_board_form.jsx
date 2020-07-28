@@ -26,11 +26,10 @@ class CreateBoardForm extends React.Component {
     }
 
     handleDelete(e) {
-        debugger
         this.props.deleteBoard(this.props.board.id)
             .then(this.props.closeModal())
-            .then(() => document.location.reload());
-            // .then(this.props.history.push(`/${this.props.username}`));
+            //.then(this.props.history.push(`/${this.props.username}`));
+            .then(this.props.history.push(`/feed`));
     }
 
     handleSubmit(e) {

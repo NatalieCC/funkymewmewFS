@@ -10,7 +10,6 @@ import { RECEIVE_USER, RECEIVE_USERS } from "../actions/user_actions";
 
 const boardsReducer = (state = {}, action) => {
     Object.freeze(state);
-    //newState makes a hard copy of the old state
     let newState = merge({}, state);
 
     switch (action.type) {
