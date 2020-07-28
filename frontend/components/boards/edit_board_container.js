@@ -8,10 +8,12 @@ import { closeModal } from '../../actions/modal_actions';
 const msp = (state,ownProps) => {
     //next line???
     //const boardId = ownProps.match.params.boardId;
+    debugger
     const boardId = ownProps.location.pathname.split("/")[2];
     const board = state.entities.boards[boardId];
     //const currentUser = state.entities.users[state.session.id];
     //debugger
+    //below make a hashmap
     return ({
         board,
         boardId,

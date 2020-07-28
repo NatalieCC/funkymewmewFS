@@ -26,8 +26,10 @@ export const receiveBoard = (payload) => {
         pins: payload.pins,
     };
 };
-
+//after thunk.then
 export const removeBoard = (payload) => {
+    //below is a hashmap
+    //action looks below
     return {
         type: REMOVE_BOARD,
         boardId: payload.board.id,
