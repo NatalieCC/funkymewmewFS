@@ -45,13 +45,14 @@ class ProfileEditForm extends React.Component {
         for (let key in details) {
             formData.append(`user[${key}]`, details[key])
         }
-        debugger;
+        //debugger;
         this.props.updateUser(formData, this.state.id)
             // .then(() => location.reload(false))
-            .then((user) => {
-                debugger
-                this.setState(user.payload.user)
-            });
+            // .then((user) => {
+            //     debugger
+            //     this.setState(user.payload.user)
+            // });
+        .then(() => this.props.history.push(`/${this.props.username}`));
     }
 
     handleFile(e) {
@@ -101,7 +102,7 @@ class ProfileEditForm extends React.Component {
                                     <NavLink to={{pathname: `/${currentUser.username}`, state: this.state}} id="user-profile-link">
                                         <div id="back-icon-container-shadow">
                                             <div id="back-icon-container">
-                                                <i className="fas fa-arrow-left" id="back-icon"></i>
+                                                {/* <i className="fas fa-arrow-left" id="back-icon"></i> */}
                                             </div>
                                         </div>
                                     </NavLink>
