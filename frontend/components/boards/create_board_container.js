@@ -4,14 +4,17 @@ import { createBoard } from '../../actions/board_actions';
 import CreateBoardForm from './create_board_form';
 import { connect } from 'react-redux';
 
-const msp = (state, ownProps) => ({
+const msp = (state, ownProps) => {
+      //debugger 
+    return {
     //username: ownProps.match.params.username,
+    currentUser: state.entities.users[state.session.currentUserId.id],
     formType: 'create',
     header: 'Create board',
     buttonText: 'Create',
     board: { title: '', description: '' },
     modal: state.ui.modal
-});
+}};
 
 const mdp = dispatch => ({
     //createBoardAction: (board) => dispatch(createBoard(board)),
