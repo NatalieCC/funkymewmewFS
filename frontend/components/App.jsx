@@ -34,6 +34,7 @@ const App = () => (
             <Route exact path="/settings" component={ProfileEditContainer} />
             <ProtectedRoute exact path="/feed" component={() => <div><NavbarContainer /><PinFeedContainer/></div>} />
             <ProtectedRoute exact path="/boards/:boardId" component={() => <div><NavbarContainer /><BoardPinContainer /></div>} />
+            {/* <ProtectedRoute exact path="/boards/:boardId/pins/:pinId" component={() => <div><NavbarContainer /><BoardPinContainer /></div>} /> */}
             <ProtectedRoute exact path='/pins/:pinId' component={ () => <div><NavbarContainer /><PinShowContainer /></div> } />
             {/* <ProtectedRoute exact path="/:username" component={ProfileShowContainer} /> */}
             <ProtectedRoute exact path="/:username" component={() => <div><NavbarContainer /><ProfileShowContainer /></div>} />
