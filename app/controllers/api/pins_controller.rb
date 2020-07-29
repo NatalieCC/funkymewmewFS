@@ -15,7 +15,11 @@ class Api::PinsController < ApplicationController
       description: params[:pin][:description],
       #title: params[:pin][:title]
     )
-    render 'api/pins/pin'  
+    hash = {pin:pin,board:board}
+    @pinsOnBoard = OpenStruct.new(hash);
+    #debugger 
+    render 'api/pins_on_boards/show' 
+    #not rendering a route, this is a template jbuilder file it has to be in the json jbuilder 
   end
 
   def index
