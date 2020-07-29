@@ -34,15 +34,21 @@ class CreateBoardForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         //this.props.createBoardAction(this.state.board).then(this.props.closeModal());
-        //debugger
+        debugger
+        if (this.props.buttonText == "Save") {
+            debugger
+            this.props.action(this.state.board).then(this.props.closeModal())
+            .then(this.props.history.push(`/boards/${this.state.board.id}`))
+        } else {
         this.props.action(this.state.board).then(this.props.closeModal())
-            .then(
+        .then(
                 () => {
                     let username = this.props.currentUser;
                     debugger
                     this.props.history.push(`/${this.props.currentUser.username}`)}
                 );
     }
+}
 
     update(field) {
         // debugger
