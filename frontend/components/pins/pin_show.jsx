@@ -25,6 +25,8 @@ class PinShow extends React.Component {
                     description: pin.description,
                     user_id: pin.user_id,
                     pin_id: pin.id,
+                    username: pin.username,
+                    board: pin.board
             })}) 
     }
 
@@ -41,9 +43,10 @@ class PinShow extends React.Component {
             )
         }
     }
+    
     showEditModal(e) {
         //debugger
-        this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': this.props.location.state.type });
+        this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': this.props.location.state.type,'boardId': this.props.boardId });
         //this.props.openModal('editPin', this.state.pin_id);
     }
 
@@ -51,11 +54,40 @@ class PinShow extends React.Component {
         this.props.openModal('savePinOnBoard', this.props.pin.id);
     }
 
+    displayOwnername() {
+        const {pin} = this.props;
+        if(this.props.currentUser.username == pin.creator.username) {
+            return 'You'
+        } else {
+            return pin.creator.username
+        }
+    }
+
+    displayOwnerPhoto() {
+        const {creator} = this.props;
+        if(creator.photoUrl) {
+            return(
+                <img className='user-thumbnail' src={creator.photoUrl} />
+            )
+        } else {
+            return null;
+        }
+    }
+
 
     render() {
         //const { pin } = this.props;
-        const {title,imageUrl,description} = this.state;
-        const { board } = this.props;
+        const {title,imageUrl,description,username,board} = this.state;
+        let userinfo;
+        if(username && board) {
+            let displayName;
+            if(username===this.props.currentUser.username) {
+                displayName="You";
+            } else {
+                displayName=username;
+            }
+            userinfo = <h4>{`${displayName} added to ${board}`}</h4>
+        }
         //debugger
         //if user add a non existent pinId in url then if should handle?
         if (true) {
@@ -77,14 +109,15 @@ class PinShow extends React.Component {
                         <img className='pin-image' src={imageUrl} />
                         {/* {this.displayLink()} */}
                         <h5>{description}</h5>
+                            {userinfo}
                         <div className='pin-footer'>
-                            {/* {this.displayOwnerPhoto()} */}
-                            {/* <Link */}
-                                {/* to={`/${pin.owner.username}`}> */}
-                                {/* {this.displayOwnername()} */}
-                            {/* </Link> */}
-                            {/* <p>saved to</p> */}
-                            {/* <Link
+                            {/* {this.displayOwnerPhoto()} 
+                            <Link
+                                to={`/${pin.creator.username}`}> 
+                                {this.displayOwnername()} 
+                            </Link> 
+                            <p>saved to</p>
+                            <Link
                                 to={`/boards/${board.id}`}>
                                 {board.title}
                             </Link> */}
