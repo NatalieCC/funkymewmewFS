@@ -10,12 +10,23 @@ export const savePinOnBoard = pinsOnBoard => (
 );
 
 //delete pin from board
-// export const deleteBoardPin = boardPinId => (
-//     $.ajax({
-//         method: "DELETE",
-//         url: `/api/boards_pins/${boardPinId}`
+export const deletePinOnBoard = pinOnBoard => {
+    
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/pins_on_boards/`,
+        data: { pinsOnBoard: pinOnBoard }
+    })
+};
+
+// export const fetchBoardIdFromPinId = pin_id => {
+//     debugger
+//     return $.ajax({
+//         method: "GET",
+//         url: `/api/pins_on_boards?pin_id=${pin_id}`,
+//         // data: { pin_id }
 //     })
-// );
+// };
 
 // class Name {
 

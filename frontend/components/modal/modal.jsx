@@ -6,7 +6,7 @@ import CreateBoardContainer from '../boards/create_board_container';
 import EditBoardContainer from '../boards/edit_board_container';
 import EditPinFormContainer from "../pins/edit_pin_form_container";
 import SavePinOnBoardFormContainer from '../pins/save_pin_on_board_form_container';
-import DeletePinFormContainer from '../pins/delete_pin_form';
+import DeletePinFormContainer from '../pins/delete_pin_form_container';
 
 function Modal({ modal,openModal,closeModal }) {
     //debugger

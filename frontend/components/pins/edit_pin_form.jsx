@@ -25,7 +25,7 @@ class EditPinForm extends React.Component {
 
   openDeletePin(e) {
     //this.props.openModal('deletePin', this.props.pin.id);
-    this.props.openModal('deletePin', {'pinId':this.props.pin.id, 'type': this.props.type});
+    this.props.openModal('deletePin', { 'pinId': this.props.pin.id, 'type': this.props.type, 'boardId': this.props.boardId});
   }
 
   handleSubmit(e) {

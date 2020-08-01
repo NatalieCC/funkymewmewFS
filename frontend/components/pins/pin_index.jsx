@@ -61,7 +61,7 @@ class PinIndex extends React.Component {
                 key={pin.id}
                 type={this.props.type}
                 openModal={this.props.openModal}
-                // identifier={identifier}
+                boardId={this.props.boardId}
               />
             );
         }) : [];

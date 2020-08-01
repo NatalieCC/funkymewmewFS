@@ -5,10 +5,11 @@ import PinIndex from './pin_index';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+    debugger
     return (
         {
             type: 'Board',
-            // pins: Object.values(state.entities.pins)
+            boardId: ownProps.boardId,
         }
     )       
 };

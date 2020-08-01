@@ -69,14 +69,14 @@ class PinIndexItem extends React.Component {
     //console.log("to pin show");    
     this.props.history.push({
       pathname: `/pins/${this.props.pin.id}`,
-      state: { 'pinId': this.props.pin.id, 'type': this.props.type }
+      state: { 'pinId': this.props.pin.id, 'type': this.props.type, 'boardId': this.props.boardId }
     });
   }
 
   showEditModal(e) {
     //debugger
     e.stopPropagation();
-    this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': this.props.type });
+    this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': this.props.type, 'boardId': this.props.boardId });
   }
 
   showSavePinOnBoardModal(e) {

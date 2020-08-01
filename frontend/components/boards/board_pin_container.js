@@ -10,9 +10,10 @@ const msp = (state, ownProps) => {
     //access from history, thats how we know url. the oppostiote of 'push' history.
     const boardId = ownProps.match.params.boardId;
     const pins = Object.values(state.entities.pins);
-    const currentUser = state.entities.users[state.session.id];
+    const currentUser = state.entities.users[state.session.currentUserId.id];
     const board = state.entities.boards[boardId];
     const users = Object.values(state.entities.users);
+    //const type = 'Board';
 
     return ({
         boardId,board,pins,currentUser,users

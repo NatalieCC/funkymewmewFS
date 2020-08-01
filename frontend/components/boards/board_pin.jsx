@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter, withRouter } from 'react-router-dom';
 import PinOnBoardContainer from '../pins/pin_on_board_container';
+
 //user profile click into one board
 class BoardPin extends React.Component {
     constructor(props) {
@@ -59,7 +60,7 @@ class BoardPin extends React.Component {
             return (
                 <div ref={node => this.node = node} className='profile-visible'>
                     <Link
-                        to={`/${this.props.username}/build-pin`}
+                        to={`/${this.props.currentUser.username}/build-pin`}
                         className='create-pin-dropdown'>
                         Create pin
                     </Link>
@@ -87,7 +88,7 @@ class BoardPin extends React.Component {
     }
 
     render() {
-        //debugger
+        debugger
         const { board } = this.props;
         if(!board) return null;
         if(!this.state.pins) return null;
@@ -96,8 +97,7 @@ class BoardPin extends React.Component {
 
         //if (board) {
             return (
-                <div>
-                    
+                <div>                  
                     <div className='profile-buffer'>
                         <div className='profile-box'>
                             <div className='profile'>
@@ -119,6 +119,8 @@ class BoardPin extends React.Component {
                     <div className='index-buffer'>
                         <PinOnBoardContainer 
                         pins={this.state.pins}
+                        //type={this.props.type}
+                        boardId={this.props.boardId}
                         />
                             {/* creator={this.props.creator}
                             board={this.props.board} */} 

@@ -11,6 +11,12 @@ class Api::PinsOnBoardsController < ApplicationController
         #debugger 
         render 'api/pins/index'
     end
+
+    # def index
+    #   #debugger
+    #   @pinboardjoin = PinsOnBoard.find_by(:pin_id => params[:pin_id])
+    #   render :json => @pinboardjoin
+    # end
   
     # Method:POST Endpoint: api/pins_on_boards
     def create
@@ -22,14 +28,24 @@ class Api::PinsOnBoardsController < ApplicationController
       end
     end
 
+  # def destroy
+  #   #find only accepts id, if search by other coloums we use find_by
+  #   @pinjoin = PinsOnBoard.find_by(pin_id: params[:pin_id],board_id: params[:board_id])
+  #   @pinjoin.destroy
+  #   @board = Board.find(params[:board_id])
+  #   render 'api/boards/show'
+  # end
+
   def destroy
-    #find only accepts id, if search by other coloums we use find_by
-    @pinjoin = PinsOnBoard.find_by(pin_id: params[:pin_id],board_id: params[:board_id])
-    @pinjoin.destroy
-    @board = Board.find(params[:board_id])
-    render 'api/boards/show'
+    
+    @pinsOnBoard = PinsOnBoard.find_by(pinsOnBoard_params)
+    
+    @pinsOnBoard.destroy
+    #@board = Board.find(params[:board_id])
+    render 'api/pins_on_boards/show'
   end
 
+  
    private
   def pinsOnBoard_params
     #:pinsOnBoard refers to api Form Data in Chrome's Headers in Network
