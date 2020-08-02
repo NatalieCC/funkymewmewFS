@@ -23,22 +23,22 @@ user1 = User.create!({
 file = open("https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/jerry.jpg")
 user1.photo.attach(io: file, filename: "jerry.jpg")
 
-pin1 = Pin.new({ user_id: user1.id, height: "", title: 'la poppies'})
+pin1 = Pin.new({ user_id: user1.id, height: "", title: 'la poppies', description: ""})
 p1 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/poppy.jpg')
 pin1.image.attach(io: p1, filename: 'poppy.jpg')
 pin1.save!
 
-pin2 = Pin.new({ user_id: user1.id, height: "", title: 'dear maple'})
+pin2 = Pin.new({ user_id: user1.id, height: "", title: 'dear maple', description: ""})
 p2 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/dearMaple.jpg')
 pin2.image.attach(io: p2, filename: 'dearMaple.jpg')
 pin2.save!
 
-pin3 = Pin.new({ user_id: user1.id, height: "", title: 'Venice'})
+pin3 = Pin.new({ user_id: user1.id, height: "", title: 'Venice', description: ""})
 p3 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/Venice.jpg')
 pin3.image.attach(io: p3, filename: 'Venice.jpg')
 pin3.save!
 
-pin4 = Pin.new({ user_id: user1.id, height: "", title: 'the Abstract'})
+pin4 = Pin.new({ user_id: user1.id, height: "", title: 'the Abstract', description: ""})
 p4 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/abstract.jpg')
 pin4.image.attach(io: p4, filename: 'abstract.jpg')
 pin4.save!
@@ -48,22 +48,22 @@ pin4.save!
 # pin5.image.attach(io: p5, filename: 'de_dinning.jpg')
 # pin5.save!
 
-pin6 = Pin.new({ user_id: user1.id, height: "", title: 'Buddha and I'})
+pin6 = Pin.new({ user_id: user1.id, height: "", title: 'Buddha and I', description: ""})
 p6 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/buddha.jpg')
 pin6.image.attach(io: p6, filename: 'buddha.jpg')
 pin6.save!
 
-pin7 = Pin.new({ user_id: user1.id, height: "", title: 'backyard'})
+pin7 = Pin.new({ user_id: user1.id, height: "", title: 'backyard', description: ""})
 p7 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/backyard.jpg')
 pin7.image.attach(io: p7, filename: 'backyard.jpg')
 pin7.save!
 
-pin8 = Pin.new({ user_id: user1.id, height: "", title: 'Paris'})
+pin8 = Pin.new({ user_id: user1.id, height: "", title: 'Paris', description: ""})
 p8 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/paris.jpg')
 pin8.image.attach(io: p8, filename: 'paris.jpg')
 pin8.save!
 
-pin9 = Pin.new({ user_id: user1.id, height: "", title: 'butterfly'})
+pin9 = Pin.new({ user_id: user1.id, height: "", title: 'butterfly', description: ""})
 p9 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/butterfly.jpg')
 pin9.image.attach(io: p9, filename: 'butterly.jpg')
 pin9.save!
