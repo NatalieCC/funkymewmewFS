@@ -36,7 +36,7 @@ class PinShow extends React.Component {
         if(this.state.user_id === this.props.currentUser.id) {
             return (
                 <button
-                className='prof-buttons'
+                    className='pin-show edit-pin-link'
                 onClick={this.showEditModal} >
                     <i className='fas fa-pencil-alt' style={{ color: "#333333" }}></i>
                 </button>
@@ -55,19 +55,21 @@ class PinShow extends React.Component {
     }
 
     displayOwnername() {
-        const {pin} = this.props;
-        if(this.props.currentUser.username == pin.creator.username) {
+        const {username} = this.state;
+        if(username == this.props.currentUser.username) {
             return 'You'
         } else {
-            return pin.creator.username
+            return username;
         }
     }
 
     displayOwnerPhoto() {
-        const {creator} = this.props;
-        if(creator.photoUrl) {
+        const {currentUser} = this.props;
+        if(currentUser.photo) {
             return(
-                <img className='user-thumbnail' src={creator.photoUrl} />
+                <Link to={`/${this.props.currentUser.username}`}>
+                    <img className='user-thumbnail' src={currentUser.photo} />
+                </Link>
             )
         } else {
             return null;
@@ -76,52 +78,58 @@ class PinShow extends React.Component {
 
 
     render() {
-        //const { pin } = this.props;
-        const {title,imageUrl,description,username,board} = this.state;
-        let userinfo;
-        if(username && board) {
-            let displayName;
-            if(username===this.props.currentUser.username) {
-                displayName="You";
-            } else {
-                displayName=username;
-            }
-            userinfo = <h4>{`${displayName} added to ${board}`}</h4>
-        }
+         const {title,imageUrl,description,username,board} = this.state;
+        // let userinfo;
+        // if(username && board) {
+        //     let displayName;
+        //     if(username===this.props.currentUser.username) {
+        //         displayName="You";
+        //     } else {
+        //         displayName=username;
+        //     }
+        //     userinfo = <h4>{`${displayName} added to ${board}`}</h4>
+        // }
         //debugger
         //if user add a non existent pinId in url then if should handle?
         if (true) {
             return (
                 <div className='pin-buffer'>
                     <div className='pin-panel'>
-                        <div className='pin-header'>
-                            <div>
-                                {this.displayEdit()}
-                            </div>
-                            <button
-                                className='save-btn'
-                                onClick={this.showSavePinOnBoardModal}>
-                                {/* <i className='fas fa-map-pin'></i> */}
-                                <p>Save</p>
-                            </button>
-                        </div>
-                        <h3>{title}</h3>
                         <img className='pin-image' src={imageUrl} />
-                        {/* {this.displayLink()} */}
-                        <h5>{description}</h5>
-                            {userinfo}
-                        <div className='pin-footer'>
-                            {/* {this.displayOwnerPhoto()} 
-                            <Link
-                                to={`/${pin.creator.username}`}> 
-                                {this.displayOwnername()} 
-                            </Link> 
-                            <p>saved to</p>
-                            <Link
-                                to={`/boards/${board.id}`}>
-                                {board.title}
-                            </Link> */}
+                        <div className='pin-header'>
+                            <div className='pin-show nav-bar'>
+                                <div>
+                                    {this.displayEdit()}
+                                </div>
+                                <a
+                                    className='pin-show save-board-pin-link'
+                                    onClick={this.showSavePinOnBoardModal}>
+                                    {/* <i className='fas fa-map-pin'></i> */}
+                                    <div className="pin-show save-board-pin-text">Save</div>
+                                </a>
+                            </div>
+                            <div className="pin-show info">
+                                    <div className="pin-show title">{title}</div>
+                                    <div className="pin-show description">{description}</div>
+                            </div>
+                           
+                            <div className='pin-show-credit'>
+                                {this.displayOwnerPhoto()}
+                                <div className="pin-show credit-summary">
+                                    <Link
+                                        to={`/${this.props.currentUser.username}`}
+                                        className="pin-show credit-link">
+                                        <strong>{this.displayOwnername()}</strong>
+                                    </Link>
+                                    <span>&nbsp;saved to&nbsp;</span>
+                                    <Link>
+                                        {/* to={`/boards/${board.id}`} > */}
+                                        <div className="pin-show credit-link">{`${board}`}</div>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             )
