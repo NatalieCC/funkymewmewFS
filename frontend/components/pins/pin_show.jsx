@@ -9,6 +9,7 @@ class PinShow extends React.Component {
         this.state =  { title: '', description: '', imageUrl: '' };
         this.showEditModal = this.showEditModal.bind(this);
         this.showSavePinOnBoardModal = this.showSavePinOnBoardModal.bind(this);
+        this.goBack = this.goBack.bind(this);
     }
 
     componentDidMount() {
@@ -76,6 +77,11 @@ class PinShow extends React.Component {
         }
     }
 
+    goBack(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.props.history.goBack();
+    }
 
     render() {
          const {title,imageUrl,description,username,board} = this.state;
@@ -94,6 +100,11 @@ class PinShow extends React.Component {
         if (true) {
             return (
                 <div className='pin-buffer'>
+                    <a className="pin-show goback-button"
+                        onClick={this.goBack}>
+                        <i className="fas fa-arrow-left back-icon"></i> 
+                    </a>
+                    
                     <div className='pin-panel'>
                         <img className='pin-image' src={imageUrl} />
                         <div className='pin-header'>
