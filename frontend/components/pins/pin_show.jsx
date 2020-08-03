@@ -46,8 +46,13 @@ class PinShow extends React.Component {
     }
     
     showEditModal(e) {
-        //debugger
-        this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': this.props.location.state.type,'boardId': this.props.boardId });
+        if (this.props.location.state.type === "Feed") { 
+            this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': "Feed", 'boardId': this.props.boardId });
+        } else if (this.props.location.state.type === "Profile") {
+            this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': "Profile", 'boardId': this.props.boardId });
+        } else { this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': "Board", 'boardId': this.props.boardId }); 
+    }      
+        // this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': this.props.location.state.type,'boardId': this.props.boardId });
         //this.props.openModal('editPin', this.state.pin_id);
     }
 
@@ -134,7 +139,7 @@ class PinShow extends React.Component {
                                     </Link>
                                     <span>&nbsp;saved to&nbsp;</span>
                                     <Link>
-                                        {/* to={`/boards/${board.id}`} > */}
+                                        {/* to={`/boards/${board.id}`} >  */}
                                         <div className="pin-show credit-link">{`${board}`}</div>
                                     </Link>
                                 </div>

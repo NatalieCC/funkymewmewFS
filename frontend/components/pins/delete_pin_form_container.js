@@ -13,13 +13,15 @@ const msp = (state, ownProps) => {
     //   'boardId': 122 }
     const pinId = state.ui.currentObject['pinId'];
     const type = state.ui.currentObject['type'];
-    const boardId = state.ui.currentObject['boardId'];
+    //const boardId = state.ui.currentObject['boardId'];
+    //const boardId = ownProps.location.state.boardId;
+    //const boardId = ownProps.location.pathname.split("/").slice(0).pop();
     const username = state.entities.users.username;
 
     return ({
         pinId,
         type,
-        boardId,
+        //boardId,
         username,
     })
 };

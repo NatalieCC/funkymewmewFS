@@ -6,10 +6,12 @@ import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
     debugger
+    const boardId = ownProps.match.params.boardId;
+    const type = 'Board';
     return (
         {
-            type: 'Board',
-            boardId: ownProps.boardId,
+            type,
+            boardId
         }
     )       
 };

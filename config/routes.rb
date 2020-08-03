@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
     resources :pins, only: [:create,:destroy, :index, :show, :update]
     resources :pins_on_boards, only: [:destroy, :create,:index,:show]
+    # get 'pins_on_boards' => 'pins_on_boards#getBoardIdFromPinId', :as => :getBoardIdFromPinId
+    resource :pins_on_boards, :members => {:getBoardIdFromPinId => :get}
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

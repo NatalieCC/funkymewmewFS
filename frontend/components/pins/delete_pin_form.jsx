@@ -33,27 +33,30 @@ class DeletePinForm extends React.Component {
             this.props.deletePin(this.props.pinId)
             .then(this.props.closeModal())
             .then(this.props.history.push(`/${this.props.username}/pins`))
-        }
+        } else {
         // if(this.props.type == 'Board') {
-            else {
-            debugger 
             const pinOnBoard = {
                 pin_id: this.props.pinId,
                 board_id: this.props.boardId,
             }
-            this.props.deletePinOnBoard(pinOnBoard)
-                .then(this.props.closeModal())
-                .then(this.props.history.go(0))
-                //.then(< Link to = {`/boards/${this.props.boardId}`} replace />)
-                // .then(this.props.history.push(`/boards/${this.props.boardId}`))           
-        }
-        
+            debugger 
+            if(this.props.location.pathname != `/pins/${this.props.pinId}`) {
+                    this.props.deletePinOnBoard(pinOnBoard)
+                        .then(this.props.closeModal())
+                        .then(this.props.history.go(0))
+                } else {
+                    this.props.deletePinOnBoard(pinOnBoard)
+                        .then(this.props.closeModal())
+                        // .then(this.props.history.push(`/boards/${this.props.boardId}`))
+                        .then(this.props.history.go(-1) )
+                        //.then(< Link to = {`/boards/${this.props.boardId}`} replace />)        
+                }         
+            }
         // this.props.deletePin(this.props.pinId)
         //     // .then(this.setState({'deleted':true}))
         //     .then(this.props.closeModal())
         //     .then(this.props.history.push(path));      
-            //.then(this.props.history.push(`/boards/${this.props.boardId}`));      
-        
+            //.then(this.props.history.push(`/boards/${this.props.boardId}`));           
     }
     
     render() {

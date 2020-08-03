@@ -1,5 +1,6 @@
 import React from 'react';
 import BoardList from './board_list';
+import { Redirect } from 'react-router-dom';
 
 class PinCreateForm extends React.Component {
     constructor(props) {
@@ -13,7 +14,9 @@ class PinCreateForm extends React.Component {
 
             boardscroll: false,
             chooseFile: false,
-            boardChoice: 'Choose a board (required)'
+            boardChoice: 'Choose a board (required)',
+
+            pageOnClick: false
         };
 
         this.goBack = this.goBack.bind(this);
@@ -30,10 +33,16 @@ class PinCreateForm extends React.Component {
         this.changeInput = this.changeInput.bind(this);
         this.hideBoardScroll = this.hideBoardScroll.bind(this);
         this.changeInput = this.changeInput.bind(this);
+
+        this.handleClickOnPage = this.handleClickOnPage.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchBoards();
+    }
+
+    handleClickOnPage(e){
+        this.setState({pageOnClick: true})
     }
 
     uploadImage(e) {
@@ -95,8 +104,7 @@ class PinCreateForm extends React.Component {
         this.setState({ photoPreview: null });
     }
 
-    handleSave(e) {
-         
+    handleSave(e) {    
         e.preventDefault();
         const formData = new FormData();
         formData.append('pin[title]', this.state.pin.title);
@@ -154,8 +162,7 @@ class PinCreateForm extends React.Component {
     }
 
     changeInput(field) {
-        //debugger
-        
+        //debugger    
         return (
             e => {
                 // below is like merge
@@ -182,9 +189,11 @@ class PinCreateForm extends React.Component {
         ) : (
                 this.handleSave
             );
-
-
+        const refresh = this.state.pageOnClick ?  <Redirect to ={`${this.props.currentUser.username}/build-pin`}/> : null
         return (
+            <>
+            {refresh}
+            {/* <div className='page'></div> */}
             <div className='pin-form-buffer'>
                 <div className='pin-form-box'>
                     <div className='pin-form-header'>
@@ -243,6 +252,7 @@ class PinCreateForm extends React.Component {
                     {this.displayBoardScroll()}  
                 </div>
             </div>
+            </>
         )
     }
 
