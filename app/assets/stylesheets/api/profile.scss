@@ -545,6 +545,8 @@
   // }
   &.done { 
     background-color: #e60023;
+    margin-bottom: 10px;
+    height:40px;
     &:hover {
       background-color: #ad081b;
     }
@@ -564,7 +566,7 @@
     color: graytext;
     pointer-events: none;
     margin-bottom: 10px;
-    height: 39px;
+    height: 40px;
   }
 }
 
@@ -672,7 +674,7 @@
 .edit-profile.button#change-photo {
   background-color: #efefef;
   box-sizing: border-box;
-  min-height: 40px;
+  height: 40px;
   display: inline-block;
   cursor: pointer;
   border: 0px;
