@@ -5,4 +5,5 @@ json.username pin.user.username
 json.imageUrl url_for(pin.image)
 if(pin.boards.length > 0)
     json.board pin.boards[0].title
+    json.boardId pin.boards[0].id
 end

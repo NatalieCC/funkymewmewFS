@@ -89,7 +89,8 @@ class PinShow extends React.Component {
     }
 
     render() {
-         const {title,imageUrl,description,username,board} = this.state;
+        const {title,imageUrl,description,username,board} = this.state;
+        if (!this.props.pin) return <div style={{ "paddingTop": "65px" }}>Loading...</div>;
         // let userinfo;
         // if(username && board) {
         //     let displayName;
@@ -138,8 +139,8 @@ class PinShow extends React.Component {
                                         <strong>{this.displayOwnername()}</strong>
                                     </Link>
                                     <span>&nbsp;saved to&nbsp;</span>
-                                    <Link>
-                                        {/* to={`/boards/${board.id}`} >  */}
+                                    <Link
+                                        to={`/boards/${this.props.pin.boardId}`} > 
                                         <div className="pin-show credit-link">{`${board}`}</div>
                                     </Link>
                                 </div>
