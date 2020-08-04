@@ -279,7 +279,7 @@ pinsOnBoard12 = PinsOnBoard.new({
 })
 pinsOnBoard12.save!
 
-pin14 = Pin.new({ user_id: user1.id, height: "", title: 'Sweet-Table in Pudertönen mit Rosé', description: "Weiß und Schwarz als Detailfarbe. Das ist ja farblich genau"})
+pin14 = Pin.new({ user_id: user1.id, height: "", title: 'Sweet-Table in Pudertönen', description: "Weiß und Schwarz als Detailfarbe. Das ist ja farblich genau"})
 p14 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/July+Fun/j6.jpg')
 pin14.image.attach(io: p14, filename: 'j6.jpg')
 pin14.save!
@@ -289,6 +289,28 @@ pinsOnBoard13 = PinsOnBoard.new({
   pin_id: pin14.id
 })
 pinsOnBoard13.save!
+
+pin33 = Pin.new({ user_id: user1.id, height: "", title: 'Rose Balloons', description: "Love capture."})
+p33 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/July+Fun/j7.jpg')
+pin33.image.attach(io: p33, filename: 'j7.jpg')
+pin33.save!
+
+pinsOnBoard32 = PinsOnBoard.new({
+  board_id: board3.id,
+  pin_id: pin33.id
+})
+pinsOnBoard32.save!
+
+pin34 = Pin.new({ user_id: user1.id, height: "", title: 'Floral Cotton Candies', description: "Little wheels\'re delivering the fun."})
+p34 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/July+Fun/j8A.jpg')
+pin34.image.attach(io: p34, filename: 'j8A.jpg')
+pin34.save!
+
+pinsOnBoard33 = PinsOnBoard.new({
+  board_id: board3.id,
+  pin_id: pin34.id
+})
+pinsOnBoard33.save!
 
 ##############
 # FUNKY MEWMEW  board6
@@ -357,6 +379,28 @@ pinsOnBoard19 = PinsOnBoard.new({
   pin_id: pin20.id
 })
 pinsOnBoard19.save!
+
+pin31 = Pin.new({ user_id: user1.id, height: "", title: 'Coral Treats', description: "Get more excited about desserts."})
+p31 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/funkymewmew/f7.jpg')
+pin31.image.attach(io: p31, filename: 'f7.jpg')
+pin31.save!
+
+pinsOnBoard30 = PinsOnBoard.new({
+  board_id: board6.id,
+  pin_id: pin31.id
+})
+pinsOnBoard30.save!
+
+pin32 = Pin.new({ user_id: user1.id, height: "", title: 'Rose Balloons', description: "Love capture."})
+p32 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/funkymewmew/f8.jpg')
+pin32.image.attach(io: p32, filename: 'f8.jpg')
+pin32.save!
+
+pinsOnBoard31 = PinsOnBoard.new({
+  board_id: board6.id,
+  pin_id: pin32.id
+})
+pinsOnBoard31.save!
 
 ##############
 
