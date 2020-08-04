@@ -118,7 +118,7 @@ class SessionForm extends React.Component {
             <div className="login-form-container">
                 <div className="form-box">
                     <div className="logo-box">
-                        <img src={window.logo} className="small-logo" />
+                        <img src={window.logobear} className="small-logo" />
                     </div>     
                     <h1 className="shimmer">Welcome to MewMew Trest</h1>
                     <div>Your Inspirations</div>
