@@ -68,7 +68,7 @@ user4.photo.attach(io: file, filename: "Toodles.jpg")
 #Boards
 board1 = Board.new({
   title: "Fantacy Arts",
-  description: "My favorite art pieces",
+  description: "My favorite art pieces.",
   is_public: true,
   user_id: user2.id
 })
@@ -76,7 +76,7 @@ board1.save!
 
 board2 = Board.new({
   title: "La La Land",
-  description: "What are your dreams",
+  description: "What are your dreams?",
   is_public: true,
   user_id: user1.id
 })
@@ -84,7 +84,7 @@ board2.save!
 
 board3 = Board.new({
   title: "July\'s Fun",
-  description: "If it makes you happy it doesn't have to make sense",
+  description: "If it makes you happy it doesn't have to make sense.",
   is_public: true,
   user_id: user1.id
 })
@@ -92,7 +92,7 @@ board3.save!
 
 board4 = Board.new({
   title: "Sweet 16 Parties",
-  description: "Bling Bling Twinkle Star",
+  description: "Bling Bling Twinkle Star >.<",
   is_public: true,
   user_id: user3.id
 })
@@ -108,7 +108,7 @@ board5.save!
 
 board6 = Board.new({
   title: "Funky Mew Mew",
-  description: "Immaturity Rocks",
+  description: "Immaturity Rocks!",
   is_public: true,
   user_id: user1.id
 })
@@ -116,7 +116,7 @@ board6.save!
 
 board7 = Board.new({
   title: "Work Hard Play Harder",
-  description: "All work and no play makes jack a dull boy",
+  description: "All work and no play makes jack a dull boy~",
   is_public: true,
   user_id: user2.id
 })
@@ -189,7 +189,7 @@ pinsOnBoard4 = PinsOnBoard.new({
 })
 pinsOnBoard4.save!
 
-pin6 = Pin.new({ user_id: user1.id, height: "", title: 'CITYSCAPE PHOTOGRAPHY', description: "BY ALISDAIR MILLER"})
+pin6 = Pin.new({ user_id: user1.id, height: "", title: 'Cityscape Photography', description: "BY ALISDAIR MILLER"})
 p6 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lala+land/l6.jpg')
 pin6.image.attach(io: p6, filename: 'l6.jpg')
 pin6.save!
@@ -360,6 +360,116 @@ pinsOnBoard19.save!
 
 ##############
 
+# HEBREW  board8
+pin21 = Pin.new({ user_id: user1.id, height: "", title: 'Glamorous Destination', description: "With Classic Palette & Glowing Candles."})
+p21 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h1.jpg')
+pin21.image.attach(io: p21, filename: 'h1.jpg')
+pin21.save!
+
+pinsOnBoard20 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin21.id
+})
+pinsOnBoard20.save!
+
+pin22 = Pin.new({ user_id: user1.id, height: "", title: 'Purple Dendrobium Orchids', description: "Dendrobium Orchid Centerpieces."})
+p22 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h4.jpg')
+pin22.image.attach(io: p22, filename: 'h4.jpg')
+pin22.save!
+
+pinsOnBoard21 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin22.id
+})
+pinsOnBoard21.save!
+
+pin23 = Pin.new({ user_id: user1.id, height: "", title: 'Past', description: "Bear Mr.Handsome..."})
+p23 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h9.jpg')
+pin23.image.attach(io: p23, filename: 'h9.jpg')
+pin23.save!
+
+pinsOnBoard22 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin23.id
+})
+pinsOnBoard22.save!
+
+pin24 = Pin.new({ user_id: user1.id, height: "", title: 'Forget-Me-Nots', description: "These blue blooms are the Alaskan state flower."})
+p24 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h8.jpg')
+pin24.image.attach(io: p24, filename: 'h8.jpg')
+pin24.save!
+
+pinsOnBoard23 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin24.id
+})
+pinsOnBoard23.save!
+
+pin25 = Pin.new({ user_id: user1.id, height: "", title: 'Baby Fox', description: "Adorable Foxes To Fall Hopeless In Love With."})
+p25 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h10.jpg')
+pin25.image.attach(io: p25, filename: 'h10.jpg')
+pin25.save!
+
+pinsOnBoard24 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin25.id
+})
+pinsOnBoard24.save!
+
+pin26 = Pin.new({ user_id: user1.id, height: "", title: 'Illustration of Pink', description: "Pink and indigo marble."})
+p26 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h2.jpg')
+pin26.image.attach(io: p26, filename: 'h2.jpg')
+pin26.save!
+
+pinsOnBoard25 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin26.id
+})
+pinsOnBoard25.save!
+
+pin27 = Pin.new({ user_id: user1.id, height: "", title: 'Botanical Art Print', description: "Tropical palm trees."})
+p27 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h6.jpg')
+pin27.image.attach(io: p27, filename: 'h6.jpg')
+pin27.save!
+
+pinsOnBoard26 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin27.id
+})
+pinsOnBoard26.save!
+
+pin28 = Pin.new({ user_id: user1.id, height: "", title: 'Wedding Centerpiece', description: "Stunning wedding decorations."})
+p28 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h3.jpg')
+pin28.image.attach(io: p28, filename: 'h3.jpg')
+pin28.save!
+
+pinsOnBoard27 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin28.id
+})
+pinsOnBoard27.save!
+
+pin29 = Pin.new({ user_id: user1.id, height: "", title: 'Bridal Brooch Bouquet', description: "Custom Lush Blush Pink and Ivory with Gold and Rose Gold."})
+p29 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h5.jpg')
+pin29.image.attach(io: p29, filename: 'h5.jpg')
+pin29.save!
+
+pinsOnBoard28 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin29.id
+})
+pinsOnBoard28.save!
+
+pin30 = Pin.new({ user_id: user1.id, height: "", title: 'No Breeze Whispered', description: "A brief encounter..."})
+p30 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h7.jpg')
+pin30.image.attach(io: p30, filename: 'h7.jpg')
+pin30.save!
+
+pinsOnBoard29 = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin30.id
+})
+pinsOnBoard29.save!
 
 
 
@@ -370,10 +480,8 @@ pinsOnBoard19.save!
 
 
 
-# pin9 = Pin.new({ user_id: user1.id, height: "", title: 'butterfly', description: ""})
-# p9 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/seeds/butterfly.jpg')
-# pin9.image.attach(io: p9, filename: 'butterly.jpg')
-# pin9.save!
+
+
 
 
 
