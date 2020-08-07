@@ -33,7 +33,6 @@ const pinsReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_PIN:
             //return Object.assign(newState,action);
-            //debugger 
             newState[action.payload.pin.id] = action.payload.pin;
             return newState;
         case REMOVE_PIN:

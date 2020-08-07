@@ -8,12 +8,13 @@ const usersReducer = (state = {}, action) => {
     //debugger;
     switch (action.type) {    
         case RECEIVE_CURRENT_USER:
-            return Object.assign(nextState, { [action.user]: action.currentUser });
+            return Object.assign(nextState, { [action.currentUser.username]: action.currentUser });
         case RECEIVE_USERS:
             return action.users;
         case RECEIVE_USER:
             //debugger 
-            return Object.assign(nextState, action.payload.user);  
+            // return Object.assign(nextState, action.payload.user); 
+            return Object.assign(nextState, { [action.payload.user.username]: action.payload.user }); 
         // case RECEIVE_BOARD:
         //     return Object.assign({}, state, { [action.author.id]: action.author });
         // case RECEIVE_PIN:

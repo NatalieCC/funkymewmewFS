@@ -18,13 +18,21 @@ class ProfileShow extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         // how we make things persisitant upon refresh
         //set initial local state, api call
         //const username = this.props.username;
         //const fetchUser = (userId) => this.props.fetchUser(userId);
         this.props.fetchUser(this.props.username);
-        // this.props.fetchAllPins();
-        // this.props.fetchBoards();
+        // const username = this.props.match.params.username;
+        // const fetchUser = (username) => this.props.fetchUser(username);
+
+        // this.props.fetchAllUsers()
+        //     .then(res => {
+        //         const user = Object.values(res.users).find(user => user.username === username);
+        //         return fetchUser(user.id);
+        //     })
+
     }
 
     componentWillUnmount() {
@@ -32,7 +40,7 @@ class ProfileShow extends React.Component {
     }
 
     allowProfileNav() {
-        
+        if(this.props.currentUser.username === this.props.username) {
             return (
                 <nav className="profile-nav">
                     <div className="prof-buttons prof-plus"
@@ -47,6 +55,11 @@ class ProfileShow extends React.Component {
                     </Link>
                 </nav>
             ) 
+        } else {
+                <div classNmae = 'profile-nav-guest'>
+                    
+                </div>
+            }
     }
 
     displayDropDown() {
@@ -70,18 +83,20 @@ class ProfileShow extends React.Component {
     }
 
     displayName() {
-        const { currentUser } = this.props;
-        return currentUser.username;
+        // const { currentUser } = this.props;
+        // return currentUser.username;
+       
+        return this.props.username;
     }
 
     displayDescription() {
-        const { currentUser } = this.props;
-        if (currentUser.location && currentUser.description) {
-            return [currentUser.location, currentUser.description].join(" • ");
-        } else if (currentUser.location) {
-            return currentUser.location;
-        } else if (currentUser.description) {
-            return currentUser.description;
+        const { user } = this.props;
+        if (user.location && user.description) {
+            return [user.location, user.description].join(" • ");
+        } else if (user.location) {
+            return user.location;
+        } else if (user.description) {
+            return user.description;
         } else {
             return null;
         }
@@ -92,16 +107,16 @@ class ProfileShow extends React.Component {
         if(this.props.location && this.props.location.state) {
             return <img src={this.props.location.state.photo} className="profile-image" />
         }
-        const { currentUser } = this.props;
-        if (currentUser.photo) {
+        const { user } = this.props;
+        if (user.photo) {
             return (
-                <img src={currentUser.photo} className="profile-image" />
+                <img src={user.photo} className="profile-image" />
             )
         } else {
-            debugger 
+            //debugger 
             return (
                 <div className="profile-name-initial" >
-                    <div className="initial"> {this.props.currentUser.username[0].toUpperCase()} </div>
+                    <div className="initial"> {this.props.user.username[0].toUpperCase()} </div>
                 </div>
             )
         }
@@ -161,7 +176,11 @@ class ProfileShow extends React.Component {
     }
 
     render() {
-        const { currentUser } = this.props;
+        if(!this.props.user) {
+            //debugger
+            return null;
+        }
+        //const { currentUser } = this.props;
         let boardButton = 'link-selected';
         let pinButton = '';
         let boardsOrPinsIndex;
