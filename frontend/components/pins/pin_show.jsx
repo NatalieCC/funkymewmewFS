@@ -27,7 +27,8 @@ class PinShow extends React.Component {
                     user_id: pin.user_id,
                     pin_id: pin.id,
                     username: pin.username,
-                    board: pin.board
+                    board: pin.board,
+                    creatorPhotoUrl: pin.photo
             })}) 
     }
 
@@ -46,9 +47,9 @@ class PinShow extends React.Component {
     }
     
     showEditModal(e) {
-        if (this.props.location.state.type === "Feed") { 
+        if (this.props.location.state && this.props.location.state.type === "Feed") { 
             this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': "Feed", 'boardId': this.props.boardId });
-        } else if (this.props.location.state.type === "Profile") {
+        } else if (this.props.location.state && this.props.location.state.type === "Profile") {
             this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': "Profile", 'boardId': this.props.boardId });
         } else { this.props.openModal('editPin', { 'pinId': this.props.pin.id, 'type': "Board", 'boardId': this.props.boardId }); 
     }      
@@ -70,11 +71,12 @@ class PinShow extends React.Component {
     }
 
     displayOwnerPhoto() {
-        const {currentUser} = this.props;
-        if(currentUser.photo) {
+        const { creatorPhotoUrl,username} = this.state;
+        //debugger 
+        if (creatorPhotoUrl) {
             return(
-                <Link to={`/${this.props.currentUser.username}`}>
-                    <img className='user-thumbnail' src={currentUser.photo} />
+                <Link to={`/${username}`}>
+                    <img className='user-thumbnail' src={creatorPhotoUrl} />
                 </Link>
             )
         } else {
@@ -134,14 +136,15 @@ class PinShow extends React.Component {
                                 {this.displayOwnerPhoto()}
                                 <div className="pin-show credit-summary">
                                     <Link
-                                        to={`/${this.props.currentUser.username}`}
+                                        to={`/${username}`}
                                         className="pin-show credit-link">
                                         <strong>{this.displayOwnername()}</strong>
                                     </Link>
                                     <span>&nbsp;saved to&nbsp;</span>
                                     <Link
-                                        to={`/boards/${this.props.pin.boardId}`} > 
-                                        <div className="pin-show credit-link">{`${board}`}</div>
+                                        to={`/boards/${this.props.pin.boardId}`} 
+                                        className="pin-show credit-link">
+                                        <strong>{`${board}`}</strong>
                                     </Link>
                                 </div>
                             </div>

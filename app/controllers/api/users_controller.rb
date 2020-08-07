@@ -23,11 +23,6 @@ class Api::UsersController < ApplicationController
   end
 
   # def show
-  #   @user = selected_user
-  #   render "api/users/show"
-  # end
-
-  # def show
   #   render "api/users/show"
   # end
 
