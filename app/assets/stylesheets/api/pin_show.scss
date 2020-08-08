@@ -21,6 +21,7 @@
   height: 44px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   @media (max-width: 1136px) and (min-width: 1056px) {
     visibility: hidden;
@@ -201,6 +202,7 @@
   flex-direction: row;
   align-items: center;
 }
+
 .pin-show.credit-summary {
   max-width: 100%;
   flex: 1 1 auto;
@@ -221,7 +223,7 @@
   color: #333;
   & > .credit-link {
     color: #333;
-    text-decoration: none;
+    //text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
@@ -235,6 +237,7 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  object-fit: cover;
   & > .profile-link-photo {
     color: transparent;
     width: 100%;
