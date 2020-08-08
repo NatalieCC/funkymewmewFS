@@ -62,6 +62,7 @@
   -moz-appearance: none;
   appearance: none;
 }
+
 .login-input:focus {
     outline: none !important;
     //border:2px outset red;
@@ -80,11 +81,12 @@
 .logo-box {
   width: 410px;
   margin: 8px;
+  padding-top: 2.5px;
 }
 
 .small-logo {
   width: 45px;
-  height: 33px;
+  height: 34px;
   justify-content: center;
   align-items: center;
 }
@@ -150,6 +152,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+// input {
+//   border: 1px solid #8E8E8E;
+// }
 // input:-webkit-autofill {
 //     -webkit-text-fill-color: yellow !important;
 // }
