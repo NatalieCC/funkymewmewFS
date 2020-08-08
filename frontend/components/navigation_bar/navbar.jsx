@@ -57,7 +57,7 @@ class NavBar extends React.Component {
 
                             <div className="right-nav-bar">
 
-                                <div className="nav-bar-button" id="following">
+                                {/* <div className="nav-bar-button" id="following">
                                     <NavLink to="/following" className="nav-bar-link">
                                         <div className="icon-container-shadow">
                                             <div className="icon-container">
@@ -65,7 +65,7 @@ class NavBar extends React.Component {
                                             </div>
                                         </div>
                                     </NavLink>
-                                </div>
+                                </div> */}
 
                                 <div className="nav-bar-button" id="profile">
                                     <NavLink to={`/${currentUser.username}`} className="nav-bar-link">
