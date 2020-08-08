@@ -515,8 +515,100 @@ pinsOnBoard29 = PinsOnBoard.new({
 })
 pinsOnBoard29.save!
 
+#####################
+#USER 2 TOM BOARD: FANTACY ARTS
+
+pin35 = Pin.new({ user_id: user2.id, height: "", title: 'Hummingbird Watercolor', description: "By Jen Buckley."})
+p35 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/Fantacy+Arts/fa1.jpg')
+pin35.image.attach(io: p35, filename: 'fa1.jpg')
+pin35.save!
+
+pinsOnBoard34 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin35.id
+})
+pinsOnBoard34.save!
+
+pin36 = Pin.new({ user_id: user2.id, height: "", title: 'Thorned Rose', description: "Portrait of the Marquise de Pompadour."})
+p36 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/Fantacy+Arts/fa2.jpg')
+pin36.image.attach(io: p36, filename: 'fa2.jpg')
+pin36.save!
+
+pinsOnBoard35 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin36.id
+})
+pinsOnBoard35.save!
+
+pin37 = Pin.new({ user_id: user2.id, height: "", title: 'A Vanity', description: "Auguste Toulmouche, born 1829 - died 1890."})
+p37 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/Fantacy+Arts/fa3.jpg')
+pin37.image.attach(io: p37, filename: 'fa3.jpg')
+pin37.save!
+
+pinsOnBoard36 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin37.id
+})
+pinsOnBoard36.save!
+
+pin38 = Pin.new({ user_id: user2.id, height: "", title: 'Poem | Romance', description: "Waking and sleeping he longed for her."})
+p38 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/Fantacy+Arts/fa4.jpg')
+pin38.image.attach(io: p38, filename: 'fa4.jpg')
+pin38.save!
+
+pinsOnBoard37 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin38.id
+})
+pinsOnBoard37.save!
+
+pin39 = Pin.new({ user_id: user2.id, height: "", title: 'The Proposition', description: "19th century, artist: Arturo Ricci."})
+p39 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/Fantacy+Arts/fa5.jpg')
+pin39.image.attach(io: p39, filename: 'fa5.jpg')
+pin39.save!
+
+pinsOnBoard38 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin39.id
+})
+pinsOnBoard38.save!
+
+pin40 = Pin.new({ user_id: user2.id, height: "", title: 'Loose and Simple', description: "Karin Johannesson Art."})
+p40 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/Fantacy+Arts/fa6.jpg')
+pin40.image.attach(io: p40, filename: 'fa6.jpg')
+pin40.save!
+
+pinsOnBoard39 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin40.id
+})
+pinsOnBoard39.save!
+
+pin41 = Pin.new({ user_id: user2.id, height: "", title: 'Rococo Aesthetic', description: "Stupinigi's Little Hunting Palace."})
+p41 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/Fantacy+Arts/fa7.jpg')
+pin41.image.attach(io: p41, filename: 'fa7.jpg')
+pin41.save!
+
+pinsOnBoard40 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin41.id
+})
+pinsOnBoard40.save!
+
+pin42 = Pin.new({ user_id: user2.id, height: "", title: 'Simerenya', description: "Belas romanticas."})
+p42 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/Fantacy+Arts/fa8.jpg')
+pin42.image.attach(io: p42, filename: 'fa8.jpg')
+pin42.save!
+
+pinsOnBoard41 = PinsOnBoard.new({
+  board_id: board1.id,
+  pin_id: pin42.id
+})
+pinsOnBoard41.save!
 
 
+#####################
+#USER 2 TOM BOARD: WORK HARD PLAY HARDER
 
 
 
