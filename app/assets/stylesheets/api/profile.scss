@@ -45,7 +45,7 @@
     height: 64px;
     justify-content: flex-end;
     margin-bottom: 4px;
-    margin-top: 4px;
+    margin-top: 25px;
     max-width: 800px;
     padding-bottom: 8px;
     padding-top: 8px;
@@ -79,31 +79,6 @@
       }
     }
 
-    .follow-btn {
-      background-color: gray;
-      border-radius: 8px;
-      box-sizing: border-box;
-      color: gray;
-      cursor: pointer;
-      //font-family: $font;
-      font-size: 16px;
-      font-weight: bold;
-      height: 40px;
-      padding: 10px 14px;
-
-      &:hover {
-        background-color: rgba(80,80,80,.25);
-      }
-    }
-
-    .follow {
-      //background-color: $pop;
-      color: white;
-
-      &:hover {
-        background-color: pop-hover;
-      }
-    }
   }
 
   .profile-content {
@@ -874,4 +849,3 @@
   align-content: center;
   line-height: 1.3;
 }
-

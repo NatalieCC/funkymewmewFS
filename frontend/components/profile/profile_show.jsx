@@ -56,9 +56,10 @@ class ProfileShow extends React.Component {
                 </nav>
             ) 
         } else {
-                <div classNmae = 'profile-nav-guest'>
-                    
-                </div>
+            return (
+                <div className="profile-nav-guest"> 
+                </div> 
+            )     
             }
     }
 
