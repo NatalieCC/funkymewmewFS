@@ -18,7 +18,7 @@ class ProfileShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        //debugger
         // how we make things persisitant upon refresh
         //set initial local state, api call
         //const username = this.props.username;
@@ -37,6 +37,12 @@ class ProfileShow extends React.Component {
 
     componentWillUnmount() {
         document.removeEventListener('mousedown', this.hideDropdown);
+    }
+
+    componentDidUpdate(prevProps) {
+        if(prevProps.username !== this.props.username) {
+                this.props.fetchUser(this.props.username);  
+        }
     }
 
     allowProfileNav() {
@@ -85,8 +91,7 @@ class ProfileShow extends React.Component {
 
     displayName() {
         // const { currentUser } = this.props;
-        // return currentUser.username;
-       
+        // return currentUser.username;   
         return this.props.username;
     }
 
@@ -175,12 +180,13 @@ class ProfileShow extends React.Component {
             </div>
         )
     }
-
+    
     render() {
         if(!this.props.user) {
             //debugger
             return null;
         }
+       
         //const { currentUser } = this.props;
         let boardButton = 'link-selected';
         let pinButton = '';
@@ -241,10 +247,6 @@ class ProfileShow extends React.Component {
                         </div>
                     </div>
                 </div>
-                
-                {/* <div className="index-buffer">
-                    {component}
-                </div> */}
                 <div className="index-buffer">
                     <div className='board-index'>
                         {boardsOrPinsIndex}

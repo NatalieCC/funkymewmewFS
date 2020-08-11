@@ -8,7 +8,7 @@ import {withRouter} from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => {
      debugger
-     //let user = state.entities.users[userId] ? state.entities.users[userId] : null
+    //let user = state.entities.users[userId] ? state.entities.users[userId] : null
     return {
         //currentUser: state.entities.users[state.session.currentUserId],
         currentUser: state.session.currentUserId,
