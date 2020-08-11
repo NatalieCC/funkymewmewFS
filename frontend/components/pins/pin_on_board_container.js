@@ -7,11 +7,13 @@ import { openModal } from '../../actions/modal_actions';
 const msp = (state, ownProps) => {
     debugger
     const boardId = ownProps.match.params.boardId;
+    const currentUser = state.session.currentUserId || {};
     const type = 'Board';
     return (
         {
             type,
-            boardId
+            boardId,
+            currentUser,
         }
     )       
 };

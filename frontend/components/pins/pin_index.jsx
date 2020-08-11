@@ -62,6 +62,7 @@ class PinIndex extends React.Component {
                 type={this.props.type}
                 openModal={this.props.openModal}
                 boardId={this.props.boardId}
+                currentUser={this.props.currentUser}
               />
             );
         }) : [];

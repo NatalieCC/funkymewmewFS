@@ -10,6 +10,7 @@ const mSTP = (state) => {
         {
             type: 'Profile',
             pins: Object.values(state.entities.pins),
+            currentUser: state.session.currentUserId || {},
         }
     )
 };

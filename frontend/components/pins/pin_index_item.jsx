@@ -113,19 +113,33 @@ class PinIndexItem extends React.Component {
           );
         case "Profile":
         case "Board":
+          //debugger
+          if (this.state.pin.user_id === this.props.currentUser.id) { 
+            return (
+              <div className="p-links" >
+                <div className="top-links">
+                  <button className="main-save-btn" onClick={this.showSavePinOnBoardModal}>
+                    {/* <i className="fas fa-map-pin"></i> */}
+                    Save
+                  </button>
+                  
+                  <button className="p-btn" onClick={this.showEditModal}>
+                    <i className='fas fa-pencil-alt' style={{ color: "#333333" }}></i>
+                  </button>
+                </div>
+              </div>
+            )
+        } else {
           return (
-            <div className="p-links" >
+            <div className="p-links">
               <div className="top-links">
                 <button className="main-save-btn" onClick={this.showSavePinOnBoardModal}>
-                  {/* <i className="fas fa-map-pin"></i> */}
                   Save
-                </button>
-                <button className="p-btn" onClick={this.showEditModal}>
-                  <i className='fas fa-pencil-alt' style={{ color: "#333333" }}></i>
                 </button>
               </div>
             </div>
-          );
+          )
+        };
       }
     } else {
       return <div className="p-links"></div>;
@@ -136,9 +150,7 @@ class PinIndexItem extends React.Component {
     // debugger
     return (
       // <Link to={`/pins/${this.props.pin.id}`}>
-      <div
-        // className="pin-index-box"
-        className="p-index-frame"
+      <div className="p-index-frame"
         // id={`${this.state.id}`}
         onClick={this.toPinShow}
         onMouseEnter={this.turnOnVisibility}

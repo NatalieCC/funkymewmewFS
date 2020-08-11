@@ -5,11 +5,11 @@ import { fetchAllPins, updatePin, deletePin, clearPinIndex } from '../../actions
 import { openModal } from "../../actions/modal_actions";
 
 const mSTP = (state) => {
-    debugger
     return(
          {
              type: 'Feed',
              pins: Object.values(state.entities.pins),
+             //currentUser: state.session.currentUserId || {},
          }
     )       
 };
