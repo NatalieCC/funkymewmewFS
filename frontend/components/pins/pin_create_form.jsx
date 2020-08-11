@@ -14,7 +14,8 @@ class PinCreateForm extends React.Component {
 
             boardscroll: false,
             chooseFile: false,
-            boardChoice: 'Choose a board (required)',
+            // boardChoice: 'Choose a board (required)',
+            boardChoice: 'select',
 
             pageOnClick: false
         };
@@ -200,10 +201,20 @@ class PinCreateForm extends React.Component {
                         <button
                             className='back-btn'
                             onClick={this.goBack}>
-                            <i className="fas fa-chevron-left"></i>                            
+                            <i className="fas fa-chevron-left" id="back"></i>                            
                         </button>
-                        <div className='create-save-btn' onClick={clickSave} >
-                            <button className='create-save-btn'>Save</button>
+                        <div className="right-header">
+                            <div className='board-choices'
+                                onClick={this.showBoardList} >
+                                <div className="select-board-label">{this.state.boardChoice}</div>
+                                <div className='arrow-down'>
+                                    <i className='fas fa-chevron-down' id="dropdown-icon"></i>
+                                </div>
+                            </div>
+                            <div className='create-pin' id="save-button" onClick={clickSave} >
+                                <div className='create-pin' id="save-button-label">Save</div>
+                            </div>
+                            {this.displayBoardScroll()} 
                         </div>
                     </div>
                     <div className='pin-form'>
@@ -214,11 +225,10 @@ class PinCreateForm extends React.Component {
                             
                         </div>
                         <div className='pin-form-content'>
-                            <div className='pin-title'>
+                            <div className='pin-title-container'>
                                 <textarea className='pin-title'
                                     type="text"
                                     placeholder='Add your title'
-                                    
                                     value={this.state.title}
                                     onChange={this.changeInput('title')}
                                     />
@@ -239,17 +249,10 @@ class PinCreateForm extends React.Component {
                                     >
                                 </textarea>
                             </div>
-                            <div
-                                className='board-choices'
-                                onClick={this.showBoardList} >
-                                <p>{this.state.boardChoice}</p>
-                                <div className='arrow-down'>
-                                    <i className='fas fa-chevron-down'></i>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
-                    {this.displayBoardScroll()}  
+                     
                 </div>
             </div>
             </>
