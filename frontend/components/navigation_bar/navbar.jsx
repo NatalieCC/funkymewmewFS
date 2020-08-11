@@ -82,7 +82,7 @@ class NavBar extends React.Component {
                                 <div className="nav-bar-spacer" id="spacer"></div>
 
                                 <div className="nav-bar-button" id="github">
-                                    <a href="" target="_blank" className="nav-bar-link">
+                                    <a href="https://github.com/NChen666" target="_blank" className="nav-bar-link">
                                         <div className="icon-container-shadow">
                                             <div className="icon-container">
                                                 <i className="fab fa-github-square" id="networking-icon"></i>
@@ -92,7 +92,7 @@ class NavBar extends React.Component {
                                 </div>
 
                                 <div className="nav-bar-button" id="linkedin">
-                                    <a href="" target="_blank" className="nav-bar-link">
+                                    <a href="https://www.linkedin.com/in/nataliecake/" target="_blank" className="nav-bar-link">
                                         <div className="icon-container-shadow">
                                             <div className="icon-container">
                                                 <i className="fab fa-linkedin" id="networking-icon"></i>
