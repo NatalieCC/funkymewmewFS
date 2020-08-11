@@ -37,6 +37,7 @@ class BoardPin extends React.Component {
 
     //create and edit pin nav
     allowBoardNav() {
+        if(this.props.currentUser.username === this.props.creator.username) {
             return (
                 <nav className='profile-nav'>
                     <div className='prof-buttons prof-plus'
@@ -52,6 +53,7 @@ class BoardPin extends React.Component {
                     </button>
                 </nav>   
         )
+        }
     }
 
     
