@@ -61,8 +61,8 @@ user4 = User.create!({
   location: 'New York City',
   description: 'I am enjoying the show...'})
 
-file = open("https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/galore/Toodles.jpg")
-user4.photo.attach(io: file, filename: "Toodles.jpg")
+file = open("https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/galore/toodles2.jpg")
+user4.photo.attach(io: file, filename: "Toodles2.jpg")
 
 
 #Boards
@@ -610,8 +610,341 @@ pinsOnBoard41.save!
 #####################
 #USER 2 TOM BOARD: WORK HARD PLAY HARDER
 
+pin = Pin.new({ user_id: user2.id, height: "", title: 'Neon Lights On', description: "All night long baby slow down the song~"})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w1.jpg')
+pin.image.attach(io: p, filename: 'w1.jpg')
+pin.save!
 
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board7.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
 
+pin = Pin.new({ user_id: user2.id, height: "", title: 'Villa Belle', description: "Custom European style by Dan Sater."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w2.jpg')
+pin.image.attach(io: p, filename: 'w2.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board7.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user2.id, height: "", title: 'The Spirit of Hood Ornament', description: "Art of Rolls-Royce."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w3.jpg')
+pin.image.attach(io: p, filename: 'w3.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board7.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user2.id, height: "", title: 'Osetra Caviar in Oyster', description: "The Art of Plating."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w4.jpg')
+pin.image.attach(io: p, filename: 'w4.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board7.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user2.id, height: "", title: 'Silver and Purple', description: "Speed is life..."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w5.jpg')
+pin.image.attach(io: p, filename: 'w5.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board7.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user2.id, height: "", title: 'The Bund, Shanghai', description: "Banyan Tree Shanghai on The Bund"})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w6.jpg')
+pin.image.attach(io: p, filename: 'w6.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board7.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user2.id, height: "", title: 'Torbogen in Frankreich', description: "Papiertapete France."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w7.jpg')
+pin.image.attach(io: p, filename: 'w7.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board7.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user2.id, height: "", title: 'Kaws Collection', description: "Whoever told you life is Gucci lied.Sometimes life is Louis Vuitton."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w8.jpg')
+pin.image.attach(io: p, filename: 'w8.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board7.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+#####################
+#USER3 Spike BOARD4: SWEET16 
+pin = Pin.new({ user_id: user3.id, height: "", title: 'Casamento Rustico', description: "Decoração de casamento ao ar livre."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s1.jpg')
+pin.image.attach(io: p, filename: 's1.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user3.id, height: "", title: 'Rustic de Cake', description: "Beautiful wedding cake."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s2.jpg')
+pin.image.attach(io: p, filename: 's2.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user3.id, height: "", title: 'The Corner Bakery', description: "In London."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s3.jpg')
+pin.image.attach(io: p, filename: 's3.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user3.id, height: "", title: 'Milan Fashion Week', description: "Alessandro Michele presents fall designs."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s4.jpg')
+pin.image.attach(io: p, filename: 's4.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user3.id, height: "", title: 'The Little Boy', description: "My son in my toy~"})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s5.jpg')
+pin.image.attach(io: p, filename: 's5.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user3.id, height: "", title: 'I Dress for Women', description: "and I don\'t undress for men."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s6.jpg')
+pin.image.attach(io: p, filename: 's6.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user3.id, height: "", title: 'Big CC Logo', description: "Whenver I am in that mood?"})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s7.jpg')
+pin.image.attach(io: p, filename: 's7.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user3.id, height: "", title: 'You are the Moon', description: "~ Rebellious soul beneath the Elegance ~"})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s8.jpg')
+pin.image.attach(io: p, filename: 's8.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user3.id, height: "", title: 'Teacup Trio', description: "British Fine Bone China teacups and saucers."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/sweet16/s9.jpg')
+pin.image.attach(io: p, filename: 's9.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board4.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+#####################
+
+#USER4 TOODLE  BOARD5: LAVISH MEWMEW
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Slim Aarons Meets Casino', description: "Custommade seashell bed upholstered in mauve velvet, by Lenny Kravitz."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l5.jpg')
+pin.image.attach(io: p, filename: 'l5.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Ostrich Feather Lamp', description: "The mini palm lamp is a bijous version of the exquisite, illuminating ostrich feather table lamp."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l7.jpg')
+pin.image.attach(io: p, filename: 'l7.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Vintage 30\'s', description: "Silver and Enamel compact, from the 30s."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l2.jpg')
+pin.image.attach(io: p, filename: 'l2.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Paper Pom Pom Flowers', description: "Decorative flower wall."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l8.jpg')
+pin.image.attach(io: p, filename: 'l8.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Shopping Spree!', description: "Back from Hermes."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l1.jpg')
+pin.image.attach(io: p, filename: 'l1.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Sweet Little Things', description: "Finishing up all the cookies."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l3.jpg')
+pin.image.attach(io: p, filename: 'l3.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Bad Bitch', description: "Visualize your highest self then show up as her."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l4.jpg')
+pin.image.attach(io: p, filename: 'l4.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Pink Addiction', description: "Haters - People who secretly wish to be you."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l6.jpg')
+pin.image.attach(io: p, filename: 'l6.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Backyard Swing', description: "Scent of the breeze."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l9.jpg')
+pin.image.attach(io: p, filename: 'l9.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Engagement Ring', description: "By Harry Winston."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l10.jpg')
+pin.image.attach(io: p, filename: 'l10.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Tom Ford Beauty', description: "This collection glows a summer shimmer."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l11.jpg')
+pin.image.attach(io: p, filename: 'l11.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Bear called Lou', description: "Louis Vuitton Monogram Bear on display in a LV Boutique."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l12.jpg')
+pin.image.attach(io: p, filename: 'l12.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
+
+pin = Pin.new({ user_id: user4.id, height: "", title: 'Kaws & Bearbrick', description: "Pink Pink in Monogram..."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lavish/l13.jpg')
+pin.image.attach(io: p, filename: 'l13.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board5.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
 
 
 
