@@ -37,7 +37,7 @@ Utilized CSS grid and media queries for a dynamic display of page content and a 
 ### Modals
 
 <p align="center">
-  <img src="https://media.giphy.com/media/XdOfmQXvBl0CJAVAGx/giphy.gif" width="85%" />
+  <img src="https://s8.gifyu.com/images/ezgif.com-video-to-gifda4b9ba143c5858a.gif" width="85%" />
 </p>
 
 Utilized lightweight, multi-purpose modals for all forms which significantly DRYed up code.
