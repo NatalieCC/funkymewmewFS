@@ -2,7 +2,7 @@
 mewTrest is a A visual discovery engine that allows users to connect and share ideas in the form of images inspired by [Pinterest](https://www.pinterest.com/). mewTrest is built on a Ruby on Rails backend, utilizing PostgreSQL and AWS S3 for data storage. React and Redux are the main libraries used for the frontend, along with HTML and CSS, with Heroku used for app deployment.
 
 <p align="center">
-  <img src="https://imgur.com/yhA8Jh0" width="85%" />
+  <img src="https://i.imgur.com/yhA8Jh0.png" width="85%" />
 </p>
 
 
@@ -30,7 +30,7 @@ mewTrest is a A visual discovery engine that allows users to connect and share i
 Utilized CSS grid and media queries for a dynamic display of page content and a smooth UI experience in imitation of Pinterest's aesthetic. Image heights are stored on the database level to guarantee consistant formatting and spacing between pins of varied heights during image load.
 
 <p align="center">
-  <img src="https://imgur.com/PGtkOqH" width="85%" />
+  <img src="https://i.imgur.com/PGtkOqH.png" width="85%" />
 </p>
 
 
