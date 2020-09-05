@@ -21,7 +21,7 @@ class DeletePinForm extends React.Component {
     // }
 
     handleDelete(e) {
-        debugger 
+        //debugger 
         //let path;
         // if (this.props.type == 'board') path = `/boards/${this.props.boardId}`;
         //{ path = '/feed';}
@@ -30,6 +30,7 @@ class DeletePinForm extends React.Component {
             .then(this.props.closeModal())
             .then(this.props.history.push(`/feed`))
         } else if (this.props.type == 'Profile') {
+            //debugger
             this.props.deletePin(this.props.pinId)
             .then(this.props.closeModal())
             .then(this.props.history.push(`/${this.props.username}/pins`))
@@ -39,7 +40,7 @@ class DeletePinForm extends React.Component {
                 pin_id: this.props.pinId,
                 board_id: this.props.boardId,
             }
-            debugger 
+            //debugger 
             if(this.props.location.pathname != `/pins/${this.props.pinId}`) {
                     this.props.deletePinOnBoard(pinOnBoard)
                         .then(this.props.closeModal())

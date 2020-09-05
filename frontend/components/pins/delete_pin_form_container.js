@@ -6,7 +6,7 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import DeletePinForm from './delete_pin_form';
 
 const msp = (state, ownProps) => {
-    debugger
+    //debugger
     //const pinId = state.ui.currentObject;
     // {'pinId': 133,
     //   'type': 'board',
@@ -16,7 +16,8 @@ const msp = (state, ownProps) => {
     //const boardId = state.ui.currentObject['boardId'];
     //const boardId = ownProps.location.state.boardId;
     //const boardId = ownProps.location.pathname.split("/").slice(0).pop();
-    const username = state.entities.users.username;
+    //const username = state.entities.users.username;
+    const username = state.session.currentUserId.username;
 
     return ({
         pinId,
