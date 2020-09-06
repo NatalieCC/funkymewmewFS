@@ -26,17 +26,21 @@ class CreateBoardForm extends React.Component {
     }
 
     handleDelete(e) {
+        //debugger
         this.props.deleteBoard(this.props.board.id)
             .then(this.props.closeModal())
-            .then(this.props.history.push(`/${this.props.currentUser.username}`));
+            //.then(this.props.history.push(`/${this.props.currentUser.username}`));
+            .then(
+                this.props.history.goBack(-1) 
+            );
     }
 
     handleSubmit(e) {
         e.preventDefault();
         //this.props.createBoardAction(this.state.board).then(this.props.closeModal());
-        debugger
+        //debugger
         if (this.props.buttonText == "Save") {
-            debugger
+            //debugger
             this.props.action(this.state.board).then(this.props.closeModal())
             .then(this.props.history.push(`/boards/${this.state.board.id}`))
         } else {
@@ -44,7 +48,6 @@ class CreateBoardForm extends React.Component {
         .then(
                 () => {
                     let username = this.props.currentUser;
-                    debugger
                     this.props.history.push(`/${this.props.currentUser.username}`)}
                 );
     }
