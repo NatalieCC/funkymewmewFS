@@ -14,7 +14,6 @@ Board.destroy_all
 PinsOnBoard.destroy_all
 
 
-
 ### USERS four users
 user1 = User.create!({
   username: 'Jinx_Jerry',
@@ -134,6 +133,17 @@ board8.save!
 
 ### PINS & PinsOnBoard
 # La La Land board2
+pin0 = Pin.new({ user_id: user1.id, height: "", title: 'Sleeping Beauty', description: "Svetlana Zakharova & David Hallberg, Marius Petipa (Director)"})
+p0 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lala+land/gif3.gif')
+pin0.image.attach(io: p0, filename: 'gif3.jpg')
+pin0.save!
+
+pinsOnBoard00 = PinsOnBoard.new({
+  board_id: board2.id,
+  pin_id: pin0.id
+})
+pinsOnBoard00.save!
+
 pin1 = Pin.new({ user_id: user1.id, height: "", title: 'Milos... Hidden beaches', description: "Mílos, Kikladhes, Greece"})
 p1 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/lala+land/l1.jpg')
 pin1.image.attach(io: p1, filename: 'l1.jpg')
@@ -460,9 +470,9 @@ pinsOnBoard24 = PinsOnBoard.new({
 })
 pinsOnBoard24.save!
 
-pin26 = Pin.new({ user_id: user1.id, height: "", title: 'Illustration of Pink', description: "Pink and indigo marble."})
-p26 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h2.jpg')
-pin26.image.attach(io: p26, filename: 'h2.jpg')
+pin26 = Pin.new({ user_id: user1.id, height: "", title: 'NY.FW', description: "by ~Rodarte~"})
+p26 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/gif2.gif')
+pin26.image.attach(io: p26, filename: 'gif2.jpg')
 pin26.save!
 
 pinsOnBoard25 = PinsOnBoard.new({
@@ -470,6 +480,17 @@ pinsOnBoard25 = PinsOnBoard.new({
   pin_id: pin26.id
 })
 pinsOnBoard25.save!
+
+pin = Pin.new({ user_id: user1.id, height: "", title: 'Illustration of Pink', description: "Pink and indigo marble."})
+p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h2.jpg')
+pin.image.attach(io: p, filename: 'h2.jpg')
+pin.save!
+
+pinsOnBoard = PinsOnBoard.new({
+  board_id: board8.id,
+  pin_id: pin.id
+})
+pinsOnBoard.save!
 
 pin27 = Pin.new({ user_id: user1.id, height: "", title: 'Botanical Art Print', description: "Tropical palm trees."})
 p27 = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/hebrew/h6.jpg')
@@ -609,6 +630,7 @@ pinsOnBoard41.save!
 
 #####################
 #USER 2 TOM BOARD: WORK HARD PLAY HARDER
+
 
 pin = Pin.new({ user_id: user2.id, height: "", title: 'Neon Lights On', description: "All night long baby slow down the song~"})
 p = open('https://active-storage-mewtrest-dev.s3-us-west-1.amazonaws.com/work+hard/w1.jpg')
