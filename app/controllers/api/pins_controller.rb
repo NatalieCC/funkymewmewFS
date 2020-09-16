@@ -23,7 +23,12 @@ class Api::PinsController < ApplicationController
   end
 
   def index
-    @pins = Pin.all
+    #debugger
+    if params[:keyword]
+      @pins = Pin.search(params[:keyword])
+    else
+      @pins = Pin.all
+    end
     render :index
   end
 
@@ -54,10 +59,24 @@ class Api::PinsController < ApplicationController
       end
   end
 
+  # def search 
+  #   search_query = pin_params.search_query
+  #   query_words = search_query.split(" ").map(|word| word.downcase)
+  #   @collection = []
+  #   Pins.all.each do |pin|
+  #       query_words.each do |word|
+  #         if pin.title.include?(word)
+  #         @collection << word
+  #         end     
+  #   end
+  #   render "api/pins/search_results"
+  # end
+
     private
 
     def pin_params
-      params.require(:pin).permit(:title, :user_id, :image,:height,:description)
+      params.require(:pin).permit(:title, :user_id, :image,:height,:description,:keyword)
+      #,:search_query
     end
   
 end
