@@ -22,12 +22,14 @@ import ProfileEditContainer from "./profile/profile_edit_container";
 import BoardPinContainer from "./boards/board_pin_container";
 import PinCreateContainer from "./pins/pin_create_container";
 import SplashContainer from './splash_container';
+import SearchContainer from './search_container';
 
-
+//console.log(SearchContainer)
 const App = () => (
     <div>
         <Modal />
-        <Switch>    
+        <Switch>   
+            <ProtectedRoute exact path="/search" component={() => <div><NavbarContainer /><SearchContainer /></div> }/> 
             <Route exact path="/" component={() => <div><RegisterContainer /><SplashContainer/></div> } />
             <Route exact path="/" component={NavbarContainer} />
             <Route exact path="/signin" component={() => <div><SigninContainer /><SplashContainer /></div>} />
@@ -40,6 +42,7 @@ const App = () => (
             <ProtectedRoute exact path="/:username" component={() => <div><NavbarContainer /><ProfileShowContainer /></div>} />
             <ProtectedRoute exact path="/:username/pins" component={() => <div><NavbarContainer /><ProfileShowContainer /></div>} />
             <ProtectedRoute exact path="/:username/build-pin" component={() => <div><NavbarContainer /><PinCreateContainer /></div>} />
+            
         
         </Switch>
     </div>
