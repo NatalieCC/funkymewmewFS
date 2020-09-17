@@ -24,29 +24,33 @@ import PinCreateContainer from "./pins/pin_create_container";
 import SplashContainer from './splash_container';
 import SearchContainer from './search_container';
 
-//console.log(SearchContainer)
 const App = () => (
     <div>
         <Modal />
         <Switch>   
-            <ProtectedRoute exact path="/search" component={() => <div><NavbarContainer /><SearchContainer /></div> }/> 
-            <Route exact path="/" component={() => <div><RegisterContainer /><SplashContainer/></div> } />
+            <ProtectedRoute exact path="/search" component={ composeComponents(NavbarContainer,SearchContainer)} /> 
+            <Route exact path="/" component={composeComponents(RegisterContainer,SplashContainer)} />
             <Route exact path="/" component={NavbarContainer} />
-            <Route exact path="/signin" component={() => <div><SigninContainer /><SplashContainer /></div>} />
+            <Route exact path="/signin" component={composeComponents(SigninContainer,SplashContainer)} />
             <Route exact path="/settings" component={ProfileEditContainer} />
-            <ProtectedRoute exact path="/feed" component={() => <div><NavbarContainer /><PinFeedContainer/></div>} />
-            <ProtectedRoute exact path="/boards/:boardId" component={() => <div><NavbarContainer /><BoardPinContainer /></div>} />
-            {/* <ProtectedRoute exact path="/boards/:boardId/pins/:pinId" component={() => <div><NavbarContainer /><BoardPinContainer /></div>} /> */}
-            <ProtectedRoute exact path='/pins/:pinId' component={ () => <div><NavbarContainer /><PinShowContainer /></div> } />
-            {/* <ProtectedRoute exact path="/:username" component={ProfileShowContainer} /> */}
-            <ProtectedRoute exact path="/:username" component={() => <div><NavbarContainer /><ProfileShowContainer /></div>} />
-            <ProtectedRoute exact path="/:username/pins" component={() => <div><NavbarContainer /><ProfileShowContainer /></div>} />
-            <ProtectedRoute exact path="/:username/build-pin" component={() => <div><NavbarContainer /><PinCreateContainer /></div>} />
-            
-        
+            <ProtectedRoute exact path="/feed" component={composeComponents(NavbarContainer,PinFeedContainer)} />
+            <ProtectedRoute exact path="/boards/:boardId" component={composeComponents(NavbarContainer,BoardPinContainer)} />
+            <ProtectedRoute exact path='/pins/:pinId' component={ composeComponents(NavbarContainer,PinShowContainer)} />
+            <ProtectedRoute exact path="/:username" component={composeComponents(NavbarContainer,ProfileShowContainer)} />
+            <ProtectedRoute exact path="/:username/pins" component={composeComponents(NavbarContainer,ProfileShowContainer)} />
+            <ProtectedRoute exact path="/:username/build-pin" component={composeComponents(NavbarContainer,PinCreateContainer)} />    
         </Switch>
     </div>
-
 );
+
+const composeComponents = (...components) => {
+  return () => (
+    <div>
+      {components.map((Component, index) => (
+        <Component key={`comp-${index}`} />
+      ))}
+    </div>
+  );
+};
 
 export default App;
