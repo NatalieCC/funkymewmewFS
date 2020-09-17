@@ -18,6 +18,15 @@ class NavBar extends React.Component {
   //     }
        
    //}
+  componentDidMount() {
+    //debugger
+    if (this.props.history.location.state && this.props.history.location.state.searchWord) {
+      this.setState({searchWord: this.props.history.location.state.searchWord});
+      let input= document.getElementById("si")
+      input.focus()
+    } 
+  }
+
   onKeyUp(e) {
     //debugger;
     e.preventDefault();
