@@ -100,10 +100,10 @@ class NavBar extends React.Component {
                     id="si"
                     type="text"
                     value={this.state.searchWord}
-                    onChange={(e) => this.debounce(this.onKeyUp(e),250)}
-                    placeholder="Search"
+                    onChange={(e) => this.debounce(this.onKeyUp(e), 250)}
+                    placeholder="search by a pin's title or description"
                   />
-                  {/* <Search/> redner the search results inside navbar */}
+                  {/* <Search/> would redner the search results inside navbar */}
                 </div>
               </div>
             </div>
