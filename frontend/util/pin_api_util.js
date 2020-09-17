@@ -1,7 +1,8 @@
 export const fetchAllPins = () => {
     return $.ajax({
         method: 'GET',
-        url: `api/pins`
+        url: `api/pins`,
+        //data: page,
     });
 };
 
@@ -37,3 +38,11 @@ export const deletePin = pinId => (
         url: `/api/pins/${pinId}`
     })
 )
+
+export const fetchSearchPins = keyword => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/pins`,
+        data: { keyword: keyword }   
+    })
+);
