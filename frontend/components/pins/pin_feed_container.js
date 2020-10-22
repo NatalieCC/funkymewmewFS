@@ -15,7 +15,7 @@ const mSTP = (state) => {
 };
 
 const mDTP = dispatch => ({
-    fetchPins: (page) => dispatch(fetchAllPins(page)),
+    fetchAllPins: (page) => dispatch(fetchAllPins(page)),
     updatePin: pin => dispatch(updatePin(pin)),
     deletePin: pinId => dispatch(deletePin(pinId)),
     clearPinIndex: () => dispatch(clearPinIndex()),
