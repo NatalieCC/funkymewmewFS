@@ -27,7 +27,10 @@ class Api::PinsController < ApplicationController
     if params[:keyword]
       @pins = Pin.search(params[:keyword])
     else
-      @pins = Pin.all
+      #@pins = Pin.all
+      #debugger
+      amount=15
+      @pins = Pin.all.order("title ASC").offset((params[:page].to_i*amount)).limit(amount)
     end
     render :index
   end
