@@ -5,7 +5,7 @@ import NavbarContainer from '../navigation_bar/navbar_container';
 class PinIndex extends React.Component {
     constructor(props) {
         super(props);
-		//this.state = {columns: 1};
+		    this.state = {page: 0,total_pages:10};
 		// this.onResize = this.onResize.bind(this);
   }
 
@@ -17,14 +17,30 @@ class PinIndex extends React.Component {
     // window.addEventListener("resize", this.onResize);	
         if (this.props.type === 'Feed') {
             // debugger
-            this.props.fetchPins();
+            this.props.fetchAllPins(this.state.page);
         } else if (this.props.type === 'Board') {
             // fetch pins of a board
         } else if (this.props.type === 'Profile') {
             // get pins of a user from global state
         }
         
-	}
+  }
+
+  listenForScroll() {
+    //debugger
+    let _ = require('underscore')
+    $(window).off("scroll");
+    let throttleCallback = _.throttle(this.nextPage.bind(this), 20);
+    $(window).on("scroll", throttleCallback);
+  }
+  nextPage() {
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 10) {
+      if (this.state.page < this.state.total_pages) {
+        this.setState({ page: this.state.page + 1 });
+        this.props.fetchAllPins(this.state.page);
+      }
+    }
+  }
 	
 	// getColumns(w) {
 	// 	return this.props.brakePoints.reduceRight((p, c, i) => {
@@ -66,7 +82,7 @@ class PinIndex extends React.Component {
               />
             );
         }) : [];
-
+        this.listenForScroll();
         return (
           //   <div className="index-buffer">
           <div className="pin-index-container">
