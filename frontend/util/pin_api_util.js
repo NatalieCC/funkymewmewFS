@@ -1,8 +1,10 @@
-export const fetchAllPins = () => {
+export const fetchAllPins = (page) => {
     return $.ajax({
         method: 'GET',
         url: `api/pins`,
         //data: page,
+        //we pass page down in a query string
+        data: {page:page}
     });
 };
 
