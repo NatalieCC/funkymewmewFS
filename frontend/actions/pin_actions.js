@@ -36,8 +36,8 @@ const receiveSearchPins = matchedpins => ({
 
 // thunk action creators
 //might need to add err handling arrow functions
-export const fetchAllPins = () => dispatch => (
-    PinApiUtil.fetchAllPins()
+export const fetchAllPins = (page) => dispatch => (
+    PinApiUtil.fetchAllPins(page)
     .then(pins => (dispatch(receivePins(pins))
     ))
 );
