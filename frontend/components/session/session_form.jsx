@@ -56,17 +56,7 @@ class SessionForm extends React.Component {
         );
     }
 
-    // demoLogin(e) {
-    //     e.preventDefault();
-    //     this.setState({
-    //         username: "poppy",
-    //         email: "poppy@aa.com",
-    //         password: "123321"
-    //     },()=>{
-    //         this.props.processForm(this.state) 
-    //             .then(() => this.props.history.push("/feed"))
-    //     })
-    // }
+
 
     handleDemo(e) {
         e.preventDefault();
@@ -120,7 +110,7 @@ class SessionForm extends React.Component {
                     <div className="logo-box">
                         <img src={window.logobear} className="small-logo" />
                     </div>     
-                    <h1 className="shimmer">Welcome to MewMew Trest</h1>
+                    <h1 className="shimmer">Welcome to MewTrest</h1>
                     <div>Your Inspirations</div>
                         <form onSubmit={this.handleSubmit} className="login-form-box">
                             <div onClick={this.props.closeModal} ></div>
