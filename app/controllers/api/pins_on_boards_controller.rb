@@ -1,14 +1,12 @@
 class Api::PinsOnBoardsController < ApplicationController
     
     def show
-      #debugger 
-        @pins = []
-        @pinboardjoins = PinsOnBoard.find(params[:id])
-        @pinboardjoins.map do |pinboardjoin| 
-            pin = Pin.find(pinboardjoin.pin_id)
+      @pins = []
+        @pinboardjoins = PinsOnBoard.includes(:pin).find(params[:id])
+        @pinboardjoins.map do |pinboardjoin|
+            pin = pinboardjoin.pin
             pins << pin
         end
-        #debugger 
         render 'api/pins/index'
     end
 
