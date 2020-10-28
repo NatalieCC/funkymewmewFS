@@ -47,6 +47,9 @@ class PinCreateForm extends React.Component {
   }
 
   uploadImage(e) {
+    debugger
+    e.stopPropagation();
+    //e.stopImmediatePropagation();
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
 
@@ -97,7 +100,8 @@ class PinCreateForm extends React.Component {
     }
   }
 
-  deleteImage() {
+  deleteImage(e) {
+    e.stopPropagation();
     this.setState({ photoPreview: null });
   }
 
@@ -171,14 +175,13 @@ class PinCreateForm extends React.Component {
     //     });
   }
 
-  onDrop(acceptedFile) {
+  onDrop(acceptedFile, _, event) {
+    event.stopPropagation();
     const file = acceptedFile[0];
     const fileReader = new FileReader();
-
     fileReader.onloadend = () => {
       this.setState({ photoFile: file, photoPreview: fileReader.result });
     };
-
     if (file) {
       fileReader.readAsDataURL(file);
     }
