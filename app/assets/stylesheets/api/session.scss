@@ -25,7 +25,8 @@
         margin-bottom: 10px;
         // color: rgb(112, 39, 96);
         // background: rgb(112, 39, 96);
-        background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+        //background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+        background: rgb(112, 39, 96);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -81,12 +82,13 @@
 .logo-box {
   width: 410px;
   margin: 8px;
-  padding-top: 2.5px;
+  padding-top: 3px;
+  height: 49px;
 }
 
 .small-logo {
-  width: 45px;
-  height: 34px;
+  width: 55px;
+  height: 50px;
   justify-content: center;
   align-items: center;
 }
