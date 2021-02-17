@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import BoardIndexItem from "../boards/profile_board_index_item";
 import PinProfileIndexContainer from '../pins/pin_profile_index_container';
 
-
 class ProfileShow extends React.Component {
     constructor(props) {
         super(props);
@@ -20,9 +19,9 @@ class ProfileShow extends React.Component {
     componentDidMount() {
         //debugger
         // how we make things persisitant upon refresh
-        //set initial local state, api call
-        //const username = this.props.username;
-        //const fetchUser = (userId) => this.props.fetchUser(userId);
+        // set initial local state, api call
+        // const username = this.props.username;
+        // const fetchUser = (userId) => this.props.fetchUser(userId);
         this.props.fetchUser(this.props.username);
         // const username = this.props.match.params.username;
         // const fetchUser = (username) => this.props.fetchUser(username);
@@ -40,13 +39,13 @@ class ProfileShow extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if(prevProps.username !== this.props.username) {
-                this.props.fetchUser(this.props.username);  
+        if (prevProps.username !== this.props.username) {
+            this.props.fetchUser(this.props.username);
         }
     }
 
     allowProfileNav() {
-        if(this.props.currentUser.username === this.props.username) {
+        if (this.props.currentUser.username === this.props.username) {
             return (
                 <nav className="profile-nav">
                     <div className="prof-buttons prof-plus"
@@ -60,13 +59,13 @@ class ProfileShow extends React.Component {
                         <i className="fas fa-pencil-alt" style={{ color: " #8E8E8E" }}></i>
                     </Link>
                 </nav>
-            ) 
+            )
         } else {
             return (
-                <div className="profile-nav-guest"> 
-                </div> 
-            )     
-            }
+                <div className="profile-nav-guest">
+                </div>
+            )
+        }
     }
 
     displayDropDown() {
@@ -90,8 +89,6 @@ class ProfileShow extends React.Component {
     }
 
     displayName() {
-        // const { currentUser } = this.props;
-        // return currentUser.username;   
         return this.props.username;
     }
 
@@ -110,7 +107,7 @@ class ProfileShow extends React.Component {
 
     profilePhoto() {
         //debugger
-        if(this.props.location && this.props.location.state) {
+        if (this.props.location && this.props.location.state) {
             return <img src={this.props.location.state.photo} className="profile-image" />
         }
         const { user } = this.props;
@@ -128,7 +125,7 @@ class ProfileShow extends React.Component {
         }
     }
 
-    
+
     hideDropdown(e) {
         if (!this.node.contains(e.target)) {
             this.setState({ dropdown: false });
@@ -154,21 +151,19 @@ class ProfileShow extends React.Component {
         //this.setState({ showing: 'boards' })
         this.props.history.push(`/${this.props.username}`)
     }
-//{} is saying excute Javascript instead of jsx
-//used forEach returns enumerable, so should use map which returns array.
-//react complains if you render an object, have to key in
-//passing data among functions, functins expect what we told them in the defination(pin api util vs actions), vs where we call
-//the function.
-//model have associatins commented back in and controller, but needs to have them in jbuilder.
+    //{} is saying excute Javascript instead of JSX
+    //used forEach returns enumerable, so should use map which returns an array.
+    //React complains if you render an object, have to key in
+    //passing data among functions, functins expect what we told them in the defination(pin api util vs actions), vs where we call
+    //the function.
+    //model have associatins commented back in and controller, but needs to have them in jbuilder.
     renderBoards() {
-        //debugger
-        //const { currentUser } = this.props;    
-       return (this.props.boards.map((board) => {
+        return (this.props.boards.map((board, i) => {
             return (
-                <BoardIndexItem board={board} pins={this.props.pins} />
+                <BoardIndexItem key={i} board={board} pins={this.props.pins} />
             )
         })
-       )
+        )
     }
 
     renderPins() {
@@ -180,13 +175,13 @@ class ProfileShow extends React.Component {
             </div>
         )
     }
-    
+
     render() {
-        if(!this.props.user) {
+        if (!this.props.user) {
             //debugger
             return null;
         }
-       
+
         //const { currentUser } = this.props;
         let boardButton = 'link-selected';
         let pinButton = '';
@@ -213,29 +208,22 @@ class ProfileShow extends React.Component {
                                         {this.displayName()}
                                     </h2>
                                     <div className="profile-follows">
-                                        <h4>{`0 followers • 0 following`}</h4> 
-                                        {/* <Link to={`/${user.username}/followers`}>
-                                            {numFollowers} {followerTense}
-                                        </Link>
-                                        <div className='bullet'>•</div>
-                                        <Link to={`/${user.username}/following`}>
-                                            {numFollowing} following
-                                        </Link> */}
+                                        <h4>{`0 followers • 0 following`}</h4>
                                     </div>
 
                                     <h4 className="profile-description">
                                         {this.displayDescription()}
-                                    </h4>                           
+                                    </h4>
                                 </section>
 
-                                <nav className="profile-buttons">                                   
-                                    <button 
-                                        className={boardButton+' oval-link' }
+                                <nav className="profile-buttons">
+                                    <button
+                                        className={boardButton + ' oval-link'}
                                         onClick={this.showBoards.bind(this)} >
                                         Boards
                                     </button>
-                                    <button 
-                                        className={pinButton + ' oval-link' }
+                                    <button
+                                        className={pinButton + ' oval-link'}
                                         onClick={this.showPins.bind(this)} >
                                         Pins
                                     </button>
@@ -254,12 +242,12 @@ class ProfileShow extends React.Component {
                 </div>
             </div>
         )
-    } 
-    
-    };
+    }
+
+};
 
 export default ProfileShow;
 
 //<div> grabElementbyId
 //.classList.add .classList.remove
-//eventListner when an item gets clicked use above minipulate css
+//eventListner when an item gets clicked use above to manipulate CSS
